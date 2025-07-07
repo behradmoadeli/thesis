@@ -11,7 +11,6 @@
 *.nls
 *.out
 *.dvi
-*.pdf
 *.synctex
 *.synctex.gz
 *.toc
