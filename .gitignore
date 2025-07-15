@@ -18,3 +18,5 @@
 *.xmpdata
 *.xmpi
 *-blx.bib
+*.fls
+*.fdb_latexmk
