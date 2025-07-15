@@ -43,6 +43,19 @@
 
 % The defacto package for including graphics
 	\usepackage{graphicx}
+	\usepackage{epsfig} % for postscript graphics files
+	\usepackage{svg}
+	\usepackage{tikz}
+
+% from ECC:
+	\tikzstyle{block} = [rectangle, minimum width=2cm, minimum height=1cm,text centered, draw=black]
+	\tikzstyle{block_1} = [rectangle, minimum width=2cm, minimum height=1cm,text centered, draw=black, fill=blue!5]
+	\tikzstyle{block_2} = [rectangle, minimum width=2cm, minimum height=1cm,text centered, draw=black, fill=red!5]
+	\tikzstyle{arrow} = [thick,->,>=stealth]
+	\tikzstyle{arrow_2} = [very thick,->,>=stealth]
+	\tikzstyle{arrow_3} = [thick,->,>=stealth,dashed]
+	\tikzstyle{pfr} = [cylinder, draw, minimum height=4cm, minimum width=1cm, shape aspect=1, shape border rotate=180]
+	\usetikzlibrary{shapes.geometric}
 
 % Used to extend or replace the table/tabular environment
 	\usepackage{tabularx}  % Auto-Sizing Tables
