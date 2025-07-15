@@ -38,7 +38,7 @@ where $\mathfrak{Q}$ and $\mathfrak{F}$ are positive definite operators of appro
         & \langle \underline{\hat{x}}(\zeta, k+N | k), \underline{\phi_u}(\zeta) \rangle = 0
     \end{aligned}
 \end{equation}
-where $\mathfrak{P}$ is the terminal cost operator obtained as the solution to the discrete-time Lyapunov equation, as shown in \eqref{eq:terminal_cost}. This operator can be shown to be positive definite only if the terminal state $\underline{\hat{x}}(\zeta, k+N | k)$ is in a stable subspace. Therefore, for the resulting quadratic optimization problem to be convex, an equality constraint is introduced to guarantee $\mathfrak{P}$ is positive definite. The terminal constraint is enforced by setting the projection of the terminal state onto the unstable subspace of the system to zero \cite{curtainbook, xu2017linear, khatibi2021model}.
+where $\mathfrak{P}$ is the terminal cost operator obtained as the solution to the discrete-time Lyapunov equation, as shown in \eqref{eq:terminal_cost}. This operator can be shown to be positive definite only if the terminal state $\underline{\hat{x}}(\zeta, k+N | k)$ is in a stable subspace. Therefore, for the resulting quadratic optimization problem to be convex, an equality constraint is introduced to guarantee $\mathfrak{P}$ is positive definite. The terminal constraint is enforced by setting the projection of the terminal state onto the unstable subspace of the system to zero \cite{curtainbook, xu2017linear,Khatibi2021Model}.
 \begin{equation} \label{eq:terminal_cost}
     \mathfrak{P} (\cdot) = \sum_{m=0}^{\infty} \sum_{n=0}^{\infty} 
     -\frac{

@@ -41,7 +41,7 @@ where $\mathfrak{Q}$ and $\mathfrak{F}$ are positive definite operators of appro
     \end{aligned}
 \end{equation}
 
-Obtained as the solution to the discrete-time Lyapunov equation, $\mathfrak{P}$ is the terminal cost operator as shown in \eqref{eq:terminal_cost}; which can be proven to be positive definite only if the terminal state $\underline{x}(\zeta, k+N | k)$ is in a stable subspace. Therefore, an equality constraint is introduced to guarantee that the resulting quadratic optimization problem is convex. The terminal constraint is enforced by setting the projection of the terminal state onto the unstable subspace of the system to zero \cite{curtain2020introduction, xu2017linear, khatibi2021model}. Here, $\underline{\phi_u}(\zeta)$ is the set of unstable eigenfunctions of the system, for all eigenvalues where $\operatorname{Re}(\lambda_u) \geq 0$.
+Obtained as the solution to the discrete-time Lyapunov equation, $\mathfrak{P}$ is the terminal cost operator as shown in \eqref{eq:terminal_cost}; which can be proven to be positive definite only if the terminal state $\underline{x}(\zeta, k+N | k)$ is in a stable subspace. Therefore, an equality constraint is introduced to guarantee that the resulting quadratic optimization problem is convex. The terminal constraint is enforced by setting the projection of the terminal state onto the unstable subspace of the system to zero \cite{Curtain2020Introduction, xu2017linear,Khatibi2021Model}. Here, $\underline{\phi_u}(\zeta)$ is the set of unstable eigenfunctions of the system, for all eigenvalues where $\operatorname{Re}(\lambda_u) \geq 0$.
 
 \begin{equation} \label{eq:terminal_cost}
     \mathfrak{P} (\cdot) = \sum_{m=0}^{\infty} \sum_{n=0}^{\infty} 
@@ -92,12 +92,12 @@ One may further process the optimization problem in \eqref{eq:MPC_finite_time} t
 
 \subsection{Continuous-Time Observer Design}
 For the purpose of state reconstruction of a diffusion-convection-reaction system, where the feedforward term $\mathfrak{D}$ is generally absent, the continuous-time observer dynamics are given by \eqref{eq:observer_continuous}.
-\begin{equation} \label{eq:observer_continuous}
-    \begin{aligned}
-        \dot{\underline{\hat{x}}}(\zeta, t) &= \mathfrak{A} \underline{\hat{x}}(\zeta, t) + \mathfrak{B} u(t) + \mathfrak{L}_c [y(t) - \hat{y}(t)] \\
-        \hat{y}(t) &= \mathfrak{C} \underline{\hat{x}}(\zeta, t)
-    \end{aligned}
-\end{equation}
+% \begin{equation} \label{eq:observer_continuous}
+%     \begin{aligned}
+%         \dot{\underline{\hat{x}}}(\zeta, T) &= \mathfrak{A} \underline{\hat{x}}(\zeta, t) + \mathfrak{B} u(t) + \mathfrak{L}_c [y(t) - \hat{y}(t)] \\
+%         \hat{y}(t) &= \mathfrak{C} \underline{\hat{x}}(\zeta, t)
+%     \end{aligned}
+% \end{equation}
 where $\underline{\hat{x}}(\zeta, t)$ is the reconstructed state of the original system and $\mathfrak{L}_c$ is the continuous-time observer gain. By subtracting the observer dynamics from the original system dynamics, the error dynamics $e(\zeta,t$) are obtained as shown in \eqref{eq:observer_error_continuous}.
 \begin{equation} \label{eq:observer_error_continuous}
     \begin{aligned}
@@ -130,7 +130,7 @@ with $\mathfrak{A}_d$ and $\mathfrak{B}_d$ defined in \eqref{eq:discrete_AB}, an
         \mathfrak{L}_d &= \sqrt{2\alpha} \mathfrak{R}(\alpha, \mathfrak{A}) \mathfrak{L}_c \\
     \end{aligned}
 \end{equation}
-It can been shown that using this approach, the discrete-time error dynamics will be stable if the continuous-time observer gain $\mathfrak{L}_c$ is chosen such that $\mathfrak{A}_o$ is stable. It is also worth noting that the proposed methodology skips the need for model reduction associated with the discrete-time Luenberger observer, with no spatial approximation required as well \cite{dochain2000state,dochain2001state,alonso2004optimal,ali2015review,khatibi2021model}.
+It can been shown that using this approach, the discrete-time error dynamics will be stable if the continuous-time observer gain $\mathfrak{L}_c$ is chosen such that $\mathfrak{A}_o$ is stable. It is also worth noting that the proposed methodology skips the need for model reduction associated with the discrete-time Luenberger observer, with no spatial approximation required as well \cite{dochain2000state,dochain2001state,alonso2004optimal, Ali2015Ali2015Review,Khatibi2021Model}.
 
 \subsection{Model predictive control design, output feedback implementation}
 

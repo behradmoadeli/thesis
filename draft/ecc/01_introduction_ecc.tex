@@ -8,13 +8,13 @@ In contrast, Late Lumping retains the system’s infinite-dimensional structure 
 Several Late Lumping approaches have been employed to control convection-reaction and diffusion-convection-reaction systems modeled by hyperbolic and parabolic PDEs, respectively.
 Robust and boundary feedback control of plug flow reactors have been demonstrated in \cite{christofides1996feedback, krstic2008backstepping}, while \cite{xu2016state} addresses state feedback design for countercurrent heat exchangers.
 The role of dispersion in axial dispersion tubular reactors is considered in \cite{christofides1998robust}, and low-dimensional predictive controllers based on modal decomposition have been explored in \cite{dubljevic2006predictive2}.
-A comprehensive observer-based MPC strategy is proposed in \cite{khatibi2021model} for axial dispersion tubular reactors with recycle, combining diffusion, convection, and feedback under input constraints.
-State reconstruction for DPSs has also been addressed using discrete-time Luenberger observers without spatial discretization, a key feature consistent with the late lumping paradigm \cite{dochain2000state, dochain2001state, alonso2004optimal, ali2015review}.
+A comprehensive observer-based MPC strategy is proposed in \cite{Khatibi2021Model} for axial dispersion tubular reactors with recycle, combining diffusion, convection, and feedback under input constraints.
+State reconstruction for DPSs has also been addressed using discrete-time Luenberger observers without spatial discretization, a key feature consistent with the late lumping paradigm \cite{dochain2000state, dochain2001state, alonso2004optimal, Ali2015Review}.
 
 Delay systems, another class of infinite-dimensional systems, are often represented either as delay differential equations or transport PDEs, with the latter offering advantages in systems with spatial dynamics \cite{krstic2009book}.
 While input/output delays have been widely studied in chemical engineering using cascade PDE models \cite{Hiratsuka1969IEEE, mohammadi2012lq, Guilherme2019ACC}, state delays are less commonly addressed.
 Notable exceptions include heat exchanger systems with stream passage delays \cite{ozorio2019heat} and plug flow reactors with recycle delays that omit dispersion \cite{qi2021output}.
-Regarding diffusion-convection-reaction systems, even the work of \cite{khatibi2021model}—which remains one of the most complete applications of Late Lumping for distributed chemical reactors—assumes an instantaneous recycle stream, leaving a gap in the literature concerning systems where recycle imposes a state delay.
+Regarding diffusion-convection-reaction systems, even the work of \cite{Khatibi2021Model}—which remains one of the most complete applications of Late Lumping for distributed chemical reactors—assumes an instantaneous recycle stream, leaving a gap in the literature concerning systems where recycle imposes a state delay.
 
 This work addresses an axial dispersion tubular reactor with recycle, modeled as a coupled system of parabolic and hyperbolic PDEs to capture both spatial dispersion and recycle-induced state delay.
 A closed-form resolvent operator is derived to preserve the system’s infinite-dimensional structure using the Late Lumping approach.
