@@ -1,0 +1,102 @@
+\section{INFINITE-DIMENSIONAL REPRESENTATION} \label{sec:3_LTI}
+
+\subsection{System Operators}
+
+The linearized dynamics of the coupled non-isothermal reactor and recycle system can be expressed as an infinite-dimensional linear time-invariant (LTI) system over a Hilbert space. Let the augmented state space be defined as $X := \mathrm{L}^2([0,1]; \mathbb{R}^4)$ and $X_\mathbb{C} := \mathrm{L}^2([0,1]; \mathbb{C}^4)$, where $X_\mathbb{C}$ denotes the complexification of $X$, used later for spectral analysis. The system takes the abstract form given by Equation~\eqref{eq:LTI_1}:
+
+\begin{equation} \label{eq:LTI_1}
+\begin{cases}
+\partial_t x(\zeta, t) &= A x(\zeta, t) + B u(t), \\
+y(t) &= C x(\zeta, t),
+\end{cases}
+\end{equation}
+
+where $x(\zeta, t) \in X$, and $A : \mathcal{D}(A) \subset X \to X$ is an unbounded linear operator generating a $C_0$-semigroup on $X$. The input and output operators are $B \in \mathcal{L}(\mathbb{R}, X)$ and $C \in \mathcal{L}(X, \mathbb{R})$, respectively. The structure of the operator $A$ is given in Equation~\eqref{eq:A_operator}:
+
+\begin{equation} \label{eq:A_operator}
+A (\cdot) =
+\begin{bmatrix} 
+\dfrac{1}{Pe_m} \partial_{\zeta\zeta} - \partial_\zeta + R_1 & R_2 & 0 & 0 \\
+\alpha R_1 & \dfrac{1}{Pe_T} \partial_{\zeta\zeta} - \partial_\zeta + \alpha R_2 - \sigma & 0 & 0 \\
+0 & 0 & \dfrac{1}{\tau} \partial_\zeta & 0 \\
+0 & 0 & 0 & \dfrac{1}{\tau} \partial_\zeta
+\end{bmatrix} \begin{bmatrix} (\cdot)_1 \\ (\cdot)_2 \\ (\cdot)_3 \\ (\cdot)_4 \end{bmatrix},
+\end{equation}
+
+with its domain, $\mathcal{D}(A)$ defined in Equation~\eqref{eq:A_domain}:
+
+\begin{equation} \label{eq:A_domain}
+\begin{aligned}
+\mathcal{D}(A) := \Big\{ x = (x_1, x_2, x_3, x_4)^\top \in X :\ 
+& x_1, x_2 \in H^2(0,1),\ x_3, x_4 \in H^1(0,1); \\[0.5ex]
+\partial_\zeta x_1(1) = 0; \hspace{1.9em} & \partial_\zeta x_1(0) = Pe_m \bigl[ x_1(0) - r_r x_3(0) \bigr]; \\[0.5ex]
+\partial_\zeta x_2(1) = 0; \hspace{1.9em} & \partial_\zeta x_2(0) = Pe_T \bigl[ x_2(0) - r_r x_4(0) \bigr]; \\[0.5ex]
+x_1(1) = x_3(1); \quad & x_2(1) = x_4(1)
+\Big\}.
+\end{aligned}
+\end{equation}
+
+The definition of the input operator $B$ is provided in Equation~\eqref{eq:B_operator}:
+
+\begin{equation} \label{eq:B_operator}
+B (\cdot) = \begin{bmatrix} 0 \\ \sigma \\ 0 \\ 0 \end{bmatrix} (\cdot) \in \mathcal{L}(\mathbb{R}, X),
+\end{equation}
+
+representing actuation on the inlet thermal condition of the reactor. The output operator corresponds to a pointwise measurement at the outlet of the reactor ($\zeta = 1$), and is defined in Equation~\eqref{eq:C_operator}, where $\delta(\zeta - 1)$ denotes the Dirac delta function:
+
+\begin{equation} \label{eq:C_operator}
+C (\cdot) = \begin{bmatrix} 0 & \int_0^1 \delta(\zeta - 1)(\cdot)_2\, d\zeta & 0 & 0 \end{bmatrix} \in \mathcal{L}(X, \mathbb{R}).
+\end{equation}
+
+As the system delay has been reformulated as an auxiliary state governed by a transport PDE, the operator $A$ is time-invariant, and the overall model assumes the structure of a linear time-invariant system in the sense of semigroup theory.
+
+
+\subsection{Spectral Analysis} \label{sec:3_2_spectral_analysis}
+
+The eigenvalues $\lambda_i \in \mathbb{C}$ and corresponding eigenfunctions $\phi_i \in \mathcal{D}(A) \subset X_\mathbb{C}$ of the generator $A$ are determined by solving the spectral equation $A \phi_i = \lambda_i \phi_i$. This is achieved by constructing a first-order representation of the PDE system and enforcing boundary matching to globally satisfy the non-separated boundary conditions. Admissible eigenvalues are identified as those for which a non-trivial solution exists, and the associated eigenfunctions are then constructed by propagating these non-trivial profiles across the spatial domain using the solution operator derived from the lifted system.
+
+The resulting eigenvalue distributions for two representative parameter sets are shown in Figure~\ref{fig:eigvals}. Case~I exhibits instability, as evidenced by the presence of eigenvalues with positive real parts, whereas Case~II is stable with all eigenvalues located in the left-half complex plane. Next step is to examine the spectral structure of $A$ more closely, focusing on its adjoint properties in order to obtain an orthogonal basis for projection in the augmented state space $X_\mathbb{C}$.
+
+\begin{figure}[!htbp]
+    \centering
+    \includesvg[inkscapelatex=false, width=1.0\textwidth, keepaspectratio]{papers/3_mhe/figures/eigenvalue_distribution_filtered.svg}
+    \caption{Eigenvalue distribution in the complex plane for Case I (Unstable) and Case II (Stable).}
+    \label{fig:eigvals}
+\end{figure}
+
+\subsection{Adjoint System and Biorthogonal Basis} \label{sec:3_3_adjoint}
+
+The presence of complex eigenvalues suggests that the generator $A$ is not self-adjoint. This can be verified by evaluating the inner product relation $\langle A x, x^\dagger \rangle_X = \langle x, A^* x^\dagger \rangle_X$ for all $x \in \mathcal{D}(A)$ and $x^\dagger \in \mathcal{D}(A^*)$, where the inner product on $X = \mathrm{L}^2([0,1]; \mathbb{C}^4)$ is defined by $\langle x, x^\dagger \rangle_X := \int_0^1 x(\zeta)^\top \overline{x^\dagger(\zeta)}\, d\zeta$. Performing integration by parts reveals the formal adjoint operator $A^*$, given in Equation~\eqref{eq:A_adjoint}, which differs structurally from $A$ and confirms the lack of self-adjointness.
+
+\begin{equation} \label{eq:A_adjoint}
+A^* =
+\begin{bmatrix} 
+\dfrac{1}{Pe_m} \partial_{\zeta \zeta} + \partial_\zeta + R_1 & R_2 & 0 & 0 \\
+\alpha R_1 & \dfrac{1}{Pe_T} \partial_{\zeta \zeta} + \partial_\zeta + \alpha R_2 - \sigma & 0 & 0 \\
+0 & 0 & -\dfrac{1}{\tau} \partial_\zeta & 0 \\
+0 & 0 & 0 & -\dfrac{1}{\tau} \partial_\zeta
+\end{bmatrix}
+\end{equation}
+
+The corresponding domain $\mathcal{D}(A^*) \subset X$ is shown in Equation~\eqref{eq:A_adjoint_domain}.
+
+\begin{equation} \label{eq:A_adjoint_domain}
+\begin{aligned}
+\mathcal{D}(A^*) := \Big\{ x^\dagger = (x_1^\dagger, x_2^\dagger, x_3^\dagger, x_4^\dagger)^\top \in X :\ 
+& x_1^\dagger, x_2^\dagger \in H^2(0,1),\ x_3^\dagger, x_4^\dagger \in H^1(0,1); \\[0.5ex]
+\partial_\zeta x_1^\dagger(0) = 0; \hspace{2.2em} & \partial_\zeta x_1^\dagger(1) = Pe_m \left[ \frac{1}{\tau} x_3^\dagger(1) - x_1^\dagger(1) \right]; \\[0.5ex]
+\partial_\zeta x_2^\dagger(0) = 0; \hspace{2.2em} & \partial_\zeta x_2^\dagger(1) = Pe_T \left[ \frac{1}{\tau} x_4^\dagger(1) - x_2^\dagger(1) \right]; \\[0.5ex]
+x_3^\dagger(0) = r_r \tau x_1^\dagger(0); \quad & x_4^\dagger(0) = r_r \tau x_2^\dagger(0)
+\Big\}.
+\end{aligned}
+\end{equation}
+
+
+Though not self-adjoint, the spectrum of $A^*$ coincides with that of $A$, with each eigenvalue $\lambda_i \in \mathbb{C}$ admitting a complex-conjugate counterpart $\bar{\lambda}_i$ in the spectrum of $A^* $. Upon normalization, the associated eigenfunctions $\{ \phi_i \}_{i \in \mathbb{Z}} \subset \mathcal{D}(A)$ and $\{ \psi_i \}_{i \in \mathbb{Z}} \subset \mathcal{D}(A^*)$ form a biorthonormal system satisfying $\langle \phi_i, \psi_j \rangle_X = \delta_{ij}$, where $\delta_{ij}$ denotes the Kronecker delta. This biorthonormal structure enables modal projection of the infinite-dimensional system onto reduced-order subspaces. Specifically, it provides the analytical basis for solving the discrete-time Lyapunov equation used to compute the MPC terminal penalty, and the discrete algebraic filter Riccati equation used in MHE design \autocite{moadeli2025optimal, Khatibi2021Model, xie2022constrained}.
+
+Finally, the adjoint input and output operators are derived from the duality relations $\langle Bu, x \rangle_X = \langle u, B^* x \rangle_\mathbb{R}$ and $\langle Cx, y \rangle_\mathbb{R} = \langle x, C^* y \rangle_X$, and are expressed in Equation~\eqref{eq:BC_adjoint}. These operators are essential for constructing the discrete-time setting of the proposed estimation and control framework.
+
+\begin{equation} \label{eq:BC_adjoint}
+B^* = \begin{bmatrix} 0 & \sigma \int_0^1 (\cdot)_2\, d\zeta & 0 & 0 \end{bmatrix}, \qquad
+C^* = \begin{bmatrix} 0 \\ \delta(\zeta - 1) \\ 0 \\ 0 \end{bmatrix}.
+\end{equation}

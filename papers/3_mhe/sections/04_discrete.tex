@@ -1,0 +1,254 @@
+\section{CAYLEY--TUSTIN TIME DISCRETIZATION} \label{sec:4_dt}
+
+To enable digital implementation of estimation and control algorithms, the continuous-time DPS model must be mapped into a discrete-time form. We follow the structure-preserving Cayley--Tustin time discretization method, as adopted in previous works on reactor control\autocite{Khatibi2021Model, Moadeli2025Model,Moadeli2025Observer}. This approach is a Crank--Nicolson-type scheme belonging to the class of symplectic Runge--Kutta integrators, known for preserving key dynamical properties such as stability in the discrete-time setting\autocite{havu2007cayley, hairer2006geometric}.
+
+Assuming a piecewise constant (zero-order hold) input over each sampling interval of length $\Delta t$, the Cayley--Tustin method yields a discrete-time state-space model of the form represented in Equation~\eqref{eq:discrete_model}. The discrete-time representation operators emerge naturally from the Cayley--Tustin framework by evaluating corresponding continuous-time operators through their resolvent form. In particular, the discrete-time dynamics are obtained by applying functions of the resolvent operator $\mathfrak{R}(s, A) := (sI - A)^{-1}$, evaluated at $s = \alpha$, where $\alpha = 2 / \Delta t$.
+
+\begin{equation} \label{eq:discrete_model}
+    \begin{cases}
+        \begin{aligned}
+        x(\zeta, k{+}1) &= A_d x(\zeta, k) + B_d u(k)\\
+        y(k) & = C_d x(\zeta, k) + D_d u(k)
+        \end{aligned}
+    \end{cases}
+\end{equation}
+
+Section~\ref{sec:4_1_resolvent} is therefore dedicated to deriving a closed-form expression for this resolvent that respects the infinite-dimensional structure of the original PDE model. The resulting operator will then serve as the foundation for constructing the discrete-time system operators $A_d, B_d, C_d, D_d$, as well as their adjoint counterparts in Section~\ref{sec:4_2_dt_operators}.
+
+
+\subsection{Resolvent Operator} \label{sec:4_1_resolvent}
+
+As discussed previously, to evaluate the Cayley--Tustin mappings, one must first obtain the resolvent operator $\mathfrak{R}(s, A) := (sI - A)^{-1}$ for the system generator $A$. Rather than relying on modal decomposition and truncating the resulting infinite sum, we follow a direct Laplace-domain approach\autocite{Khatibi2021Model, Moadeli2025Model}, which yields a non-truncated expression that fully preserves the infinite-dimensional structure of the system. As shown in Equation~\eqref{eq:resolvent_def}, the resolvent $\mathfrak{R}(s, A)$ may be understood as the operator that maps either the initial condition $x_0(\zeta) := x(\zeta, t=0)$ or the input $B u(t)$ to the Laplace transform of the state, denoted by $X(\zeta, s) := \mathcal{L}\{x(\zeta, t)\}$.
+
+
+\begin{equation} \label{eq:resolvent_def}
+\begin{aligned}
+    &\hspace{3.6em}\partial_t x(\zeta, t) = A x(\zeta, t) + B u(t) \xrightarrow{\mathcal{L}} \\
+    &s X(\zeta, s) - x_0(\zeta) = A X(\zeta, s) + B U(s) \\
+    &\hspace{0.8em}\Rightarrow \begin{cases}
+        X(\zeta, s) &= \mathfrak{R}(s, A)\, x_0(\zeta) \quad \text{(if $u = 0$)}, \\
+        X(\zeta, s) &= \mathfrak{R}(s, A)\, B U(s) \quad \text{(if $x_0(\zeta) = 0$)}
+    \end{cases}
+\end{aligned}
+\end{equation}
+
+To explicitly construct $\mathfrak{R}(s, A)$, we apply the Laplace transform to the original PDE system in Equation~\eqref{eq:PDE_4}, and introduce auxiliary states to eliminate second-order spatial derivatives. This yields a lifted six-dimensional system of first-order ODEs with respect to the spatial variable $\zeta$. The resulting augmented state is denoted by $\tilde{X}(\zeta, s) := \begin{bmatrix} X_1 & \partial_\zeta X_1 & X_2 & \partial_\zeta X_2 & X_3 & X_4 \end{bmatrix}^\top$, and satisfies the differential equation given in Equation~\eqref{eq:resolvent_ode}.
+
+\begin{equation} \label{eq:resolvent_ode}
+    \partial_\zeta \tilde{X}(\zeta, s) = \tilde{A}(s)\, \tilde{X}(\zeta, s) + \tilde{Z}(\zeta, s)
+\end{equation}
+
+Here, $\tilde{A}(s)$ is the lifted spatial generator, and $\tilde{Z}(\zeta, s)$ is the lifted inhomogeneity, which depends on whether we are analyzing the zero-input or zero-initial condition response. To ensure a linear operator structure with respect to the external signal, we construct $\tilde{Z}(\zeta, s)$ as in Equation~\eqref{eq:tilde_Z}, where the signal $\tilde{z}(\zeta, s)$ is either $x_0(\zeta)$ or $B U(s)$, and the lifting operator $\mathcal{Q}$ is matrix-valued and depends on whether the problem involves an initial condition or an input. In particular, $\mathcal{Q} = \mathcal{Q}^x$ in the zero-input case, and $\mathcal{Q} = \mathcal{Q}^u$ in the zero-initial condition case. This ensures that the solution $\tilde{X}(\zeta, s)$ remains an explicit operator acting on $\tilde{z}$.
+
+\begin{equation} \label{eq:tilde_Z}
+\tilde{Z}(\zeta, s) = \mathcal{Q}\, \tilde{z}(\zeta, s)
+\end{equation}
+
+The variation-of-constants formula then yields the solution shown in Equation~\eqref{eq:resolvent_voc}, where $\tilde{T}(\zeta, s) := e^{\tilde{A}(s) \zeta}$ denotes the state-transition matrix in space, and the integral operator $\mathcal{I}_\zeta[\tilde{z}(\xi, s)]$ captures the accumulated effect of the inhomogeneity.
+
+\begin{equation} \label{eq:resolvent_voc}
+    \tilde{X}(\zeta, s) = \tilde{T}(\zeta, s)\, \tilde{X}(0, s) + \mathcal{I}_\zeta[\tilde{z}(\xi, s)], \quad \text{with} \quad \mathcal{I}_\zeta(\cdot) := \int_0^\zeta \tilde{T}(\zeta - \xi, s)\, \mathcal{Q}\, (\cdot) d\xi
+\end{equation}
+
+To eliminate the unknown value $\tilde{X}(0, s)$, we impose the Laplace-transformed boundary conditions in the algebraic form given in Equation~\eqref{eq:resolvent_bc}.
+
+\begin{equation} \label{eq:resolvent_bc}
+    M_0(s)\, \tilde{X}(0, s) + M_1(s)\, \tilde{X}(1, s) = 0
+\end{equation}
+
+Evaluating Equation~\eqref{eq:resolvent_voc} at $\zeta = 1$ and substituting the result $\tilde{X}(1, s) = \tilde{T}(1, s)\, \tilde{X}(0, s) + \mathcal{I}_1[\tilde{z}(\zeta, s)]$ into Equation~\eqref{eq:resolvent_bc} followed by solving for $\tilde{X}(0, s)$ yields the relation shown in Equation~\eqref{eq:resolvent_x0}, where $\mathcal{M}(s)$ is the boundary matching operator.
+
+\begin{equation} \label{eq:resolvent_x0}
+    \tilde{X}(0, s) = -\mathcal{M}(s)\, \mathcal{I}_1[\tilde{z}(\zeta, s)], \quad \text{with} \quad \mathcal{M}(s) := \left( M_0(s) + M_1(s)\, \tilde{T}(1, s) \right)^{-1} M_1(s)
+\end{equation}
+
+Substituting Equation~\eqref{eq:resolvent_x0} back into Equation~\eqref{eq:resolvent_voc} gives the final expression for the augmented solution, shown in Equation~\eqref{eq:resolvent_final}. 
+
+\begin{equation} \label{eq:resolvent_final}
+\tilde{X}(\zeta, s) = -\tilde{T}(\zeta, s)\, \mathcal{M}(s)\, \mathcal{I}_1[\tilde{z}(\zeta, s)] + \mathcal{I}_\zeta[\tilde{z}(\zeta, s)]
+\end{equation}
+
+The Laplace-domain solution $X(\zeta, s)$ is then recovered as shown in Equation~\eqref{eq:resolvent_project}, where the projection operator $\mathcal{Q}^X$ is a matrix-valued operator that simply extracts the physical state variables from the augmented state.
+
+\begin{equation} \label{eq:resolvent_project}
+    X(\zeta, s) = \mathcal{Q}^X\, \tilde{X}(\zeta, s)
+\end{equation}
+
+Putting these steps together, the resolvent operator $\mathfrak{R}(s, A)$ admits the explicit operator-valued form given in Equation~\eqref{eq:resolvent_operator_final}. This representation maintains a structured dependence on the external signal—either the initial condition $x_0(\zeta)$ or the input $B U(s)$—which appears solely as the operand of a linear operator expression.
+
+\begin{equation} \label{eq:resolvent_operator_final}
+    \mathfrak{R}(s, A) (\cdot) = \mathcal{Q}^X \left[ \mathcal{I}_\zeta (\cdot) - \tilde{T}(\zeta, s)\, \mathcal{M}(s)\, \mathcal{I}_1 (\cdot)  \right] \\
+\end{equation}
+
+This formulation will be used in Section~\ref{sec:4_2_dt_operators} to evaluate the discrete-time operators $A_d$, $B_d$, $C_d$, and $D_d$ via Cayley--Tustin discretization. It is worth mentioning that by implementing the generator and the boundary matching constraints of the adjoint system into the framework obtained at this stage, the resolvent-based mappings may also be derived for the discrete-time adjoint operators.
+
+\noindent\textit{Example.} To illustrate the concrete realization of the abstract operators introduced in this section, we present the lifted system representation for the non-isothermal reactor model described in Section~\ref{sec:2_model}. The original and augmented state vectors are defined in Equation~\eqref{eq:example_states}.
+
+\begin{equation} \label{eq:example_states}
+x(\zeta, t) =
+\begin{bmatrix}
+x_1(\zeta, t) \\
+x_2(\zeta, t) \\
+x_3(\zeta, t) \\
+x_4(\zeta, t)
+\end{bmatrix}, \qquad
+\tilde{X}(\zeta, s) =
+\begin{bmatrix}
+X_1(\zeta, s) \\
+\partial_\zeta X_1(\zeta, s) \\
+X_2(\zeta, s) \\
+\partial_\zeta X_2(\zeta, s) \\
+X_3(\zeta, s) \\
+X_4(\zeta, s)
+\end{bmatrix}
+\end{equation}
+
+Applying the Laplace transform to the PDE system in Equation~\eqref{eq:PDE_4} and lifting the second-order structure to first order yields the spatial ODE system given in Equation~\eqref{eq:example_lifted_ODE}.
+
+\begin{equation} \label{eq:example_lifted_ODE}
+\partial_\zeta \tilde{X}(\zeta, s) = \tilde{A}(s)\, \tilde{X}(\zeta, s) + \tilde{Z}(\zeta, s)
+\end{equation}
+
+The lifted operator $\tilde{A}(s) \in \mathbb{R}^{6 \times 6}$ appearing in Equation~\eqref{eq:example_lifted_ODE} is provided in Equation~\eqref{eq:example_Atilde}.
+
+\begin{equation} \label{eq:example_Atilde}
+\tilde{A}(s) =
+\begin{bmatrix}
+0 & 1 & 0 & 0 & 0 & 0 \\
+\mathrm{Pe}_m(s - R_1) & \mathrm{Pe}_m & -\mathrm{Pe}_m R_2 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 & 0 & 0 \\
+-\mathrm{Pe}_T \alpha R_1 & 0 & \mathrm{Pe}_T(s + \sigma - \alpha R_2) & \mathrm{Pe}_T & 0 & 0 \\
+0 & 0 & 0 & 0 & \tau s & 0 \\
+0 & 0 & 0 & 0 & 0 & \tau s
+\end{bmatrix}
+\end{equation}
+
+The inhomogeneity term $\tilde{Z}(\zeta, s)$ captures the effect of both the initial condition and the boundary input and is given in Equation~\eqref{eq:example_Z_full}.
+
+\begin{equation} \label{eq:example_Z_full}
+\tilde{Z}(\zeta, s) =
+\begin{bmatrix}
+0 \\
+-{\rm Pe}_m\, x_1(\zeta) \\
+0 \\
+-{\rm Pe}_T\, \left[ x_2(\zeta) + \sigma\, U(s) \right] \\
+-\tau\, x_3(\zeta) \\
+-\tau\, x_4(\zeta)
+\end{bmatrix}
+\end{equation}
+
+This expression can be decomposed into a sum of lifted operator terms acting on the initial condition and input, as shown in Equation~\eqref{eq:example_Z_split}.
+
+\begin{equation} \label{eq:example_Z_split}
+\tilde{Z}(\zeta, s) = \mathcal{Q}^x\, x_0(\zeta) + \mathcal{Q}^u\, B\, U(s)
+\end{equation}
+
+Here, the initial condition is denoted by $x_0(\zeta) = \begin{bmatrix} x_1(\zeta, 0) & x_2(\zeta, 0) & x_3(\zeta, 0) & x_4(\zeta, 0) \end{bmatrix}^\top$, and the input operator is given by $B = \begin{bmatrix} 0 & \sigma & 0 & 0 \end{bmatrix}^\top$. The lifting matrices $\mathcal{Q}^x$ and $\mathcal{Q}^u$ appearing in Equation~\eqref{eq:example_Z_split} are defined in Equation~\eqref{eq:example_Qx_Qu}.
+
+\begin{equation} \label{eq:example_Qx_Qu}
+\mathcal{Q}^x =
+\begin{bmatrix}
+0 & 0 & 0 & 0 \\
+-{\rm Pe}_m & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & -{\rm Pe}_T & 0 & 0 \\
+0 & 0 & -\tau & 0 \\
+0 & 0 & 0 & -\tau
+\end{bmatrix}, \qquad
+\mathcal{Q}^u =
+\begin{bmatrix}
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & -{\rm Pe}_T & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0
+\end{bmatrix}
+\end{equation}
+
+This corresponds to the abstract structure $\tilde{Z}(\zeta, s) = \mathcal{Q}\, \tilde{z}(\zeta, s)$ used in Equation~\ref{eq:tilde_Z}, where $\mathcal{Q} := \mathcal{Q}^x$ and $\tilde{z} := x_0$ in the zero-input case, and $\mathcal{Q} := \mathcal{Q}^u$ and $\tilde{z} := B\, U(s)$ in the zero-initial condition case.
+
+The projection operator $\mathcal{Q}^X$ used to recover the physical state $X(\zeta, s)$ from the augmented state $\tilde{X}(\zeta, s)$ is given in Equation~\eqref{eq:example_QX}.
+
+\begin{equation} \label{eq:example_QX}
+\mathcal{Q}^X =
+\begin{bmatrix}
+1 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0 & 0 & 1
+\end{bmatrix}
+\end{equation}
+
+Finally, the boundary condition matrices $M_0$ and $M_1$, used in Equation~\eqref{eq:resolvent_bc}, are given in Equation~\eqref{eq:example_M0M1}. These matrices implement the Danckwerts-type inflow conditions and the algebraic recycle coupling at the reactor outlet.
+
+\begin{equation} \label{eq:example_M0M1}
+\begin{aligned}
+M_0 &= 
+\begin{bmatrix}
+-{\rm Pe}_m & 1 & 0 & 0 & {\rm Pe}_m r_r & 0 \\
+0 & 0 & -{\rm Pe}_T & 1 & 0 & {\rm Pe}_T r_r \\
+0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0
+\end{bmatrix}, \qquad
+M_1 = 
+\begin{bmatrix}
+0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 & 0 & 0 \\
+1 & 0 & 0 & 0 & -1 & 0 \\
+0 & 0 & 1 & 0 & 0 & -1
+\end{bmatrix}
+\end{aligned}
+\end{equation}
+
+These matrices form the core components in the numerical implementation of the resolvent via the expression in Equation~\eqref{eq:resolvent_operator_final}, and illustrate how the general operator-theoretic framework developed in this section reduces to a concrete matrix-based realization for the reactor system. This formulation is directly usable in numerical evaluations of $\mathfrak{R}(s, A)\, (\cdot)$, eliminating the need for early lumping.
+
+
+\subsection{Operator Mapping} \label{sec:4_2_dt_operators}
+
+With the resolvent operator $\mathfrak{R}(s, A)$ now available in the explicit form derived in Section~\ref{sec:4_1_resolvent}, we may proceed to construct the discrete-time operators required for digital implementation. Under the Cayley--Tustin scheme, and for a fixed time step $\Delta t$, the discrete-time system operators are obtained by evaluating $\mathfrak{R}(s, A)$ at $s = \alpha := 2 / \Delta t$. The mapping is defined formally as:
+\begin{equation} \label{eq:discrete_mappings}
+\begin{bmatrix}
+A_d & B_d \\
+C_d & D_d
+\end{bmatrix}
+=
+\begin{bmatrix}
+-I + 2\alpha \mathfrak{R}(\alpha, A) & \sqrt{2\alpha}\, \mathfrak{R}(\alpha, A) B \\
+\sqrt{2\alpha}\, C \mathfrak{R}(\alpha, A) & C \mathfrak{R}(\alpha, A) B
+\end{bmatrix}
+\end{equation}
+
+\paragraph{State and input evolution operators.}  
+The operator $A_d$ follows directly from Equation~\eqref{eq:discrete_mappings} by applying the resolvent $\mathfrak{R}(\alpha, A)$ to the initial condition $x_0$. In this context, the lifted inhomogeneity uses $\mathcal{Q}^x$ as defined in Equation~\eqref{eq:example_Qx_Qu}. Similarly, the input operator $B_d$ is obtained by evaluating the same resolvent with $\mathcal{Q}^u$ used instead, corresponding to the zero-state case. Both constructions rely on the same numerical machinery introduced earlier.
+
+\paragraph{Output and feedthrough operators.}  
+The output operator $C_d$ may be constructed explicitly from the definition of the original output operator $C$, which measures the physical state at the reactor outlet. Formally, $C$ corresponds to a Dirac-point evaluation functional acting at $\zeta = 1$, and can be represented as
+\begin{equation}
+C\,x = \begin{bmatrix}
+0 & \int_0^1 \delta(\zeta - 1)\,(\cdot)_2\,d\zeta & 0 & 0
+\end{bmatrix}
+\end{equation}
+when applied to $x(\zeta) \in \mathrm{L}^2([0,1]; \mathbb{R}^4)$. Composing $C$ with $\mathfrak{R}(\alpha, A)$ therefore involves evaluating the second component of $X(\zeta, s)$ at $\zeta = 1$, where $X = \mathfrak{R}(\alpha, A) x_0$ and $\mathcal{Q} = \mathcal{Q}^x$. For the feedthrough operator $D_d$, the same process applies, but the resolvent acts on $B\,U(s)$ and uses $\mathcal{Q}^u$ instead.
+
+\paragraph{Adjoint operator mapping.}  
+The discrete-time adjoint operators $(A_d^*, B_d^*, C_d^*, D_d^*)$ may be obtained in a structurally identical manner by replacing the original generator $A$ with its adjoint $A^*$ and applying the Cayley--Tustin scheme to the adjoint dynamics. The corresponding resolvent $\mathfrak{R}^*(\alpha, A^*)$ is applied to the adjoint generator and measurement structure. The discrete-time mappings then follow as:
+\begin{equation}
+\begin{bmatrix}
+A_d^* & C_d^* \\
+B_d^* & D_d^*
+\end{bmatrix}
+=
+\begin{bmatrix}
+-I + 2\alpha\, \mathfrak{R}^*(\alpha, A^*) & \sqrt{2\alpha}\, \mathfrak{R}^*(\alpha, A^*)\, C^* \\
+\sqrt{2\alpha}\, B^* \mathfrak{R}^*(\alpha, A^*) & B^* \mathfrak{R}^*(\alpha, A^*) C^*
+\end{bmatrix}
+\end{equation}
+
+Since the adjoint operators $A^*, B^*, C^*$ have already been introduced in Section~\ref{sec:3_3_adjoint}, the computation of their discrete-time counterparts proceeds without additional derivations.
+
+This completes the transition from continuous- to discrete-time representation under the Cayley--Tustin framework. The resulting operators $(A_d, B_d, C_d, D_d)$ and their adjoints are now suitable for direct use in the implementation of constrained state estimation and control algorithms, as developed in the next section.

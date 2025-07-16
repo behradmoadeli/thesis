@@ -1,0 +1,244 @@
+\section{CONTROL AND ESTIMATION} \label{sec:control}
+
+\subsection{Model Predictive Control} \label{sec:mpc}
+
+This subsection outlines the discrete-time full-state Model Predictive Control (MPC) formulation used in this work. The controller is designed to stabilize the linearized infinite-dimensional system under input and state constraints and is implemented in discrete time based on the Cayley--Tustin mapping developed in Section~\ref{sec:4_dt}. Since this control formulation has been established in previous work\autocite{Moadeli2025Model}, it is briefly reviewed here for completeness.
+
+The standard finite-horizon infinite-dimensional MPC problem is formulated in Equation~\ref{eq:MPC_problem}, where $Q_{\mathrm{MPC}}$, $R_{\mathrm{MPC}}$ are coercive operators that penalize the state and control input, respectively. At each sampling instant $k$, the control input is computed by solving a constrained quadratic optimization problem over a finite prediction horizon $N_{\mathrm{MPC}}$ with the goal of minimizing the weighted sum of the state and control input costs. Terminal costs are also included to ensure stability in the finite-horizon setting.
+
+\begin{equation} \label{eq:MPC_problem}
+\begin{aligned}
+\min_{U} \quad & \sum_{l=0}^{N_{\mathrm{MPC}} - 1} \langle x_{k+l|k}, x_{k+l|k} \rangle_{Q_{\mathrm{MPC}}} + \langle u_{k+l+1|k}, u_{k+l+1|k} \rangle_{R_{\mathrm{MPC}}} \\
+&+ \langle x_{k+N_{\mathrm{MPC}}|k}, x_{k+N_{\mathrm{MPC}}|k} \rangle_{P_{\mathrm{MPC}}} \\
+\text{s.t.} \quad & x_{k+l+1|k} = A_d\, x_{k+l|k} + B_d\, u_{k+l|k} \\
+& u^{\min} \leq u_{k+l|k} \leq u^{\max} \\
+& \langle x_{k+N_{\mathrm{MPC}}|k}, \phi_u \rangle = 0
+\end{aligned}
+\end{equation}
+
+Here, $\{\phi_u\}$ denotes the set of unstable eigenfunctions of the system operator $A$, associated with eigenvalues $\lambda_u$ satisfying $\operatorname{Re}(\lambda_u) \geq 0$. The terminal cost operator $P_{\mathrm{MPC}}$ encodes the long-term impact of future states and is computed as the unique solution to the discrete Lyapunov equation, which is equivalent under Cayley--Tustin discretization to the continuous-time operator Lyapunov equation\autocite{Curtain2020Introduction,Khatibi2021Model}. The closed-form expression for $P_{\mathrm{MPC}}$ is therefore obtained as the infinite series given in Equation~\ref{eq:P_MPC} over the eigenfunctions $\{\phi_m\}$ and adjoint eigenfunctions $\{\psi_n\}$ of the operator $A$.
+
+\begin{equation} \label{eq:P_MPC}
+P_{\mathrm{MPC}} (\cdot) = \sum_{m=0}^\infty \sum_{n=0}^\infty 
+    -\frac{
+        \langle \phi_m , \psi_n \rangle_{Q_{\mathrm{MPC}}}
+    }{
+        \lambda_m + \overline{\lambda_n}
+    }
+    \langle (\cdot) , \psi_n \rangle \, \phi_m
+\end{equation}
+
+When all eigenvalues satisfy $\operatorname{Re}(\lambda) < 0$, the operator $P_{\mathrm{MPC}}$ becomes coercive automatically. In the presence of unstable modes, however, this property no longer holds unless the contribution of those modes is explicitly removed. The terminal constraint in the MPC problem serves this exact purpose: it eliminates the unstable components of the terminal state, ensuring that $P_{\mathrm{MPC}}$ is evaluated only over the stable subspace. As such, it guarantees that the cost function remains convex and the optimization problem is well-posed\autocite{Curtain2020Introduction, xu2017linear}.
+
+To express the finite-horizon MPC problem in a quadratic programming (QP) form, the future states are recursively substituted in terms of the current state and future inputs using the system dynamics. The result is the standard QP formulation given in Equation~\ref{eq:MPC_QP}.
+
+\begin{equation} \label{eq:MPC_QP}
+    \begin{aligned}
+        \min_{U} &J_{\mathrm{MPC}} = U^T \langle I_{N_{\mathrm{MPC}}},H \rangle U + 2U^T \langle I_{N_{\mathrm{MPC}}}, P x(\zeta)_{k|k} \rangle \\
+        \text{s.t.} &\qquad U^{min} \leq U \leq U^{max} \\
+        &\qquad T_u {x}(\zeta)_{k|k} + S_u U = 0
+        \, \\
+        \text{with } &H = \\
+        &\hspace{-3.5em }\begin{bmatrix}
+            {B}_d^\ast P_{\mathrm{MPC}} {B}_d + {R_{\mathrm{MPC}}} & {B}_d^\ast {A}_d^\ast P_{\mathrm{MPC}} {B}_d & \cdots &  {B}_d^\ast {{A}_d^\ast}^{N_{\mathrm{MPC}}-1} P_{\mathrm{MPC}} {B}_d \\
+            {B}_d^\ast P_{\mathrm{MPC}} {A}_d {B}_d & {B}_d^\ast P_{\mathrm{MPC}} {B}_d + {R_{\mathrm{MPC}}} & \cdots & {B}_d^\ast {{A}_d^\ast}^{N_{\mathrm{MPC}}-2} P_{\mathrm{MPC}} {B}_d \\
+            \vdots & \vdots & \ddots & \vdots \\
+            {B}_d^\ast P_{\mathrm{MPC}} {{A}_d}^{N_{\mathrm{MPC}}-1} {B}_d & {B}_d^\ast P_{\mathrm{MPC}} {{A}_d}^{N_{\mathrm{MPC}}-2} {B}_d & \cdots & {B}_d^\ast P_{\mathrm{MPC}} {B}_d + {R_{\mathrm{MPC}}}
+        \end{bmatrix} \\
+        P = &\begin{bmatrix}
+            {B}_d^\ast P_{\mathrm{MPC}} {{A}_d} &
+            {B}_d^\ast P_{\mathrm{MPC}} {{A}_d}^{2}  &
+            \hdots & {B}_d^\ast P_{\mathrm{MPC}} {{A}_d}^{N_{\mathrm{MPC}}} 
+        \end{bmatrix}^T \\
+        T_u (\cdot) = &\begin{bmatrix}
+            \langle {{A}_d}^{N_{\mathrm{MPC}}} (\cdot), {\phi_u} \rangle
+        \end{bmatrix} \\
+        S_u = &\begin{bmatrix}
+            \langle {{A}_d}^{N_{\mathrm{MPC}}-1} {B}_d, {\phi_u} \rangle & 
+            \langle {{A}_d}^{N_{\mathrm{MPC}}-2} {B}_d, {\phi_u} \rangle &
+            \hdots &
+            \langle {B}_d, {\phi_u} \rangle
+        \end{bmatrix} \\
+        U = &\begin{bmatrix}
+            u_{(k+1)|k} & u_{(k+2)|k} & \hdots & u_{(k+N_{\mathrm{MPC}})|k}
+        \end{bmatrix}^T
+    \end{aligned}
+\end{equation}
+
+Once the obtained QP is solved at each time step, only the first element of the optimal control sequence, $u_{k+1|k}$, is applied to the system. At the next sampling instant, the process is repeated with updated measurements, resulting in a receding horizon control strategy.
+
+It is important to note that up to this point, all operators used in the QP are derived with no need for any spatial discretization. This preserves the underlying infinite-dimensional structure of the dynamics throughout the design. Spatial discretization is introduced only at the final stage, when evaluating inner products and solving the quadratic program numerically to compute the optimal input. This separation between modeling and numerical implementation motivates the term \emph{late-lumping}, as it allows control design to remain consistent with the distributed nature of the plant.
+
+
+\subsection{Moving Horizon Estimation} \label{sec:mhe}
+
+The full-state availability assumption made in the MPC formulation is rarely justifiable for distributed parameter systems, where the state is infinite-dimensional and cannot be fully observed. To enable output-based feedback, we now introduce a moving horizon estimation (MHE) framework---a finite-horizon, optimization-based estimator---for state reconstruction from partial, noisy measurements. In addition to optimally reconstructing the states, MHE naturally accommodates constraints and disturbances within its optimization framework, making it well-suited for control-integrated estimation.
+
+Following the structure introduced in Section~\ref{sec:4_dt}, the discrete-time model is extended with additive disturbance terms, as shown in equation~\eqref{eq:mhe_system}, where $w_k \in W \subset \mathbb{R}^{n_w}$ and $v_k \in V \subset \mathbb{R}^{n_y}$ denote the process and measurement noise, respectively. The operator $\mathcal{N}_d \in \mathcal{L}(W, X)$ maps process disturbances into the state space. All other operators and variables are as defined in the previous sections.
+
+\begin{equation} \label{eq:mhe_system}
+\begin{cases}
+x(\zeta, k{+}1) &= A_d x(\zeta, k) + B_d u(k) + \mathcal{N}_d w(k), \\
+\qquad y(k) &= C_d x(\zeta, k) + D_d u(k) + v(k)
+\end{cases}
+\end{equation}
+
+As mentioned earlier, the state space $X \subset \mathrm{L}^2([0,1]; \mathbb{R}^4)$ is infinite-dimensional, and the discrete-time operators $A_d, B_d, C_d, D_d$ are those derived via the Cayley--Tustin discretization of the continuous-time system in equation~\eqref{eq:discrete_model}. Building on top of the estimation model in \Citeauthor{xie2022constrained}'s work\autocite{xie2022constrained}, the key difference here is the presence of the input term $B_d u_k$, which is essential in the control-integrated setting of our application. In Xie's formulation, the term $B_d w_k$ corresponds to what is denoted as $\mathcal{N}_d w_k$ in our model.
+
+Similar to the input operator $B_d$, the discrete-time process noise operator $\mathcal{N}_d$ is constructed from its continuous-time counterpart $\mathcal{N}$ using the same resolvent-based mapping framework described in Section~\ref{sec:4_2_dt_operators}, with $\mathcal{Q} = \mathcal{Q}^w$ serving as the lifting operator that maps $\mathcal{N}_d W(s)$ from the Laplace-transformed state-space into the Laplace transform of the lifted state-space, enabling consistent application of the noise operator in the lifted setting. The continuous and discrete-time forms of the process noise operator are given in equation~\eqref{eq:N_operator}, where $\delta(\zeta)$ denotes the Dirac delta function. Corresponding adjoint noise operators $\mathcal{N}^\ast$ and $\mathcal{N}_d^\ast$ can also be derived analogously to $B^\ast$ and $B_d^\ast$, but are omitted here for brevity.
+
+\begin{equation} \label{eq:N_operator}
+    \mathcal{N} (\cdot) = \begin{bmatrix} 0 \\ \delta(\zeta) \\ 0 \\ 0 \end{bmatrix} (\cdot), \qquad \mathcal{N}_d (\cdot) = \sqrt{2\alpha} \, \mathfrak{R}(\alpha, A) \, \mathcal{N} (\cdot)
+\end{equation}
+
+To proceed with the estimator design, we adopt the infinite-dimensional output feedback structures introduced in \Citeauthor{xie2022constrained} and \Citeauthor{zhang2023tracking}'s contributions\autocite{xie2022constrained, zhang2023tracking}. This approach formulates a constrained optimization problem over a sliding window of the most recent $N_{\mathrm{MHE}}$ output measurements. The objective is to reconstruct the most plausible state and disturbance trajectory that explains the observed outputs, subject to system dynamics and noise bounds. A finite-dimensional projection is introduced only at the numerical solution stage, consistent with the late-lumping framework developed throughout this work.
+
+The finite-horizon MHE problem is formulated in equation~\eqref{eq:MHE_problem}, following the structure established in \Citeauthor{xie2022constrained}'s work \autocite{xie2022constrained}. At each time step $T$, the optimization seeks to reconstruct the most likely state and disturbance trajectory over the past $N_{\mathrm{MHE}}$ steps, using all available measurements and inputs, while accounting for process and output noise constraints. The optimization variable is defined as $ \omega_T := \begin{bmatrix}\hat{x}_{T-N_{\mathrm{MHE}}|T} & \bigl. {} \bigr| & \hat{w}_{T-N_{\mathrm{MHE}}|T} & \cdots & \hat{w}_{T-1|T}\end{bmatrix}^\top$, which belongs to the hybrid space $\Omega := X \times W^{N_{\mathrm{MHE}}}$.
+
+\begin{equation} \label{eq:MHE_problem}
+\begin{aligned}
+\min_{\omega_T} \quad & 
+\sum_{k=T-N_{\mathrm{MHE}}}^{T-1} \left( \langle \hat{w}_{k|T}, \hat{w}_{k|T} \rangle_{Q_{\mathrm{MHE}}^{-1}} + \langle \hat{v}_{k|T}, \hat{v}_{k|T} \rangle_{R_{\mathrm{MHE}}^{-1}} \right) \\
+&+ \langle (\hat{x}_{T{-}N_{\mathrm{MHE}}|T} - \hat{x}_{T{-}N_{\mathrm{MHE}}|T{-}1}), (\hat{x}_{T{-}N_{\mathrm{MHE}}|T} - \hat{x}_{T{-}N_{\mathrm{MHE}}|T{-}1}) \rangle_{P_{\mathrm{MHE}}^{-1}} \\
+\text{s.t.} \quad
+& x_{k+1} = A_d x_k + B_d u_k + \mathcal{N}_d w_k \\
+& y_k = C_d x_k + D_d u_k + v_k \\
+& w_k \in [w^{\min}, w^{\max}], \quad \hat{y}_k \in [y_k - v^{\max}, y_k - v^{\min}]
+\end{aligned}
+\end{equation}
+
+Here, $\hat{x}_{T-N_{\mathrm{MHE}}|T-N_{\mathrm{MHE}}-1}$ is the prior state estimate, and the terms $\hat{v}_{k|T}$ are computed via model consistency with the measurements. The penalty operator $P_{\mathrm{MHE}}$ accounts for the arrival cost and is computed as the minimal nonnegative self-adjoint solution to the discrete-time algebraic Riccati filter equation\autocite{xie2022constrained}, which guarantees well-posedness of the estimation problem under mild detectability conditions.
+
+To express the finite-horizon MHE problem in a quadratic programming (QP) form, the predicted outputs and state trajectory are recursively substituted in terms of the initial state and noise sequence using the system dynamics. The result is the standard QP formulation given in Equation~\ref{eq:MHE_QP}.
+
+\begin{equation} \label{eq:MHE_QP}
+    \begin{aligned}
+        \min_{\omega_T} \quad & J_{\mathrm{MHE}} = \omega_T^\top \langle I_{N_{\mathrm{MHE}}}, G \rangle \omega_T + 2 \omega_T^\top \langle I_{N_{\mathrm{MHE}}}, f_{\mathrm{MHE}} \rangle \\
+        \text{s.t.} \quad &
+        \begin{bmatrix}
+        [0 , I_{N_{\mathrm{MHE}}}] \\
+        -[0 , I_{N_{\mathrm{MHE}}}] \\
+        -S_y \\
+        S_y
+        \end{bmatrix}
+        \omega_T
+        \leq
+        \begin{bmatrix}
+        w^{\max}_{{N_{\mathrm{MHE}}} \times 1} \\
+        -w^{\min}_{{N_{\mathrm{MHE}}} \times 1} \\
+        v^{\max}_{{N_{\mathrm{MHE}}} \times 1} - Y_T \\
+        Y_T - v^{\min}_{{N_{\mathrm{MHE}}} \times 1}
+        \end{bmatrix} \\
+        \\
+        \text{with } \quad
+        G = &\; S_y^\ast (I_{N_{\mathrm{MHE}}} \otimes R_{\mathrm{MHE}}^{-1}) S_y + \texttt{blkdiag}(P_{\mathrm{MHE}}^{-1}, I_{N_{\mathrm{MHE}}} \otimes Q_{\mathrm{MHE}}^{-1}) \in \mathcal{L}(\Omega,\Omega), \\[1ex]
+        f_{\mathrm{MHE}} = &\; -S_y^\ast (I_{N_{\mathrm{MHE}}} \otimes R_{\mathrm{MHE}}^{-1}) (Y_T - U_y U_T) + 
+        \begin{bmatrix}
+        -P_{\mathrm{MHE}}^{-1} \hat{x}_{T-{N_{\mathrm{MHE}}}|T-{N_{\mathrm{MHE}}}-1} \\
+        0_{{N_{\mathrm{MHE}}} \times 1}
+        \end{bmatrix}, \\[1ex]
+        S_y &= [\mathcal{O}, T_y], \quad
+        \mathcal{O} = 
+        \begin{bmatrix}
+        C_d &
+        C_d A_d &
+        \hdots &
+        C_d A_d^{{N_{\mathrm{MHE}}}-1}
+        \end{bmatrix}^\top, \\[1ex]
+        T_y &=
+        \begin{bmatrix}
+        0 & 0 & \cdots & 0 \\
+        C_d \mathcal{N}_d & 0 & \cdots & 0 \\
+        \vdots & \vdots & \ddots & \vdots \\
+        C_d A_d^{{N_{\mathrm{MHE}}}-2} \mathcal{N}_d & \cdots & C_d \mathcal{N}_d & 0
+        \end{bmatrix}, \quad
+        U_y =
+        \begin{bmatrix}
+        D_d & 0 & \cdots & 0 \\
+        C_d B_d & D_d & \cdots & 0 \\
+        \vdots & \vdots & \ddots & \vdots \\
+        C_d A_d^{{N_{\mathrm{MHE}}}-2} B_d & \cdots & C_d B_d & D_d
+        \end{bmatrix}, \\[1ex]
+        \omega_T &=
+        \left[
+        \begin{array}{c}
+        \hat{x}_{T-N_{\mathrm{MHE}}|T} \\
+        \hline
+        \hat{w}_{T-N_{\mathrm{MHE}}|T} \\
+        \vdots \\
+        \hat{w}_{T-1|T}
+        \end{array}
+        \right], \quad
+        Y_T =
+        \begin{bmatrix}
+        y_{T-{N_{\mathrm{MHE}}}} \\
+        y_{T-{N_{\mathrm{MHE}}}+1} \\
+        \vdots \\
+        y_{T-1}
+        \end{bmatrix} \quad 
+        U_T =
+        \begin{bmatrix}
+        u_{T-{N_{\mathrm{MHE}}}} \\
+        u_{T-{N_{\mathrm{MHE}}}+1} \\
+        \vdots \\
+        u_{T-1}
+        \end{bmatrix}
+    \end{aligned}
+\end{equation}
+
+
+All system operators $A_d, B_d, C_d, D_d, \mathcal{N}_d$, and $P_{\mathrm{MHE}}$ are derived in closed form from the continuous-time model using Cayley--Tustin discretization, without the need for spatial approximation. As with the MPC formulation, discretization is introduced only at the numerical stage when evaluating inner products and solving the resulting quadratic program, in line with the late-lumping philosophy adopted throughout this work.
+
+\subsection{Closed Loop MHE-MPC Implementation} \label{sec:mhe_mpc}
+
+The integrated MHE-MPC framework is executed as a closed-loop system in which the estimator and controller interact at each sampling instant. The estimation problem is solved over a backward-moving window using the latest available measurements, while the MPC problem is solved over a forward-moving prediction horizon using the most recent state estimate. Both optimization problems are formulated entirely in operator terms and evaluated numerically only at the final stage, consistent with the late-lumping strategy adopted throughout this work. The complete online procedure is summarized in Table~\ref{tab:mhe_algo}, outlining the initialization, estimation, and control steps performed at each iteration.
+
+\begin{table}[htbp]
+\centering
+\renewcommand{\arraystretch}{1.8}
+\setlength{\tabcolsep}{4pt}
+\caption{Proposed MHE--MPC Algorithm}
+\label{tab:mhe_algo}
+\begin{tabular}{@{}p{0.03\textwidth}p{0.92\textwidth}@{}}
+\hline\hline
+
+0). & Assume plant dynamics $\{w_k, v_k\}_{k=0}^{k_{\text{end}}}$ and initial condition $x_0$ are known. Let $N = N_{MHE}$. \\
+
+\multicolumn{2}{@{}l@{}}{\textbf{Initialization window ($T < N$):}} \\
+
+1). & Assign desired values to the input sequence $\{u_k\}_{k=0}^{N-1}$. \\
+
+2). & Run the plant model: $\left\{ \begin{array}{ll}
+x_{k+1} &= A_d x_k + B_d u_k + \mathcal{N}_d w_k \\
+y_k &= C_d x_k + D_d u_k + v_k
+\end{array} \right\}_{k=0}^{N-1}$ to obtain $\{y_k\}_{k=0}^{N-1}$. \\
+
+3). & Provide an initial guess for $\hat{x}_{0|N-1}$. \\
+\hline
+
+\multicolumn{2}{@{}l@{}}{\textbf{Control--Estimation window ($T \geq N$):}} \\
+
+4). & Collect $\{u_k, y_k\}_{k=T-N}^{T-1}$ and prior estimate $\hat{x}_{T-N|T-1}$. Solve $\min_{\omega_T} J_{\mathrm{MHE}}$ to obtain
+    $\omega_T = \left[ 
+    \left. \hat{x}_{T-N|T} \right| \{ \hat{w}_{k|T} \}_{k=T-N}^{T-1} 
+    \right]$ \\
+
+5). & Simulate the model: $\left\{ \hat{x}_{k+1|T} = A_d \hat{x}_{k|T} + B_d u_k + \mathcal{N}_d \hat{w}_{k|T} \right\}_{k=0}^{N-1}$
+    to compute $\hat{x}_{T-N+1|T}$ and $\hat{x}_{T|T}$. \\
+
+6). & Use $\hat{x}_{T|T}$ to solve $\min_{U} J_{\mathrm{MPC}}$ and obtain $u_T$. \\
+
+7). & Apply $u_T$ to the plant: $\left\{ \begin{array}{ll}
+x_{T+1} &= A_d x_T + B_d u_T + \mathcal{N}_d w_T \\
+y_T &= C_d x_T + D_d u_T + v_T
+\end{array} \right.$ to obtain $y_T$. \\
+
+8). & Update $T \leftarrow T + 1$ and repeat steps 4-8. \\
+
+\hline\hline
+\end{tabular}
+\end{table}
+
+The formulated MHE--MPC scheme provides a practical pathway for output-feedback control in distributed parameter systems. Its numerical implementation and interaction with the plant are demonstrated through simulations in Section~\ref{sec:6_results}.
+
+% Despite its practical and structural advantages, the MHE-MPC combination does not generally guarantee closed-loop stability. Unlike infinite-dimensional Luenberger observers, which enable explicit placement of estimation error dynamics to ensure fast convergence relative to the control action, infinite-dimensional MHE design imposes no such spectral control. The convergence properties of the estimation error depend implicitly on the MHE problem formulation. As a result, we restrict the application of MHE-MPC to a nominally stable Case~II system, presented in Section~\ref{sec:6_results}, where estimation and control interact over a stable baseline. In contrast, Case~I focuses on full-state MPC for an inherently unstable system, highlighting its stabilizing effect in the absence of state reconstruction mechanisms. Output-feedback MPC strategies based on infinite-dimensional Luenberger observers remain viable alternatives for stabilizing inherently unstable systems without full-state availability\autocite{Khatibi2021Model, moadeli2025ecc}.
