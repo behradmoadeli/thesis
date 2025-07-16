@@ -311,14 +311,15 @@
 \else
 	\def\ps@headings{%
 		\let\@oddfoot\@empty
-		\def\@oddhead{{\slshape\rightmark}\hfil\thepage}%
+		% \def\@oddhead{{\slshape\rightmark}\hfil\thepage}%
+		\def\@oddhead{{\slshape\parbox[t]{0.9\textwidth}{\MakeUppercase\rightmark}}\hfil\thepage}%
 		\let\@mkboth\markboth
 		\def\chaptermark##1{%
-			\markright {\MakeUppercase{%
+			\markright {%\MakeUppercase{%
 				\ifnum \c@secnumdepth >\m@ne
 					\@chapapp\ \thechapter. \ %
 				\fi
-				##1}}}}
+				##1}}}
 \fi
 
 \def\ps@myheadings{%
@@ -975,12 +976,15 @@
 
 \RequirePackage[
 	\@paperoption,
-	left=1in,
+	left=1.5in,
 	right=1.5in,
-	headheight=0.25in,
-	headsep=0.25in,
+	top=1.5in,
+	bottom=1.25in,
+	headheight=0.75in,
+	headsep=0.5in,
 	%textwidth=6.75in,
-	textheight=8.5in,
+	% textheight=8.25in,
+	footskip=0.5in,
 	\@landscape
 ]{geometry}
 
