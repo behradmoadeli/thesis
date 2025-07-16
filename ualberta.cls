@@ -358,7 +358,7 @@
 		\thispagestyle{empty}
 		\vspace*{1.75\baselineskip}
 		\begin{center}
-			\textsc{\textbf{\@title}}\\[0.5\baselineskip]
+			\textbf{\@title}\\[0.5\baselineskip]
 			by\\[0.5\baselineskip]
 			\@author\\[5\baselineskip]
 			A thesis submitted in partial fulfillment of the requirements for the degree of\\[1.25\baselineskip]
