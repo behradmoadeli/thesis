@@ -1,4 +1,4 @@
-\section{Open-loop System} \label{sec:model}
+\section{Open-loop System} \label{sec:1_open_loop}
 
 \subsection{System model}
 
@@ -24,25 +24,25 @@
         
     \end{tikzpicture}
     \caption{Axial tubular reactor with recycle stream.}
-    \label{fig:reactor_scheme_cjce1}
+    \label{fig:1_reactor_scheme}
 \end{figure}
 
 
-The chemical process illustrated in Figure~\ref{fig:reactor_scheme_cjce1} represents an axial dispersion tubular reactor, which incorporates diffusion, convection, and a chemical reaction where reactant $A$ is converted into products \autocite{levenspiel1998chemical}. The reactor is equipped with a recycle mechanism, allowing a fraction of the product stream to re-enter the reactor to ensure the consumption of any unreacted substrate. By applying first-principle modelling through relevant mass balance relations on an infinitesimally small section of the reactor, the dynamics of the reactant concentration can be described by the PDE given in Equation~(\ref{eq:PDE_basic}), belonging to the class of second order parabolic PDEs commonly used to characterize diffusion-convection-reaction systems \autocite{jensen1982bifurcation} in chemical engineering.
+The chemical process illustrated in Figure~\ref{fig:1_reactor_scheme} represents an axial dispersion tubular reactor, which incorporates diffusion, convection, and a chemical reaction where reactant $A$ is converted into products \autocite{levenspiel1998chemical}. The reactor is equipped with a recycle mechanism, allowing a fraction of the product stream to re-enter the reactor to ensure the consumption of any unreacted substrate. By applying first-principle modelling through relevant mass balance relations on an infinitesimally small section of the reactor, the dynamics of the reactant concentration can be described by the PDE given in Equation~(\ref{eq:1_PDE_basic}), belonging to the class of second order parabolic PDEs commonly used to characterize diffusion-convection-reaction systems \autocite{jensen1982bifurcation} in chemical engineering.
 
-\begin{equation} \label{eq:PDE_basic}
+\begin{equation} \label{eq:1_PDE_basic}
     \dot{C_A}(\zeta, t) = D \partial_{\zeta \zeta} C_A(\zeta, t) - v \partial_\zeta C_A(\zeta, t) + r(C_A)
 \end{equation}
 
-Here, $C_A(\zeta, t)$ denotes the concentration of reactant $A$ along the reactor. The physical parameters $D$ and $v$ correspond to the diffusion coefficient and flow velocity along the reactor, respectively. It is worth noting that the system properties are assumed to be constant against changes in temperature and pressure. The spatial and temporal coordinates of the system are represented by $\zeta$ and $t$, where $\zeta \in [0, 1]$ and $t \in [0, \infty)$. In addition, $r(C_A)$ is the reaction rate by which the reactant is consumed. Considering the reaction term in general can be non-linear, the model is further linearized around its steady-state, followed by replacing the reactant concentration $C_A$ with its deviations from the steady-state concentration $C_{A,ss}$. The result is given in Equation~(\ref{eq:PDE_original_model}).
+Here, $C_A(\zeta, t)$ denotes the concentration of reactant $A$ along the reactor. The physical parameters $D$ and $v$ correspond to the diffusion coefficient and flow velocity along the reactor, respectively. It is worth noting that the system properties are assumed to be constant against changes in temperature and pressure. The spatial and temporal coordinates of the system are represented by $\zeta$ and $t$, where $\zeta \in [0, 1]$ and $t \in [0, \infty)$. In addition, $r(C_A)$ is the reaction rate by which the reactant is consumed. Considering the reaction term in general can be non-linear, the model is further linearized around its steady-state, followed by replacing the reactant concentration $C_A$ with its deviations from the steady-state concentration $C_{A,ss}$. The result is given in Equation~(\ref{eq:1_PDE_original_model}).
 
-\begin{equation} \label{eq:PDE_original_model}
+\begin{equation} \label{eq:1_PDE_original_model}
     \dot{c}(\zeta, t) = D \partial_{\zeta \zeta} c(\zeta, t) - v \partial_\zeta c(\zeta, t) - k_r c(\zeta, t)
 \end{equation}
 
-where $c(\zeta, t) \equiv C_A(\zeta, t) - C_{A, ss}(\zeta)$ is the deviation from the steady-state concentration and the linearized reaction coefficient is defined as $k_r \equiv \left. \dfrac{\partial r(C_A)}{\partial C_A} \right|_{C_{A, ss}}$ in the vicinity of the steady-state. The system output is assumed to be the deviation of the reactant concentration from the steady-state measured at the reactor outlet, while the control input is set to be equal to the deviation of the reactant concentration from the steady-state, applied at the reactor inlet after being mixed with the delayed state resulting from the recycled portion of the flow occurring $\tau$ time units ago. Incorporating input, output, and state delay in addition to the assumption of Danckwerts boundary condition will result in Equation~(\ref{eq:BC}) that describe the boundary conditions of the system.
+where $c(\zeta, t) \equiv C_A(\zeta, t) - C_{A, ss}(\zeta)$ is the deviation from the steady-state concentration and the linearized reaction coefficient is defined as $k_r \equiv \left. \dfrac{\partial r(C_A)}{\partial C_A} \right|_{C_{A, ss}}$ in the vicinity of the steady-state. The system output is assumed to be the deviation of the reactant concentration from the steady-state measured at the reactor outlet, while the control input is set to be equal to the deviation of the reactant concentration from the steady-state, applied at the reactor inlet after being mixed with the delayed state resulting from the recycled portion of the flow occurring $\tau$ time units ago. Incorporating input, output, and state delay in addition to the assumption of Danckwerts boundary condition will result in Equation~(\ref{eq:1_BC}) that describe the boundary conditions of the system.
 
-\begin{align} \label{eq:BC}
+\begin{align} \label{eq:1_BC}
     \begin{cases}
         &D \partial_\zeta c(0, t) - v c(0, t) = -v \left[ R c(1, t-\tau) + (1-R) u(t) \right] \\
         &\partial_\zeta c(1, t) = 0 \\
@@ -55,7 +55,7 @@ Here, parameters $R$ and $\tau$ correspond to the recycle ratio and the residenc
 
 \subsection{PDE representation of the delay term}
 
-One effective method for addressing delay in systems is to represent the delay using an alternative transport partial differential equation (PDE). This approach is particularly advantageous when the problem already involves similar forms of PDEs, as is the case in the current study. To specifically address the delay in the system under consideration, the state variable $c(\zeta, t)$ is expanded into a vector of functions ${x}(\zeta, t) \equiv [x_1(\zeta, t), x_2(\zeta, t)]^T$, where $x_1(\zeta, t)$ is the same as $c(\zeta, t)$, while $x_2(\zeta, t)$ is introduced as a new state variable to account for the concentration along the recycle stream. The delay is thus modelled as a pure transport process, as if the first state $x_1(\zeta, t)$ is being transported from the reactor outlet to the inlet, experiencing a delay of $\tau$ time units while in the recycle stream. As a result, Equations~\ref{eq:PDE_original_model}~and~\ref{eq:BC} may be re-formulated as follows:
+One effective method for addressing delay in systems is to represent the delay using an alternative transport partial differential equation (PDE). This approach is particularly advantageous when the problem already involves similar forms of PDEs, as is the case in the current study. To specifically address the delay in the system under consideration, the state variable $c(\zeta, t)$ is expanded into a vector of functions ${x}(\zeta, t) \equiv [x_1(\zeta, t), x_2(\zeta, t)]^T$, where $x_1(\zeta, t)$ is the same as $c(\zeta, t)$, while $x_2(\zeta, t)$ is introduced as a new state variable to account for the concentration along the recycle stream. The delay is thus modelled as a pure transport process, as if the first state $x_1(\zeta, t)$ is being transported from the reactor outlet to the inlet, experiencing a delay of $\tau$ time units while in the recycle stream. As a result, Equations~\ref{eq:1_PDE_original_model}~and~\ref{eq:1_BC} may be re-formulated as follows:
 
 \begin{align}
     \partial_t 
@@ -78,9 +78,9 @@ One effective method for addressing delay in systems is to represent the delay u
 \end{cases}
 \end{align}
 
-With all state variables now expressed explicitly at a specific time instance $t$—in contrast to the previous representation where states at $t$ were directly involved with states at $(t-\tau)$—the open-loop system can be described in the standard state-space form of an infinite-dimensional linear time-invariant (LTI) system as $\dot{{x}} = \mathfrak{A} {x}$. Here, $\mathfrak{A}$ is a linear operator $\mathcal{L}(X)$ acting on a Hilbert space $X: L^2[0,1] \times L^2[0,1]$ and ${x}(\zeta,t)$, as defined previously, is the vector of functions describing the states of the system. The operator $\mathfrak{A}$ and its domain are defined in detail as shown in Equation~(\ref{eq:operator_A_cjce1}):
+With all state variables now expressed explicitly at a specific time instance $t$—in contrast to the previous representation where states at $t$ were directly involved with states at $(t-\tau)$—the open-loop system can be described in the standard state-space form of an infinite-dimensional linear time-invariant (LTI) system as $\dot{{x}} = \mathfrak{A} {x}$. Here, $\mathfrak{A}$ is a linear operator $\mathcal{L}(X)$ acting on a Hilbert space $X: L^2[0,1] \times L^2[0,1]$ and ${x}(\zeta,t)$, as defined previously, is the vector of functions describing the states of the system. The operator $\mathfrak{A}$ and its domain are defined in detail as shown in Equation~(\ref{eq:1_operator_A}):
 
-\begin{equation} \label{eq:operator_A_cjce1}
+\begin{equation} \label{eq:1_operator_A}
     \begin{aligned}
         \mathfrak{A} \equiv&
         \begin{bmatrix}
@@ -97,9 +97,9 @@ With all state variables now expressed explicitly at a specific time instance $t
 
 \subsection{Adjoint operator}
 
-The adjoint operator $\mathfrak{A}^*$ plays a critical role in analyzing the spectral properties of the system. It is obtained in Equation~(\ref{eq:adjoint_A_cjce1}):
+The adjoint operator $\mathfrak{A}^*$ plays a critical role in analyzing the spectral properties of the system. It is obtained in Equation~(\ref{eq:1_adjoint_A}):
 
-\begin{equation} \label{eq:adjoint_A_cjce1}
+\begin{equation} \label{eq:1_adjoint_A}
     \begin{aligned}
         \langle \mathfrak{A} {\phi}, {\psi}\rangle  = \langle {\phi}, {\mathfrak{A}}^{*} {\psi}\rangle  &\Rightarrow \\
         {\mathfrak{A}}^{*} =&
@@ -121,14 +121,14 @@ where ${\phi_i}(\zeta) = [\phi_{i,1}(\zeta), \phi_{i,2}(\zeta)]^T$ and ${\psi_i}
 
 The eigenvalue problem for $\mathfrak{A}$ is formulated as follows:
 
-\begin{equation} \label{eq:eig_prob}
+\begin{equation} \label{eq:1_eig_prob}
         \mathfrak{A} {\phi_i}(\zeta) = \lambda_i {\phi_i}(\zeta)
 \end{equation}
 
 
-where $\lambda_i \in \mathbb{C}$ is the $i^{\text{th}}$ eigenvalue. To obtain the characteristic equation, the system of PDEs shall be reduced to the ODE system in Equation~(\ref{eq:eigval_calc_2}) $\forall i \geq 0$:
+where $\lambda_i \in \mathbb{C}$ is the $i^{\text{th}}$ eigenvalue. To obtain the characteristic equation, the system of PDEs shall be reduced to the ODE system in Equation~(\ref{eq:1_eigval_calc_2}) $\forall i \geq 0$:
 
-\begin{equation} \label{eq:eigval_calc_2}
+\begin{equation} \label{eq:1_eigval_calc_2}
     \begin{aligned}
         \partial_\zeta \begin{bmatrix}
             \phi_1 \\ \partial_\zeta \phi_1 \\ \phi_2
@@ -142,9 +142,9 @@ where $\lambda_i \in \mathbb{C}$ is the $i^{\text{th}}$ eigenvalue. To obtain th
     \end{aligned}
 \end{equation}
 
-which is in the form of $ \tilde{{\phi}}_\zeta  = \tilde{\mathfrak{A}} \tilde{{\phi}}$, with the solution stated in Equation~(\ref{eq:eigval_calc_3}):
+which is in the form of $ \tilde{{\phi}}_\zeta  = \tilde{\mathfrak{A}} \tilde{{\phi}}$, with the solution stated in Equation~(\ref{eq:1_eigval_calc_3}):
 
-\begin{equation} \label{eq:eigval_calc_3}
+\begin{equation} \label{eq:1_eigval_calc_3}
     \begin{bmatrix}
         \phi_1 \\ \partial_\zeta \phi_1 \\ \phi_2
     \end{bmatrix}_{\zeta=1} = \begin{bmatrix}
@@ -156,9 +156,9 @@ which is in the form of $ \tilde{{\phi}}_\zeta  = \tilde{\mathfrak{A}} \tilde{{\
     \end{bmatrix}_{\zeta=0}
 \end{equation}
 
-where the $ 3 \times 3$ matrix $\Lambda_{(m,n)}$ is defined as $\Lambda \equiv \left. e^{\tilde{\mathfrak{A}} (\zeta - 0)} \right|_{\zeta = 1}$. By applying the boundary conditions to Equation~(\ref{eq:eigval_calc_3}), the algebraic system of equations in Equation~(\ref{eq:eigval_calc_4}) is obtained:
+where the $ 3 \times 3$ matrix $\Lambda_{(m,n)}$ is defined as $\Lambda \equiv \left. e^{\tilde{\mathfrak{A}} (\zeta - 0)} \right|_{\zeta = 1}$. By applying the boundary conditions to Equation~(\ref{eq:1_eigval_calc_3}), the algebraic system of equations in Equation~(\ref{eq:1_eigval_calc_4}) is obtained:
 
-\begin{equation} \label{eq:eigval_calc_4}
+\begin{equation} \label{eq:1_eigval_calc_4}
     \begin{bmatrix}
         -v & D & Rv \\
         \Lambda_{2,1} & \Lambda_{2,2} & \Lambda_{2,3} \\
@@ -168,18 +168,18 @@ where the $ 3 \times 3$ matrix $\Lambda_{(m,n)}$ is defined as $\Lambda \equiv \
     \end{bmatrix}_{\zeta=0} = \tilde{\Lambda} \left. \tilde{{\phi}} \right|_{\zeta = 0} = 0
 \end{equation}
 
-where $\tilde{\Lambda}$ is defined as the square matrix shown in Equation~(\ref{eq:eigval_calc_4}). Equation~(\ref{eq:eigval_calc_4}) suggests that the matrix $\tilde{\Lambda}$ must be rank-deficient for appropriate values of $\lambda_i$. Attempts to analytically solve the characteristic equation $det(\tilde{\Lambda}) = 0$ have failed; therefore, it is solved numerically using the parameters in Table~\ref{tab:pars_cjce1}. The resulting eigenvalue distribution is depicted in Figure~\ref{fig:eigval_dist_cjce1} in the complex plane.
+where $\tilde{\Lambda}$ is defined as the square matrix shown in Equation~(\ref{eq:1_eigval_calc_4}). Equation~(\ref{eq:1_eigval_calc_4}) suggests that the matrix $\tilde{\Lambda}$ must be rank-deficient for appropriate values of $\lambda_i$. Attempts to analytically solve the characteristic equation $det(\tilde{\Lambda}) = 0$ have failed; therefore, it is solved numerically using the parameters in Table~\ref{tab:1_pars}. The resulting eigenvalue distribution is depicted in Figure~\ref{fig:1_eigval_dist} in the complex plane.
 
 \begin{figure}[!htbp]
     \centering
     \includesvg[inkscapelatex=false, width=0.6\textwidth, keepaspectratio]{papers/1_optimal/figures/eig_val_dist_R_0.3.svg}
-    \caption{Eigenvalues of operator $\mathfrak{A}$ obtained by solving Equation~(\ref{eq:eigval_calc_4}).}
-    \label{fig:eigval_dist_cjce1}
+    \caption{Eigenvalues of operator $\mathfrak{A}$ obtained by solving Equation~(\ref{eq:1_eigval_calc_4}).}
+    \label{fig:1_eigval_dist}
 \end{figure}
 
-Following the same procedure for $\mathfrak{A}^*$ shows that the eigenvalues of $\mathfrak{A}$ match the ones of its adjoint, confirming that $\mathfrak{A}$ and $\mathfrak{A}^*$ form a bi-orthogonal basis according to Equation~(\ref{eq:biorth}):
+Following the same procedure for $\mathfrak{A}^*$ shows that the eigenvalues of $\mathfrak{A}$ match the ones of its adjoint, confirming that $\mathfrak{A}$ and $\mathfrak{A}^*$ form a bi-orthogonal basis according to Equation~(\ref{eq:1_biorth}):
 
-\begin{equation} \label{eq:biorth}
+\begin{equation} \label{eq:1_biorth}
     \begin{aligned}
         &\langle \mathfrak{A} {\phi_i}, {\psi_j} \rangle = \langle \lambda_i {\phi_i}, {\psi_j} \rangle = \lambda_i \langle {\phi_i}, {\psi_j} \rangle \\
         \text{L.H.S.} = &\langle {\phi_i}, \mathfrak{A}^* {\psi_j} \rangle = \langle {\phi_i}, \lambda_j^* {\psi_j} \rangle = \overline{\lambda_j^*} \langle {\phi_i}, {\psi_j} \rangle \\
@@ -187,19 +187,19 @@ Following the same procedure for $\mathfrak{A}^*$ shows that the eigenvalues of 
     \end{aligned}
 \end{equation}
 
-The eigenfunctions $\{ {\phi_i}(\zeta), {\psi_i}(\zeta) \}$ (for $\mathfrak{A}$ and $\mathfrak{A}^*$, respectively) may be obtained following the calculation of eigenvalues. The first 3 eigenfunctions are plotted in Figure~\ref{fig:eigfun}. 
+The eigenfunctions $\{ {\phi_i}(\zeta), {\psi_i}(\zeta) \}$ (for $\mathfrak{A}$ and $\mathfrak{A}^*$, respectively) may be obtained following the calculation of eigenvalues. The first 3 eigenfunctions are plotted in Figure~\ref{fig:1_eigfun}. 
 
 \begin{figure}[H]
     \centering
     \includesvg[inkscapelatex=false, width=\textwidth, keepaspectratio]{papers/1_optimal/figures/eigfuns.svg}
     \caption{First few eigenmodes of $\mathfrak{A}$ and $\mathfrak{A}^*$.}
-    \label{fig:eigfun}
+    \label{fig:1_eigfun}
 \end{figure}
 
 \begin{table}[ht]
     \centering
     \caption{Physical parameters for the system.}
-    \label{tab:pars_cjce1}
+    \label{tab:1_pars}
     \begin{tabular}{|c|c|c|c|}
     \hline
     \textbf{Parameter}        & \textbf{Symbol} & \textbf{Value}     & \textbf{Unit}    \\ \hline

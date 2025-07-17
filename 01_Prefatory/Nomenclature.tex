@@ -4,40 +4,96 @@
 % [C] : Greek
 % Use \nomunit{$Value\, Units$} to add the value and units for a defined constant
 
-\nomenclature[A]{$c$}{Speed of light in a vacuum.\nomunit{$299,792,458\, m/s$}}
-\nomenclature[A]{$h$}{Planck constant.\nomunit{$6.62607015E-34\, Js$}}
-\nomenclature[B]{$E$}{Young's Modulus}
-\nomenclature[B]{$K$}{Elastic Constant}
-\nomenclature[B]{$T$}{Torque}
-\nomenclature[B]{$a$}{Acceleration}
-\nomenclature[B]{$v$}{Velocity}
-\nomenclature[B]{$d$}{Distance}
-\nomenclature[B]{$m$}{Mass}
-\nomenclature[C]{$\varepsilon$}{Strain}
-\nomenclature[C]{$\alpha$}{Primary Angle}
+% \nomenclature[A]{$\text{R}_e$}{Rankine Number.\nomunit{$\text{R}_e = \frac{L v \rho}{\mu}$}}
+% \nomenclature[A]{$c$}{Speed of light in a vacuum.\nomunit{$299,792,458\, m/s$}}
+% Variables (Group A)
+% Variables (Group A)
+\nomenclature[A]{$t_m$}{Time\nomunit{s}}
+\nomenclature[A]{$z$}{Spatial coordinate along the reactor length\nomunit{m}}
+\nomenclature[A]{$z_r$}{Spatial coordinate along the recycle stream\nomunit{m}}
+\nomenclature[A]{$t$}{Dimensionless temporal coordinate}
+\nomenclature[A]{$\zeta$}{Dimensionless spatial coordinate}
+\nomenclature[A]{$s$}{Laplace variable}
+\nomenclature[A]{$k$}{Discrete time index}
 
-\nomenclature[A]{$R$}{Gas Constant.\nomunit{$R = 8.314 \text{ J/(mol·K)}$}}
-\nomenclature[A]{$k$}{Boltzmann Constant.\nomunit{$k = 1.380649 \times 10^{-23} \text{ J/K}$}}
-\nomenclature[A]{$\mu_0$}{Permeability of Free Space.\nomunit{$\mu_0 = 4\pi \times 10^{-7} \text{ H/m}$}}
-\nomenclature[A]{$\epsilon_0$}{Permittivity of Free Space.\nomunit{$\epsilon_0 = 8.854 \times 10^{-12} \text{ F/m}$}}
-\nomenclature[A]{$g$}{Acceleration due to Gravity.\nomunit{$g = 9.81 \text{ m/s}^2$}}
-\nomenclature[A]{$\pi$}{Mathematical Constant Pi.\nomunit{$\pi \approx 3.14159$}}
-\nomenclature[A]{$\hbar$}{Reduced Planck Constant.\nomunit{$\hbar = 1.055 \times 10^{-34} \text{ Js}$}}
-\nomenclature[A]{$\text{R}_e$}{Rankine Number.\nomunit{$\text{R}_e = \frac{L v \rho}{\mu}$}}
+% Parameters (Group B)
+\nomenclature[B]{$l$}{Reactor length\nomunit{m}}
+\nomenclature[B]{$\tilde{t}$}{Residence time in the reactor\nomunit{s}}
+\nomenclature[B]{$\tilde{t}_r$}{Residence time in the recycle stream\nomunit{s}}
+\nomenclature[B]{$D$}{Diffusion coefficient\nomunit{m$^2$/s}}
+\nomenclature[B]{$v$}{Convection velocity in the reactor\nomunit{m/s}}
+\nomenclature[B]{$v_r$}{Convection velocity in the recycle stream\nomunit{m/s}}
+\nomenclature[B]{$k_r$}{Isothermal reaction rate constant\nomunit{s$^{-1}$}}
+\nomenclature[B]{$E$}{Activation energy of the reaction\nomunit{J/mol}}
+\nomenclature[B]{$R$}{Universal gas constant\nomunit{J/(mol$\cdot$K)}}
+\nomenclature[B]{$\kappa$}{Axial energy dispersion coefficient\nomunit{W/(m$\cdot$K)}}
+\nomenclature[B]{$\rho_f$}{Fluid density in reactor\nomunit{kg/m$^3$}}
+\nomenclature[B]{$c_p$}{Specific heat capacity of the fluid\nomunit{J/(kg$\cdot$K)}}
+\nomenclature[B]{$h$}{Heat transfer coefficient at wall\nomunit{W/(m$^2\cdot$K)}}
+\nomenclature[B]{$\Delta H$}{Specific enthalpy of reaction\nomunit{J/mol}}
+\nomenclature[B]{$d_t$}{Reactor diameter\nomunit{m}}
+\nomenclature[B]{$r_r$}{Recycle ratio}
+\nomenclature[B]{$C_{Feed}$}{Feed stream concentration\nomunit{mol/m$^3$}}
+\nomenclature[B]{$T_{Feed}$}{Feed stream temperature\nomunit{K}}
+\nomenclature[B]{$\tau$}{Dimensionless recycle-induced delay}
+\nomenclature[B]{$Pe_m$}{Mass Péclet number\nomunit{$\frac{v l}{D}$}}
+\nomenclature[B]{$Pe_T$}{Thermal Péclet number\nomunit{$\frac{\rho_f c_p v l}{\kappa}$}}
+\nomenclature[B]{$k_a$}{Dimensionless reaction rate \nomunit{$\frac{k l}{v} e^{-\eta}$}}
+\nomenclature[B]{$\alpha$}{Dimensionless heat of reaction \nomunit{$\frac{-\Delta H C_{Feed}}{\rho_f c_p T_{Feed}}$}}
+\nomenclature[B]{$\sigma$}{Dimensionless heat transfer coefficient \nomunit{$\frac{4 h l}{\rho_f c_p v d_t}$}}
+\nomenclature[B]{$\eta$}{Dimensionless activation energy \nomunit{$\frac{E}{R T_{Feed}}$}}
+\nomenclature[B]{$N_{MPC}$}{Prediction horizon for MPC}
+\nomenclature[B]{$N_{MHE}$}{Estimation horizon for MHE}
 
-\nomenclature[B]{$F$}{Force.}
-\nomenclature[B]{$A$}{Cross-sectional Area.}
-\nomenclature[B]{$L$}{Length.}
-\nomenclature[B]{$D$}{Diameter.}
-\nomenclature[B]{$t$}{Thickness.}
-\nomenclature[B]{$V$}{Volume.}
-\nomenclature[B]{$P$}{Pressure.}
-\nomenclature[B]{$T$}{Temperature.}
-\nomenclature[B]{$M$}{Moment.}
-\nomenclature[B]{$I$}{Area Moment of Inertia.}
-\nomenclature[B]{$G$}{Shear Modulus.}
+% Operators and Functions (Group C)
+\nomenclature[C]{$C(z,t_m)$}{Concentration profile in the reactor\nomunit{mol/m$^3$}}
+\nomenclature[C]{$T(z,t_m)$}{Temperature profile in the reactor\nomunit{K}}
+\nomenclature[C]{$T_c(t_m)$}{Cooling jacket temperature\nomunit{K}}
+\nomenclature[C]{$C_r(z_r,t_m)$}{Concentration profile in the recycle stream\nomunit{mol/m$^3$}}
+\nomenclature[C]{$T_r(z_r,t_m)$}{Temperature profile in the recycle stream\nomunit{K}}
+\nomenclature[C]{$m_1(\zeta,t)$}{Dimensionless concentration in reactor}
+\nomenclature[C]{$m_2(\zeta,t)$}{Dimensionless temperature in reactor}
+\nomenclature[C]{$m_3(\zeta,t)$}{Dimensionless concentration in recycle}
+\nomenclature[C]{$m_4(\zeta,t)$}{Dimensionless temperature in recycle}
+\nomenclature[C]{$T_w(t)$}{Dimensionless cooling jacket temperature}
+\nomenclature[C]{$x(\zeta,t)$}{State vector of the system\ \nomunit{$[x_1, x_2, x_3, x_4]^\top$}}
+\nomenclature[C]{$x_i(\zeta,t)$}{$i$-th state\ \nomunit{Deviation from $m_{i,ss}(\zeta,t)$}}
+\nomenclature[C]{$u(t)$}{Control input}
+\nomenclature[C]{$y(t)$}{Plant output}
+\nomenclature[C]{$\mathfrak{A}$}{System generator\ \nomunit{$\in \mathcal{L}(X,X)$}}
+\nomenclature[C]{$\mathfrak{B}$}{Input operator\ \nomunit{$\in \mathcal{L}(U,X)$}}
+\nomenclature[C]{$\mathfrak{C}$}{Output operator\ \nomunit{$\in \mathcal{L}(X,Y)$}}
+\nomenclature[C]{$\mathfrak{D}$}{Feedthrough operator\ \nomunit{$\in \mathcal{L}(U,Y)$}}
+\nomenclature[C]{$\mathfrak{R}(s,\mathfrak{A})$}{Resolvent of operator $\mathfrak{A}$}
+\nomenclature[C]{$Q_{MPC}$}{State cost operator for MPC\ \nomunit{$\in \mathcal{L}(X,X)$}}
+\nomenclature[C]{$R_{MPC}$}{Control cost operator for MPC\ \nomunit{$\in \mathcal{L}(U,U)$}}
+\nomenclature[C]{$P_{MPC}$}{Terminal cost operator for MPC\ \nomunit{$\in \mathcal{L}(X,X)$}}
+\nomenclature[C]{$\mathfrak{N}$}{Process noise operator\ \nomunit{$\in \mathcal{L}(W,X)$}}
+\nomenclature[C]{$w(k)$}{Process noise sequence\ \nomunit{$\in \mathbb{R}$}}
+\nomenclature[C]{$\mu(k)$}{Measurement noise sequence\ \nomunit{$\in \mathbb{R}$}}
+\nomenclature[C]{$Q_{MHE}$}{Disturbance tolerance operator in MHE\ \nomunit{$\in \mathcal{L}(W,W)$}}
+\nomenclature[C]{$R_{MHE}$}{Measurement tolerance operator in MHE\ \nomunit{$\in \mathcal{L}(Y,Y)$}}
+\nomenclature[C]{$P_{MHE}$}{Prior estimate tolerance operator in MHE\ \nomunit{$\in \mathcal{L}(X,X)$}}
 
-\nomenclature[C]{$\sigma$}{Normal Stress.}
-\nomenclature[C]{$\tau$}{Shear Stress.}
-\nomenclature[C]{$\lambda$}{Wavelength.}
-\nomenclature[C]{$\delta$}{Deflection.}
+% Subscripts and Superscripts (Group D)
+\nomenclature[D]{$x^{ss}$}{Steady-state value/profile of $x$}
+\nomenclature[D]{$x^\ast$}{Adjoint of $x$}
+\nomenclature[D]{$\overline{x}$}{Complex conjugate of $x$}
+\nomenclature[D]{$\hat{x}$}{Estimated value/profile of $x$}
+\nomenclature[D]{$x_k$}{Value of $x$ at time index $k$\nomunit{$x(k)$}}
+\nomenclature[D]{$x_{i|j}$}{Value of $x_i$ evaluated at $j$}
+\nomenclature[D]{$x_d$}{Discrete-time representation of $x$}
+
+% Mathematical Notation (Group E)
+\nomenclature[E]{$\mathbb{R}$}{Set of real numbers}
+\nomenclature[E]{$\mathbb{R}^n$}{$n$-dimensional real vector space}
+\nomenclature[E]{$\mathbb{C}$}{Set of complex numbers}
+\nomenclature[E]{$L^2$}{Square-integrable function space\ \nomunit{$L^2([a,b]; \mathbb{R}^n)$}}
+\nomenclature[E]{$H$}{Sobolev space with derivatives up to order $k$\ \nomunit{$H^k(a,b)$}}
+\nomenclature[E]{$\mathcal{L}$}{Bounded linear operators from $X$ to $Y$\ \nomunit{$\mathcal{L}(X,Y)$}}
+\nomenclature[E]{$\mathcal{D}$}{Domain of the operator $\mathfrak{A}$\ \nomunit{$\mathcal{D}(\mathfrak{A})$}}
+\nomenclature[E]{$\lambda_i$}{$i$-th eigenvalue of $\mathfrak{A}$\ \nomunit{$\mathfrak{A} \phi_i = \lambda_i \phi_i$}}
+\nomenclature[E]{$\phi_i$}{$i$-th eigenfunction of $\mathfrak{A}$\ \nomunit{$\mathfrak{A} \phi_i = \lambda_i \phi_i$}}
+\nomenclature[E]{$\psi_i$}{$i$-th eigenfunction of $\mathfrak{A}^\ast$\ \nomunit{$\mathfrak{A}^\ast \psi_i = \overline{\lambda_i} \psi_i$}}
+\nomenclature[E]{$X(\zeta,s)$}{Laplace transform of $x(\zeta,t)$\nomunit{$X(\zeta,s) = \mathcal{L}\{x(\zeta,t)\}$}}
+\nomenclature[E]{$I_N$}{Identity matrix of size $N$}

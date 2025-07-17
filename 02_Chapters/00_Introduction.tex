@@ -1,92 +1,79 @@
-\chapter{Introduction}\label{ch:Introduction}
-	\section{Background}
-		As a graduate student from the \University, I am familiar with the challenging task of writing a thesis that adheres to the \Fac\ Minimum Thesis Formatting Requirements. 
-		Using a traditional word processor to create a long document filled with equations and figures can be frustrating due to frequent crashes, file corruption, unpredictable formatting changes, and the inability to output a document in the required PDF/A format for submission to \Fac.
-		
-		To overcome these issues, many students turn to \LaTeX\ as an alternative to conventional word processors. 
-		
-		\LaTeX\ allows students and researchers to focus separately on the content and the formatting of their documents. 
-		Because the writing is independent of the formatting, documents can be written in lightweight text editors or \LaTeX\ editors, which also facilitate the compilation of the documents. 
-		These editors can often save work after every keystroke, and due to the plaintext format, they are less prone to file corruption.
-		Moreover, \LaTeX\ ensures a consistent and professional appearance throughout the document. 
+\chapter{Introduction}\label{ch:0}
 
-	\section{Objectives}
-		The main objectives of this thesis are:
-		\begin{enumerate}
-			\item To provide a comprehensive guide on writing a thesis using \LaTeX.
-			\item To assist students and researchers in mastering the nuances of \LaTeX\ document preparation.
-			\item To showcase best practices for structuring and formatting a thesis in \LaTeX.
-		\end{enumerate}
+\section{Background and Motivation}
 
-	\section{Scope and Limitations}
-		Although there are existing templates for writing a thesis in \LaTeX\ for the \University\ (see \Cref{tab:OtherTemplates} for a list of available templates), none seem to provide all the necessary information for creating an outstanding thesis.
-		Most templates apply ``band-aid'' solutions to existing classes, such as \opt{report} or \opt{book}, offering a customized title page and methods for including prefatory pages.
-		However, these templates often fall short by not providing tips and best practices on how to include the various sections and parts that make up a thesis.
-		They also fail to offer a solid foundation for those who are new to \LaTeX.
-		Many of these templates involve extensive patching and fixing, resulting in a large \textit{preamble} section at the beginning of the template that can be confusing to new \LaTeX\ users and add to the already steep learning curve.
-		
-		\begin{landscape}
-			\begin{table}[p]
-				\centering
-				\small
-				\begin{tabularx}{\linewidth}{ccL}
-					\toprule
-						Developer & Last Updated & Link to Template Source\\
-					\midrule
-						Shivam Garg & May 29, 2023 & \url{https://github.com/svmgrg/ualberta_thesis_template}\\
-						Henry Brausen & Feb 11, 2022 & \url{https://github.com/henrybrausen/thesis_template}\\
-						Bernard Llanos & Oct 05, 2019 & \url{https://drive.google.com/file/d/1wKS8fu5e6qiVDRt0VUzEtlW8p7uMyz1T/view?usp=sharing}\\
-						John Bowman & Sep 30, 2019 & \url{https://github.com/vectorgraphics/uofathesis}\\
-						\makecell{Hongtao Yang\\\&\\Benjamin Bernard} & Sep 28, 2017 & \url{https://github.com/adrs0049/ThesisTemplate}\\
-						\makecell{GAME\\\&\\Hongtao Yang} & Feb 03, 2016 & \url{https://www.ualberta.ca/computing-science/media-library/grad/candidacy-template-tex.tex}\\
-						Steven Taschuk & Mar 21, 2012 & \url{https://github.com/stebulus/ualberta-math-stat-templates/tree/master/thesis}\\
-						CMENG & Jul 19, 1999 & \url{https://sites.ualberta.ca/CMENG/research/new-control/stythes.html}\\
-					\bottomrule
-				\end{tabularx}
-				\caption{List of Other Available Templates.}
-				\label{tab:OtherTemplates}
-			\end{table}
-		\end{landscape}
-		
-		This template, document class, and guide aim to address these shortcomings by providing all the necessary information to create a well-structured thesis, along with examples to assist in formatting your thesis written in \LaTeX.
-		To ensure the robustness and ease of maintenance, I developed the class file from the ground up keeping the additional required packages to a minimum.
-		This makes this \LaTeX\ solution easier to maintain, update, and customize to suit different needs from different areas of the \University.
-		A key goal with this was to reduce the traditionally steep learning curve associated with \LaTeX\ to ensure that anyone could create an outstanding thesis.
-		
-		While the class file (\path{ualberta.cls}) deserves its own comprehensive documentation, this document will focus on more specifically on the template file (\path{ualberta.tex}), as well as the following points:
-		\begin{itemize}
-			\item Installation and basic usage of \LaTeX.
-			\item Document structure and formatting.
-			\item Inclusion of figures and tables.
-			\item Inclusion of plots and graphs.
-			\item Handling mathematical equations.
-			\item Citations and references using BibTeX.
-			\item Use of JabRef---Reference Manager.
-			\item Inclusion of Code and PDF's.
-			\item And more.
-		\end{itemize}
+Distributed parameter systems (DPSs), governed by partial differential equations (PDEs), are central to modeling mass and energy transport phenomena in chemical engineering. Among these, axial dispersion tubular reactors with recycle represent a particularly important and generic setup, capturing convection, diffusion, reaction, and recirculation in a single, physically grounded framework. This system is typically modeled by a second-order parabolic PDE under Danckwerts boundary conditions—a formulation widely accepted for its physical accuracy, generality, and industrial relevance.
 
-		This guide does not cover advanced \LaTeX\ programming or extensive customization of document classes.
-		Instead, the class file \path{ualberta.cls} provides all the major document and formatting requirements as provided by \Fac, while this document offers references on how to include the various elements that might be required in a thesis.
-		This includes all of the explanations of the packages and macros needed to perform the examples.
+Despite its widespread use, the modeling of such systems has historically neglected a key structural phenomenon: state delay. While input and output delays have been addressed extensively, delays in the system state itself—arising naturally from physical process configurations like recycle loops—have been almost entirely overlooked in the chemical engineering DPS literature. This oversight is not due to irrelevance but due to a lack of modeling frameworks that both capture the phenomenon rigorously and allow for practical controller synthesis.
 
-	\section{Organization of the Thesis}
-		The thesis is organized into several chapters, each addressing a specific aspect of writing a thesis in \LaTeX. 
-		The breakdown is as follows:
-		\begin{itemize}
-			\item \textbf{\Cref{ch:gettingstarted}:}  \nameref{ch:gettingstarted}
-			\item \textbf{\Cref{ch:documentstructure}:}  \nameref{ch:documentstructure}
-			\item \textbf{\Cref{ch:figureandtables}:}  \nameref{ch:figureandtables}
-			\item \textbf{\Cref{ch:plotsandgraphs}:}  \nameref{ch:plotsandgraphs}
-			\item \textbf{\Cref{ch:mathematicalequations}:}  \nameref{ch:mathematicalequations}
-			\item \textbf{\Cref{ch:citref}:}  \nameref{ch:citref}
-			\item \textbf{\Cref{ch:JabRef}:}  \nameref{ch:JabRef}
-			%\item \textbf{\Cref{ch:}:}  \nameref{ch:}
-		\end{itemize}
+This thesis identifies and formalizes state delay as an intrinsic property of a common industrial system: the tubular reactor with recycle. By recognizing the non-instantaneous return of material through the recycle line as a transport phenomenon, the system is reformulated as a coupled parabolic–hyperbolic PDE. The delay is embedded within the spatial state itself using a transport PDE over a pseudo-spatial domain, avoiding the need for delay differential equations and preserving the system’s infinite-dimensional structure.
 
-		Each chapter provides detailed information, examples, and recommendations to help you navigate the thesis writing process within the \LaTeX\ ecosystem.
+This modeling choice is not arbitrary. The parabolic-hyperbolic structure, with standard Danckwerts-type boundary conditions and no artificial simplifications, closely reflects real chemical processes and includes all the building blocks of a typical chemical engineering PDE model: second-order diffusion, first-order convection, linear reaction terms, and recirculation. By selecting such a physically accurate and mathematically inclusive setup, the thesis provides a testbed that is both realistic and sufficiently general to serve as a foundation for broader theory.
 
-	\section{Summary}
-		This chapter introduced the background, objectives, scope, and organization of the thesis. 
-		The subsequent chapters delve into specific topics, offering practical guidance and examples for mastering the art of writing a thesis in \LaTeX.
-		Through this process, you will develop an understanding of how to create a thesis and manipulate content within the \LaTeX\ ecosystem to produce an exceptional document.
+The goal is not merely to stabilize a single reactor, but to establish a generalizable methodology for dealing with internal (state) delays in DPSs. This is achieved by working entirely within the late-lumping paradigm, where control and estimation strategies are designed in the infinite-dimensional setting and only discretized at the final stage for numerical implementation. As a result, modern control tools like LQR, MPC, and MHE—long considered theoretically elegant but practically out of reach for real DPSs with delays—become implementable and scalable.
+
+\section{Research Objectives}
+
+This thesis aims to develop a rigorous and structure-preserving framework for the modeling, estimation, and control of distributed parameter systems (DPSs) with intrinsic state delays, using a physically grounded and industrially significant case: the axial dispersion tubular reactor with recycle.
+
+The specific objectives are:
+\begin{itemize}
+	\item \textbf{To reveal and formalize the existence of state delay} in a class of widely used chemical processes—specifically, by showing that recycle-induced feedback introduces a true state delay that has been overlooked in conventional models.
+	\item \textbf{To construct a physically and mathematically inclusive model} that combines parabolic and hyperbolic PDE dynamics under Danckwerts boundary conditions, without introducing artificial simplifications or discretization artifacts.
+	\item \textbf{To enable the application of infinite-dimensional control and estimation theory by adopting a late-lumping approach,} wherein the distributed structure of the system is preserved throughout controller and observer design, and discretization is applied only at the final numerical stage.
+	\item \textbf{To frame the tubular reactor with recycle as a generalizable testbed} for studying structurally delayed DPSs in the field of Chemical Engineering, thereby exposing a path toward broader control strategies that retain physical realism and mathematical rigor.
+\end{itemize}
+
+These objectives collectively define the foundation for the unified framework developed in this work, and lead naturally into a discussion of the system scope and assumptions.
+
+\section{Scope and Assumptions}
+
+This thesis focuses on the modeling, estimation, and control of distributed parameter systems (DPSs) with recycle-induced state delay, using the axial dispersion tubular reactor as the central test case. While the broader goal is to establish a generalizable framework for delay-aware feedback design in chemically realistic systems, several scope-defining assumptions are made to maintain analytical and computational tractability throughout this work.
+
+\subsection*{Modeling Scope and Physical Assumptions}
+
+\begin{itemize}
+    \item The analysis is limited to \textbf{one-dimensional spatial domains}, modeling only axial variations in concentration and temperature. Radial effects, phase change, and multi-phase flow phenomena are not considered.
+
+    \item \textbf{Constant physical parameters} (e.g., diffusivity, density, heat capacity, reaction rate constants) are assumed throughout the domain. In the non-isothermal case, reaction kinetics remain temperature-dependent, but the kinetic parameters themselves are fixed.
+
+    \item \textbf{Parameter certainty} is assumed. Measurement and process noise are included in the estimation design in the non-isothermal case, but no parametric uncertainty or robustness analysis is included within the scope of this work. While these are important directions for future exploration, the present framework focuses on establishing the core methodology under nominal conditions.
+
+    \item The \textbf{recycle stream is modeled explicitly as a transport PDE}, meaning there is no reaction taking place in the recycle line. However, the recycle stream can be of any length or geometry; the key assumption is the residence time in the recycle line that introduces the delay in the system state.
+\end{itemize}
+
+\subsection*{Control Objectives and Structural Assumptions}
+
+\begin{itemize}
+    \item The primary objective in all control scenarios is \textbf{stabilization} of the reactor dynamics. Neither setpoint tracking nor explicit disturbance rejection is addressed, as the goal is to develop a foundational framework upon which more advanced objectives can later be built.
+
+    \item In the isothermal studies, \textbf{instability is introduced artificially} via a negative reaction term. While such configurations are uncommon in practice, they are used intentionally to test the framework’s ability to stabilize open-loop unstable DPSs before extending the method to non-isothermal systems, where instability arises more naturally.
+
+    \item Noise bounds and horizon lengths are treated as \textbf{design parameters} and are assumed to be known/fixed. No stochastic analysis or probabilistic uncertainty modeling is included. A brief sensitivity analysis is performed on the actual delay and the delay parameter the controller is designed for, but no robustness analysis is included.
+
+    \item Following the late-lumping approach, all estimation and control algorithms are demonstrated through \textbf{numerical simulation} using a fixed spatial discretization for evaluation of inner products and QP solution. No experimental validation is included in this thesis.
+\end{itemize}
+
+
+\section{Thesis Outline and Publications}
+
+This thesis follows a paper-based format, where each chapter corresponds to at least one peer-reviewed manuscript that is either published or submitted. Although each paper is self-contained—with its own problem formulation, literature review, and results—they are unified by a common modeling and control architecture that preserves the distributed nature of the system and accounts for recycle-induced state delay. The chapters are organized to reflect the logical development of the proposed framework, moving from continuous-time theory to digital implementation, and from simplified isothermal models to realistic non-isothermal reactors with process and measurement noise.
+
+\begin{itemize}
+    \item \textbf{\Cref{ch:0}--\nameref{ch:0}:} This chapter provides the overarching introduction to the thesis. It motivates the problem, outlines the research objectives, clarifies the modeling scope, and situates the individual papers within a broader narrative. Particular emphasis is placed on the physical and industrial relevance of recycle-induced state delay in tubular reactors, and the importance of late-lumping for enabling rigorous control design in infinite-dimensional systems.
+
+    \item \textbf{\Cref{ch:1}--\nameref{ch:1}:} This chapter introduces the core modeling contribution of the thesis by identifying and embedding a state delay into the dynamics of an isothermal tubular reactor with recycle. The delay is modeled as a transport PDE, yielding a coupled parabolic–hyperbolic system formulated in continuous time. A full-state feedback controller is designed using infinite-dimensional LQR theory, and the need for output-based feedback is addressed using a continuous-time Luenberger observer. This work establishes the foundation for extending late-lumped control strategies to chemically realistic systems with internal delays.\\
+    \textbf{Publication:} \fullcite{moadeli2025optimal}
+
+    \item \textbf{\Cref{ch:2}--\nameref{ch:2}:} Building on the previous chapter, this work transitions from continuous-time to discrete-time implementation by applying resolvent-based Cayley–Tustin discretization. The isothermal model is retained, but the control design is now formulated as a discrete-time model predictive controller (MPC), preserving the infinite-dimensional structure throughout. A discrete-time Luenberger observer is developed to enable output feedback. This chapter demonstrates how digital control can be rigorously implemented for DPSs with delay, without relying on spatial approximation.\\
+    \textbf{Publications:} \\
+	\fullcite{Moadeli2025Model}\\
+	\fullcite{Moadeli2025Observer}
+
+    \item \textbf{\Cref{ch:3}--\nameref{ch:3}:} This chapter extends the framework to the non-isothermal reactor model, introducing a coupled four-state PDE system with both mass and energy balances. The controller is designed using discrete-time MPC under input constraints, and the Luenberger observer is replaced with a moving horizon estimator (MHE) to handle measurement noise and improve estimation accuracy. The MHE and MPC are integrated in a modular architecture that maintains functional separation and late-lumped structure. This chapter demonstrates the full capability of the proposed framework under realistic process conditions.\\
+    \textbf{Under review as:} \fullcite{Moadeli2025Advanced}
+
+    \item \textbf{\Cref{ch:4}--\nameref{ch:4}:} This chapter concludes the thesis by summarizing the key findings, reflecting on the broader implications of the work, and outlining several promising directions for future research.%—including robustness to model uncertainty, stabilization under partial state observability in unstable regimes, and extensions to multi-unit or networked systems.
+\end{itemize}
+
+This thesis does not present a series of disconnected case studies, but a unified progression toward a larger goal: to establish a rigorous and scalable foundation for controlling chemically realistic distributed systems where state delays are revealed and addressed for the first time. By demonstrating that such systems can be modeled, estimated, and controlled without sacrificing physical fidelity, the work opens a viable path for applying modern estimation and control theory to a broader class of industrially relevant processes in Chemical Engineering.

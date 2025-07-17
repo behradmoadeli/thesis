@@ -1,4 +1,4 @@
-\section{Simulation Results} \label{sec:6_results}
+\section{Simulation Results} \label{sec:3_6_results}
 
 
 
@@ -9,37 +9,37 @@ Despite its practical and structural advantages, the MHE--MPC combination does n
 % Numerical simulations are conducted for two representative scenarios to demonstrate the effectiveness of the proposed control and estimation framework. All simulations are performed over the dimensionless time interval $t \in [0, 10]$, using a time step of $\Delta t = 0.2$ and a spatial discretization of $N_\zeta = 100$ points over the dimensionless space $\zeta \in [0, 1]$. Following the late-lumping approach, spatial discretization is performed only at the final implementation stage to enable numerical operations such as integration on the infinite-dimensional system, as well as numerical evaluation of controller and estimator performance.
 Numerical simulations are conducted for both cases over the dimensionless time interval $t \in [0, 10]$, using a time step of $\Delta t = 0.2$ and a spatial discretization of $N_\zeta = 100$ points over the dimensionless space $\zeta \in [0, 1]$. Following the late-lumping approach, spatial discretization is performed only at the final implementation stage to enable numerical operations such as integration on the infinite-dimensional system, as well as numerical evaluation of controller and estimator performance.
 
-% All simulations are initialized from the same nontrivial state, where the reactor states are assigned smooth spatial profiles and applied to the deviation variables around the dimensionless steady states shown in Figures~\ref{fig:ss_profiles}--\ref{fig:ss_profiles_stable}. Specifically, $x_1(\zeta, 0) = \sin(1.5\pi \zeta) + c_1$ and $x_2(\zeta, 0) = \sin(0.5\pi \zeta) + c_2$, with constants $c_1$ and $c_2$ computed from model parameters to ensure compatibility with the boundary conditions. The recycle states $x_3$ and $x_4$ are initialized as uniform offsets matching their respective inlet boundary values. Among state profiles throughout this section, only the first two state variables, $x_1(\zeta, t)$ and $x_2(\zeta, t)$, are shown, representing deviations in concentration and temperature within the reactor. State profiles along the recycle stream are omitted for brevity. Lastly, the parameters used in the simulations can be found in Table~\ref{tab:pars}.
-All simulations are initialized from the same nontrivial state, where the reactor states are assigned smooth spatial profiles and applied to the deviation variables around the dimensionless steady states shown in Figures~\ref{fig:ss_profiles}--\ref{fig:ss_profiles_stable}. Specifically, $x_1(\zeta, 0) = \sin(1.5\pi \zeta) + c_1$ and $x_2(\zeta, 0) = \sin(0.5\pi \zeta) + c_2$, with constants $c_1$ and $c_2$ computed from model parameters to ensure compatibility with the boundary conditions. The recycle states $x_3$ and $x_4$ are initialized as uniform offsets matching their respective inlet boundary values. Among state profiles throughout this section, only the first two state variables, $x_1(\zeta, t)$ and $x_2(\zeta, t)$, are shown, representing deviations in concentration and temperature within the reactor. State profiles along the recycle stream are omitted for brevity. Lastly, the parameters used in the simulations can be found in Table~\ref{tab:pars}.
+% All simulations are initialized from the same nontrivial state, where the reactor states are assigned smooth spatial profiles and applied to the deviation variables around the dimensionless steady states shown in Figures~\ref{fig:3_ss_profiles}--\ref{fig:3_ss_profiles_stable}. Specifically, $x_1(\zeta, 0) = \sin(1.5\pi \zeta) + c_1$ and $x_2(\zeta, 0) = \sin(0.5\pi \zeta) + c_2$, with constants $c_1$ and $c_2$ computed from model parameters to ensure compatibility with the boundary conditions. The recycle states $x_3$ and $x_4$ are initialized as uniform offsets matching their respective inlet boundary values. Among state profiles throughout this section, only the first two state variables, $x_1(\zeta, t)$ and $x_2(\zeta, t)$, are shown, representing deviations in concentration and temperature within the reactor. State profiles along the recycle stream are omitted for brevity. Lastly, the parameters used in the simulations can be found in Table~\ref{tab:3_pars}.
+All simulations are initialized from the same nontrivial state, where the reactor states are assigned smooth spatial profiles and applied to the deviation variables around the dimensionless steady states shown in Figures~\ref{fig:3_ss_profiles}--\ref{fig:3_ss_profiles_stable}. Specifically, $x_1(\zeta, 0) = \sin(1.5\pi \zeta) + c_1$ and $x_2(\zeta, 0) = \sin(0.5\pi \zeta) + c_2$, with constants $c_1$ and $c_2$ computed from model parameters to ensure compatibility with the boundary conditions. The recycle states $x_3$ and $x_4$ are initialized as uniform offsets matching their respective inlet boundary values. Among state profiles throughout this section, only the first two state variables, $x_1(\zeta, t)$ and $x_2(\zeta, t)$, are shown, representing deviations in concentration and temperature within the reactor. State profiles along the recycle stream are omitted for brevity. Lastly, the parameters used in the simulations can be found in Table~\ref{tab:3_pars}.
 
 
 \subsection{Full-State MPC (Case I)}
 
-To validate the stabilizing performance of the model predictive controller, an open-loop simulation is first carried out under zero input. As shown in Figure~\ref{fig:openloop_x}, the system exhibits clear instability, confirming the presence of unstable dynamics due to the eigenvalue spectrum displayed for Case~I in Figure~\ref{fig:eigvals}. This behavior motivates the design of an MPC scheme capable of stabilizing the system while enforcing constraints.
+To validate the stabilizing performance of the model predictive controller, an open-loop simulation is first carried out under zero input. As shown in Figure~\ref{fig:3_openloop_x}, the system exhibits clear instability, confirming the presence of unstable dynamics due to the eigenvalue spectrum displayed for Case~I in Figure~\ref{fig:3_eigvals}. This behavior motivates the design of an MPC scheme capable of stabilizing the system while enforcing constraints.
 
 \begin{figure}[!htbp]
     \centering
     \includesvg[inkscapelatex=false, width=1.0\textwidth, keepaspectratio]{papers/3_mhe/figures/openloop_x.svg}
     \caption{3D profile of the state $x(\zeta, t)$ evolution over space and time $(\zeta, t)$ for Case I system with zero input.}
-    \label{fig:openloop_x}
+    \label{fig:3_openloop_x}
 \end{figure}
 
 A finite-horizon discrete-time MPC is applied using a control horizon of $N_{\mathrm{MPC}} = 9$ and a terminal cost operator constructed from 4 dominant eigenmodes. The cost weights are set as $Q_{\mathrm{MPC}} = 10$ and $R_{\mathrm{MPC}} = 1$. Input constraints are imposed as $u \in [-0.8,\ 0.05]$, and both bounds become active during the simulation. No output constraints are enforced. Since the open-loop system possesses one unstable eigenmode, a single equality constraint is included at the terminal step to ensure the terminal state lies entirely within the stable subspace. This terminal constraint guarantees that the resulting quadratic program remains convex, ensuring well-posedness under feasible conditions.
 
-Figure~\ref{fig:MPC_x} confirms that the closed-loop system is successfully stabilized under this controller. The control input and corresponding plant output, shown in Figure~\ref{fig:input_output_MPC}, further verify the effectiveness of the proposed strategy in maintaining output regulation while satisfying all input constraints.
+Figure~\ref{fig:3_MPC_x} confirms that the closed-loop system is successfully stabilized under this controller. The control input and corresponding plant output, shown in Figure~\ref{fig:3_input_output_MPC}, further verify the effectiveness of the proposed strategy in maintaining output regulation while satisfying all input constraints.
 
 \begin{figure}[!htbp]
     \centering
     \includesvg[inkscapelatex=false, width=0.6\textwidth, keepaspectratio]{papers/3_mhe/figures/input_output_MPC.svg}
     \caption{Profiles of plant output $y(t)$ and control input $u(t)$ over time for Case I system with full-state feedback MPC.}
-    \label{fig:input_output_MPC}
+    \label{fig:3_input_output_MPC}
 \end{figure}
 
 \begin{figure}[!htbp]
     \centering
     \includesvg[inkscapelatex=false, width=1.0\textwidth, keepaspectratio]{papers/3_mhe/figures/MPC_x.svg}
     \caption{3D profile of the state $x(\zeta, t)$ evolution over space and time $(\zeta, t)$ for Case I system with full-state feedback MPC.}
-    \label{fig:MPC_x}
+    \label{fig:3_MPC_x}
 \end{figure}
 
 \subsection{Output Feedback MHE--MPC (Case II)}
@@ -50,32 +50,32 @@ Estimation is performed using a moving horizon estimator with window length $N_{
 
 The MPC in this scenario is designed with a shorter control horizon of $N_{\mathrm{MPC}} = 5$, a terminal cost operator based on 4 dominant modes, and cost weights $Q_{\mathrm{MPC}} = 1$, $R_{\mathrm{MPC}} = 1$. Since all modes of the plant are stable, no terminal constraint is applied and the problem remains convex with $m_{\mathrm{eq}} = 0$. The input is constrained within $u \in [-0.5,\ 0.1]$, with both limits reached during the control horizon.
 
-Figure~\ref{fig:input_output_MHE} shows the output tracking performance alongside the applied input. Note that MHE requires $N_{\mathrm{MHE}}$ steps before estimation begins, during which the system evolves in open loop. To force the stable system further away from the initial condition, a constant input sequence of $u_k = 0.5$ is applied during this period. True states $x(\zeta,t)$ and estimated states $\hat{x}(\zeta,t)$ are shown in Figures~\ref{fig:MHE_x_true}~-~\ref{fig:MHE_x_estimated}, with state estimation error squared illustrated in Figure~\ref{fig:MHE_err}. Despite ongoing process and measurement noise, the estimation error quickly converges to near zero and remains bounded throughout the simulation. The reconstructed state provides sufficiently accurate feedback for the MPC to maintain closed-loop stability, as evidenced by the regulated output and spatial state evolution.
+Figure~\ref{fig:3_input_output_MHE} shows the output tracking performance alongside the applied input. Note that MHE requires $N_{\mathrm{MHE}}$ steps before estimation begins, during which the system evolves in open loop. To force the stable system further away from the initial condition, a constant input sequence of $u_k = 0.5$ is applied during this period. True states $x(\zeta,t)$ and estimated states $\hat{x}(\zeta,t)$ are shown in Figures~\ref{fig:3_MHE_x_true}~-~\ref{fig:3_MHE_x_estimated}, with state estimation error squared illustrated in Figure~\ref{fig:3_MHE_err}. Despite ongoing process and measurement noise, the estimation error quickly converges to near zero and remains bounded throughout the simulation. The reconstructed state provides sufficiently accurate feedback for the MPC to maintain closed-loop stability, as evidenced by the regulated output and spatial state evolution.
 
 \begin{figure}[!htbp]
     \centering
     \includesvg[inkscapelatex=false, width=1.0\textwidth, keepaspectratio]{papers/3_mhe/figures/input_output_MHE.svg}
     \caption{Profiles of plant output $y(t)$ and estimated output $\hat{y}(t)$ (left), and control input $u(t)$ (right) over time for Case II system with output feedback MHE-MPC.}
-    \label{fig:input_output_MHE}
+    \label{fig:3_input_output_MHE}
 \end{figure}
 
 \begin{figure}[!htbp]
     \centering
     \includesvg[inkscapelatex=false, width=1.0\textwidth, keepaspectratio]{papers/3_mhe/figures/MHE_x_true.svg}
     \caption{3D profile of the true state $x(\zeta, t)$ over time for Case II system with output feedback MHE-MPC.}
-    \label{fig:MHE_x_true}
+    \label{fig:3_MHE_x_true}
 \end{figure}
 
 \begin{figure}[!htbp]
     \centering
     \includesvg[inkscapelatex=false, width=1.0\textwidth, keepaspectratio]{papers/3_mhe/figures/MHE_x_est.svg}
     \caption{3D profile of the estimated state $\hat{x}(\zeta, t)$ over time for Case II system with output feedback MHE-MPC.}
-    \label{fig:MHE_x_estimated}
+    \label{fig:3_MHE_x_estimated}
 \end{figure}
 
 \begin{figure}[!htbp]
     \centering
     \includesvg[inkscapelatex=false, width=1.0\textwidth, keepaspectratio]{papers/3_mhe/figures/MHE_err.svg}
     \caption{3D profile of the state estimation error $e(\zeta, t) = x(\zeta, t) - \hat{x}(\zeta, t)$ over time for Case II system with output feedback MHE-MPC.}
-    \label{fig:MHE_err}
+    \label{fig:3_MHE_err}
 \end{figure}

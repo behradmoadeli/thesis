@@ -59,7 +59,7 @@
 
 % Option to change the Level of subheading included in the Table of Contents
 %  This should be set at 2, 3, or 4 (As per GPS)
-	\settoclevel{1}
+	\settoclevel{2}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                FILE LOCATIONS                                %
@@ -98,12 +98,12 @@
 % MEDIA LOCATIONS
 	% .  - This folder
 	% .. - Up one Folder
-	\addmedia{./99_Inclusions/}
-	\addimages{Images/}
-	\addtables{Tables/}
+	% \addmedia{./99_Inclusions/}
+	% \addimages{Images/}
+	% \addtables{Tables/}
 	\addcode{Code/}
-	\adddata{Data/}
-	\addpdf{PDFs/}
+	% \adddata{Data/}
+	% \addpdf{PDFs/}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                         ADD ADDITIONAL RESOURCES                             %
@@ -144,10 +144,10 @@
 	\insertprefatory{Nomenclature}
 
 % ACRONYMS
-	\insertprefatory{Acronyms}
+	% \insertprefatory{Acronyms}
 
 % GLOSSARY
-	\insertprefatory{Glossary}
+	% \insertprefatory{Glossary}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -160,8 +160,8 @@
 	\makepreface                 % Creates the Preface Page
 	% Quote and Dedication (Only Uncomment one)
 		%\makequote                  % Creates the Quote Page
-		%\makededication             % Creates the Dedication Page
-		\makededicationandquote      % Creates the Quote/Dedication Page
+		\makededication             % Creates the Dedication Page
+		% \makededicationandquote      % Creates the Quote/Dedication Page
 	\acknowledgements            % Creates the Acknowledgements Page
 
 % SET ToC...etc SPACING
@@ -255,14 +255,14 @@
 % \input is the standard way of including a separate tex file
 % \input{"./Appendices/PDF_Appendix.tex"}
 
-	\insertappendix{0A_Additional_Figures}
+	% \insertappendix{0A_Additional_Figures}
 
-	\insertappendix{0B_Additional_Tables}
+	% \insertappendix{0B_Additional_Tables}
 
-	\insertappendix{0C_Code_Listings}
+	% \insertappendix{0C_Code_Listings}
 
-	\insertappendix{0D_Including_PDFs}
+	% \insertappendix{0D_Including_PDFs}
 
-	\insertappendix{0X_Math_Lettering}
+	% \insertappendix{0X_Math_Lettering}
 
 \end{document}
