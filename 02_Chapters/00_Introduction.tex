@@ -55,7 +55,7 @@ This thesis focuses on the modeling, estimation, and control of distributed para
 \end{itemize}
 
 
-\section{Thesis Outline and Publications}
+\section{Thesis Outline and Academic Contributions}
 
 This thesis follows a paper-based format, where each chapter corresponds to at least one peer-reviewed manuscript that is either published or submitted. Although each paper is self-contained—with its own problem formulation, literature review, and results—they are unified by a common modeling and control architecture that preserves the distributed nature of the system and accounts for recycle-induced state delay. The chapters are organized to reflect the logical development of the proposed framework, moving from continuous-time theory to digital implementation, and from simplified isothermal models to realistic non-isothermal reactors with process and measurement noise.
 
@@ -63,17 +63,35 @@ This thesis follows a paper-based format, where each chapter corresponds to at l
     \item \textbf{\Cref{ch:0}--\nameref{ch:0}:} This chapter provides the overarching introduction to the thesis. It motivates the problem, outlines the research objectives, clarifies the modeling scope, and situates the individual papers within a broader narrative. Particular emphasis is placed on the physical and industrial relevance of recycle-induced state delay in tubular reactors, and the importance of late-lumping for enabling rigorous control design in infinite-dimensional systems.
 
     \item \textbf{\Cref{ch:1}--\nameref{ch:1}:} This chapter introduces the core modeling contribution of the thesis by identifying and embedding a state delay into the dynamics of an isothermal tubular reactor with recycle. The delay is modeled as a transport PDE, yielding a coupled parabolic–hyperbolic system formulated in continuous time. A full-state feedback controller is designed using infinite-dimensional LQR theory, and the need for output-based feedback is addressed using a continuous-time Luenberger observer. This work establishes the foundation for extending late-lumped control strategies to chemically realistic systems with internal delays.\\
-    \textbf{Publication:} \fullcite{moadeli2025optimal}
+    \textbf{Publication:} This chapter has been published as {
+        B. Moadeli \emph{et al.}, “Optimal control of axial dispersion tubular reactors with recycle: Addressing state-delay through transport PDEs,” \emph{The Canadian Journal of Chemical Engineering}, vol. 103, no. 8, pp. 3751–3766, 2025, \textsc{issn}: 0008-4034. \href{https://doi.org/10.1002/cjce.25629}{doi: 10.1002/cjce.25629}.
+    }\\
+    \textbf{Oral presentation:} A preliminary version of this chapter was presented as{
+        B. Moadeli \emph{et al.}, “Optimal control of an axial dispersion tubular reactor with delayed recycle,” in \emph{2023 CSChE Annual Meeting}, Canadian Society for Chemical Engineers (CSChE), Calgary, AB, Canada, 2023.
+    }
 
     \item \textbf{\Cref{ch:2}--\nameref{ch:2}:} Building on the previous chapter, this work transitions from continuous-time to discrete-time implementation by applying resolvent-based Cayley–Tustin discretization. The isothermal model is retained, but the control design is now formulated as a discrete-time model predictive controller (MPC), preserving the infinite-dimensional structure throughout. A discrete-time Luenberger observer is developed to enable output feedback. This chapter demonstrates how digital control can be rigorously implemented for DPSs with delay, without relying on spatial approximation.\\
-    \textbf{Publications:} \\
-	\fullcite{Moadeli2025Model}\\
-	\fullcite{Moadeli2025Observer}
+    \textbf{Publications:} This chapter is inspired by two of our peer-reviewed works that are waiting in press to be published as:
+    \begin{itemize}
+        \item {
+        B. Moadeli and S. Dubljevic, “Model predictive control of axial dispersion tubular reactors with recycle: Addressing state-delay through transport PDEs,” in \emph{2025 American Control Conference (ACC)}, In Press, Denver, CO, USA, 2025.
+        }
+        \item {
+        B. Moadeli and S. Dubljevic, “Observer-based MPC design of an axial dispersion tubular reactor: Addressing recycle delays through transport PDEs,” in \emph{2025 European Control Conference (ECC)}, In Press, Thessaloniki, Greece, 2025.
+        }
+    \end{itemize}
+    \textbf{Poster presentation:} A preliminary version of this chapter was presented as {
+        B. Moadeli \emph{et al.}, “Model predictive control of an axial dispersion tubular reactor with recycle: A distributed parameter system with state delay,” in \emph{2023 AIChE Annual Meeting}, American Institute of Chemical Engineers (AIChE), Orlando, FL, USA, 2023.
+    }
+
 
     \item \textbf{\Cref{ch:3}--\nameref{ch:3}:} This chapter extends the framework to the non-isothermal reactor model, introducing a coupled four-state PDE system with both mass and energy balances. The controller is designed using discrete-time MPC under input constraints, and the Luenberger observer is replaced with a moving horizon estimator (MHE) to handle measurement noise and improve estimation accuracy. The MHE and MPC are integrated in a modular architecture that maintains functional separation and late-lumped structure. This chapter demonstrates the full capability of the proposed framework under realistic process conditions.\\
-    \textbf{Under review as:} \fullcite{Moadeli2025Advanced}
+    \textbf{Publication:} This chapter has been submitted for review as {
+        B. Moadeli and S. Dubljevic, “Advanced control of non-isothermal axial dispersion tubular reactors with recycle-induced state delay,” \emph{The Canadian Journal of Chemical Engineering}, 2025, Under review.
+    }
 
-    \item \textbf{\Cref{ch:4}--\nameref{ch:4}:} This chapter concludes the thesis by summarizing the key findings, reflecting on the broader implications of the work, and outlining several promising directions for future research.%—including robustness to model uncertainty, stabilization under partial state observability in unstable regimes, and extensions to multi-unit or networked systems.
+    \item \textbf{\Cref{ch:4}--\nameref{ch:4}:} This chapter concludes the thesis by summarizing the key findings, reflecting on the broader implications of the work, and outlining several promising directions for future research.
 \end{itemize}
+
 
 This thesis does not present a series of disconnected case studies, but a unified progression toward a larger goal: to establish a rigorous and scalable foundation for controlling chemically realistic distributed systems where state delays are revealed and addressed for the first time. By demonstrating that such systems can be modeled, estimated, and controlled without sacrificing physical fidelity, the work opens a viable path for applying modern estimation and control theory to a broader class of industrially relevant processes in Chemical Engineering.

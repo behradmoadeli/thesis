@@ -10,13 +10,13 @@ The standard finite-horizon infinite-dimensional MPC problem is formulated in Eq
 \begin{aligned}
 \min_{U} \quad & \sum_{l=0}^{N_{\mathrm{MPC}} - 1} \langle x_{k+l|k}, x_{k+l|k} \rangle_{Q_{\mathrm{MPC}}} + \langle u_{k+l+1|k}, u_{k+l+1|k} \rangle_{R_{\mathrm{MPC}}} \\
 &+ \langle x_{k+N_{\mathrm{MPC}}|k}, x_{k+N_{\mathrm{MPC}}|k} \rangle_{P_{\mathrm{MPC}}} \\
-\text{s.t.} \quad & x_{k+l+1|k} = A_d\, x_{k+l|k} + B_d\, u_{k+l|k} \\
+\text{s.t.} \quad & x_{k+l+1|k} = \mathfrak{A}_d\, x_{k+l|k} + \mathfrak{B}_d\, u_{k+l|k} \\
 & u^{\min} \leq u_{k+l|k} \leq u^{\max} \\
 & \langle x_{k+N_{\mathrm{MPC}}|k}, \phi_u \rangle = 0
 \end{aligned}
 \end{equation}
 
-Here, $\{\phi_u\}$ denotes the set of unstable eigenfunctions of the system operator $A$, associated with eigenvalues $\lambda_u$ satisfying $\operatorname{Re}(\lambda_u) \geq 0$. The terminal cost operator $P_{\mathrm{MPC}}$ encodes the long-term impact of future states and is computed as the unique solution to the discrete Lyapunov equation, which is equivalent under Cayley--Tustin discretization to the continuous-time operator Lyapunov equation\autocite{Curtain2020Introduction,Khatibi2021Model}. The closed-form expression for $P_{\mathrm{MPC}}$ is therefore obtained as the infinite series given in Equation~\ref{eq:3_P_MPC} over the eigenfunctions $\{\phi_m\}$ and adjoint eigenfunctions $\{\psi_n\}$ of the operator $A$.
+Here, $\{\phi_u\}$ denotes the set of unstable eigenfunctions of the system operator $\mathfrak{A}$, associated with eigenvalues $\lambda_u$ satisfying $\operatorname{Re}(\lambda_u) \geq 0$. The terminal cost operator $P_{\mathrm{MPC}}$ encodes the long-term impact of future states and is computed as the unique solution to the discrete Lyapunov equation, which is equivalent under Cayley--Tustin discretization to the continuous-time operator Lyapunov equation\autocite{Curtain2020Introduction,Khatibi2021Model}. The closed-form expression for $P_{\mathrm{MPC}}$ is therefore obtained as the infinite series given in Equation~\ref{eq:3_P_MPC} over the eigenfunctions $\{\phi_m\}$ and adjoint eigenfunctions $\{\psi_n\}$ of the operator $\mathfrak{A}$.
 
 \begin{equation} \label{eq:3_P_MPC}
 P_{\mathrm{MPC}} (\cdot) = \sum_{m=0}^\infty \sum_{n=0}^\infty 
@@ -40,24 +40,24 @@ To express the finite-horizon MPC problem in a quadratic programming (QP) form, 
         \, \\
         \text{with } &H = \\
         &\hspace{-3.5em }\begin{bmatrix}
-            {B}_d^\ast P_{\mathrm{MPC}} {B}_d + {R_{\mathrm{MPC}}} & {B}_d^\ast {A}_d^\ast P_{\mathrm{MPC}} {B}_d & \cdots &  {B}_d^\ast {{A}_d^\ast}^{N_{\mathrm{MPC}}-1} P_{\mathrm{MPC}} {B}_d \\
-            {B}_d^\ast P_{\mathrm{MPC}} {A}_d {B}_d & {B}_d^\ast P_{\mathrm{MPC}} {B}_d + {R_{\mathrm{MPC}}} & \cdots & {B}_d^\ast {{A}_d^\ast}^{N_{\mathrm{MPC}}-2} P_{\mathrm{MPC}} {B}_d \\
+            \mathfrak{B}_d^\ast P_{\mathrm{MPC}} \mathfrak{B}_d + {R_{\mathrm{MPC}}} & \mathfrak{B}_d^\ast \mathfrak{A}_d^\ast P_{\mathrm{MPC}} \mathfrak{B}_d & \cdots &  \mathfrak{B}_d^\ast {\mathfrak{A}_d^\ast}^{N_{\mathrm{MPC}}-1} P_{\mathrm{MPC}} \mathfrak{B}_d \\
+            \mathfrak{B}_d^\ast P_{\mathrm{MPC}} \mathfrak{A}_d \mathfrak{B}_d & \mathfrak{B}_d^\ast P_{\mathrm{MPC}} \mathfrak{B}_d + {R_{\mathrm{MPC}}} & \cdots & \mathfrak{B}_d^\ast {\mathfrak{A}_d^\ast}^{N_{\mathrm{MPC}}-2} P_{\mathrm{MPC}} \mathfrak{B}_d \\
             \vdots & \vdots & \ddots & \vdots \\
-            {B}_d^\ast P_{\mathrm{MPC}} {{A}_d}^{N_{\mathrm{MPC}}-1} {B}_d & {B}_d^\ast P_{\mathrm{MPC}} {{A}_d}^{N_{\mathrm{MPC}}-2} {B}_d & \cdots & {B}_d^\ast P_{\mathrm{MPC}} {B}_d + {R_{\mathrm{MPC}}}
+            \mathfrak{B}_d^\ast P_{\mathrm{MPC}} {\mathfrak{A}_d}^{N_{\mathrm{MPC}}-1} \mathfrak{B}_d & \mathfrak{B}_d^\ast P_{\mathrm{MPC}} {\mathfrak{A}_d}^{N_{\mathrm{MPC}}-2} \mathfrak{B}_d & \cdots & \mathfrak{B}_d^\ast P_{\mathrm{MPC}} \mathfrak{B}_d + {R_{\mathrm{MPC}}}
         \end{bmatrix} \\
         P = &\begin{bmatrix}
-            {B}_d^\ast P_{\mathrm{MPC}} {{A}_d} &
-            {B}_d^\ast P_{\mathrm{MPC}} {{A}_d}^{2}  &
-            \hdots & {B}_d^\ast P_{\mathrm{MPC}} {{A}_d}^{N_{\mathrm{MPC}}} 
+            \mathfrak{B}_d^\ast P_{\mathrm{MPC}} {\mathfrak{A}_d} &
+            \mathfrak{B}_d^\ast P_{\mathrm{MPC}} {\mathfrak{A}_d}^{2}  &
+            \hdots & \mathfrak{B}_d^\ast P_{\mathrm{MPC}} {\mathfrak{A}_d}^{N_{\mathrm{MPC}}} 
         \end{bmatrix}^T \\
         T_u (\cdot) = &\begin{bmatrix}
-            \langle {{A}_d}^{N_{\mathrm{MPC}}} (\cdot), {\phi_u} \rangle
+            \langle {\mathfrak{A}_d}^{N_{\mathrm{MPC}}} (\cdot), {\phi_u} \rangle
         \end{bmatrix} \\
         S_u = &\begin{bmatrix}
-            \langle {{A}_d}^{N_{\mathrm{MPC}}-1} {B}_d, {\phi_u} \rangle & 
-            \langle {{A}_d}^{N_{\mathrm{MPC}}-2} {B}_d, {\phi_u} \rangle &
+            \langle {\mathfrak{A}_d}^{N_{\mathrm{MPC}}-1} \mathfrak{B}_d, {\phi_u} \rangle & 
+            \langle {\mathfrak{A}_d}^{N_{\mathrm{MPC}}-2} \mathfrak{B}_d, {\phi_u} \rangle &
             \hdots &
-            \langle {B}_d, {\phi_u} \rangle
+            \langle \mathfrak{B}_d, {\phi_u} \rangle
         \end{bmatrix} \\
         U = &\begin{bmatrix}
             u_{(k+1)|k} & u_{(k+2)|k} & \hdots & u_{(k+N_{\mathrm{MPC}})|k}
@@ -74,21 +74,21 @@ It is important to note that up to this point, all operators used in the QP are 
 
 The full-state availability assumption made in the MPC formulation is rarely justifiable for distributed parameter systems, where the state is infinite-dimensional and cannot be fully observed. To enable output-based feedback, we now introduce a moving horizon estimation (MHE) framework---a finite-horizon, optimization-based estimator---for state reconstruction from partial, noisy measurements. In addition to optimally reconstructing the states, MHE naturally accommodates constraints and disturbances within its optimization framework, making it well-suited for control-integrated estimation.
 
-Following the structure introduced in Section~\ref{sec:3_4_dt}, the discrete-time model is extended with additive disturbance terms, as shown in equation~\eqref{eq:3_mhe_system}, where $w_k \in W \subset \mathbb{R}^{n_w}$ and $v_k \in V \subset \mathbb{R}^{n_y}$ denote the process and measurement noise, respectively. The operator $\mathcal{N}_d \in \mathcal{L}(W, X)$ maps process disturbances into the state space. All other operators and variables are as defined in the previous sections.
+Following the structure introduced in Section~\ref{sec:3_4_dt}, the discrete-time model is extended with additive disturbance terms, as shown in equation~\eqref{eq:3_mhe_system}, where $w_k \in W \subset \mathbb{R}^{n_w}$ and $v_k \in V \subset \mathbb{R}^{n_y}$ denote the process and measurement noise, respectively. The operator $\mathfrak{N}_d \in \mathcal{L}(W, X)$ maps process disturbances into the state space. All other operators and variables are as defined in the previous sections.
 
 \begin{equation} \label{eq:3_mhe_system}
 \begin{cases}
-x(\zeta, k{+}1) &= A_d x(\zeta, k) + B_d u(k) + \mathcal{N}_d w(k), \\
-\qquad y(k) &= C_d x(\zeta, k) + D_d u(k) + v(k)
+x(\zeta, k{+}1) &= \mathfrak{A}_d x(\zeta, k) + \mathfrak{B}_d u(k) + \mathfrak{N}_d w(k), \\
+\qquad y(k) &= \mathfrak{C}_d x(\zeta, k) + \mathfrak{D}_d u(k) + {\mu}(k)
 \end{cases}
 \end{equation}
 
-As mentioned earlier, the state space $X \subset \mathrm{L}^2([0,1]; \mathbb{R}^4)$ is infinite-dimensional, and the discrete-time operators $A_d, B_d, C_d, D_d$ are those derived via the Cayley--Tustin discretization of the continuous-time system in equation~\eqref{eq:3_discrete_model}. Building on top of the estimation model in \Citeauthor{xie2022constrained}'s work\autocite{xie2022constrained}, the key difference here is the presence of the input term $B_d u_k$, which is essential in the control-integrated setting of our application. In Xie's formulation, the term $B_d w_k$ corresponds to what is denoted as $\mathcal{N}_d w_k$ in our model.
+As mentioned earlier, the state space $X \subset \mathrm{L}^2([0,1]; \mathbb{R}^4)$ is infinite-dimensional, and the discrete-time operators $\mathfrak{A}_d, \mathfrak{B}_d, \mathfrak{C}_d, \mathfrak{D}_d$ are those derived via the Cayley--Tustin discretization of the continuous-time system in equation~\eqref{eq:3_discrete_model}. Building on top of the estimation model in \Citeauthor{xie2022constrained}'s work\autocite{xie2022constrained}, the key difference here is the presence of the input term $\mathfrak{B}_d u_k$, which is essential in the control-integrated setting of our application. In Xie's formulation, the term $\mathfrak{B}_d w_k$ corresponds to what is denoted as $\mathfrak{N}_d w_k$ in our model.
 
-Similar to the input operator $B_d$, the discrete-time process noise operator $\mathcal{N}_d$ is constructed from its continuous-time counterpart $\mathcal{N}$ using the same resolvent-based mapping framework described in Section~\ref{sec:3_4_2_dt_operators}, with $\mathcal{Q} = \mathcal{Q}^w$ serving as the lifting operator that maps $\mathcal{N}_d W(s)$ from the Laplace-transformed state-space into the Laplace transform of the lifted state-space, enabling consistent application of the noise operator in the lifted setting. The continuous and discrete-time forms of the process noise operator are given in equation~\eqref{eq:3_N_operator}, where $\delta(\zeta)$ denotes the Dirac delta function. Corresponding adjoint noise operators $\mathcal{N}^\ast$ and $\mathcal{N}_d^\ast$ can also be derived analogously to $B^\ast$ and $B_d^\ast$, but are omitted here for brevity.
+Similar to the input operator $\mathfrak{B}_d$, the discrete-time process noise operator $\mathfrak{N}_d$ is constructed from its continuous-time counterpart $\mathfrak{N}$ using the same resolvent-based mapping framework described in Section~\ref{sec:3_4_2_dt_operators}, with $\mathcal{Q} = \mathcal{Q}^w$ serving as the lifting operator that maps $\mathfrak{N}_d W(s)$ from the Laplace-transformed state-space into the Laplace transform of the lifted state-space, enabling consistent application of the noise operator in the lifted setting. The continuous and discrete-time forms of the process noise operator are given in equation~\eqref{eq:3_N_operator}, where $\delta(\zeta)$ denotes the Dirac delta function. Corresponding adjoint noise operators $\mathfrak{N}^\ast$ and $\mathfrak{N}_d^\ast$ can also be derived analogously to $\mathfrak{B}^\ast$ and $\mathfrak{B}_d^\ast$, but are omitted here for brevity.
 
 \begin{equation} \label{eq:3_N_operator}
-    \mathcal{N} (\cdot) = \begin{bmatrix} 0 \\ \delta(\zeta) \\ 0 \\ 0 \end{bmatrix} (\cdot), \qquad \mathcal{N}_d (\cdot) = \sqrt{2\alpha} \, \mathfrak{R}(\alpha, A) \, \mathcal{N} (\cdot)
+    \mathfrak{N} (\cdot) = \begin{bmatrix} 0 \\ \delta(\zeta) \\ 0 \\ 0 \end{bmatrix} (\cdot), \qquad \mathfrak{N}_d (\cdot) = \sqrt{2\alpha} \, \mathfrak{R}(\alpha, \mathfrak{A}) \, \mathfrak{N} (\cdot)
 \end{equation}
 
 To proceed with the estimator design, we adopt the infinite-dimensional output feedback structures introduced in \Citeauthor{xie2022constrained} and \Citeauthor{zhang2023tracking}'s contributions\autocite{xie2022constrained, zhang2023tracking}. This approach formulates a constrained optimization problem over a sliding window of the most recent $N_{\mathrm{MHE}}$ output measurements. The objective is to reconstruct the most plausible state and disturbance trajectory that explains the observed outputs, subject to system dynamics and noise bounds. A finite-dimensional projection is introduced only at the numerical solution stage, consistent with the late-lumping framework developed throughout this work.
@@ -98,16 +98,16 @@ The finite-horizon MHE problem is formulated in equation~\eqref{eq:3_MHE_problem
 \begin{equation} \label{eq:3_MHE_problem}
 \begin{aligned}
 \min_{\omega_T} \quad & 
-\sum_{k=T-N_{\mathrm{MHE}}}^{T-1} \left( \langle \hat{w}_{k|T}, \hat{w}_{k|T} \rangle_{Q_{\mathrm{MHE}}^{-1}} + \langle \hat{v}_{k|T}, \hat{v}_{k|T} \rangle_{R_{\mathrm{MHE}}^{-1}} \right) \\
+\sum_{k=T-N_{\mathrm{MHE}}}^{T-1} \left( \langle \hat{w}_{k|T}, \hat{w}_{k|T} \rangle_{Q_{\mathrm{MHE}}^{-1}} + \langle \hat{{\mu}}_{k|T}, \hat{{\mu}}_{k|T} \rangle_{R_{\mathrm{MHE}}^{-1}} \right) \\
 &+ \langle (\hat{x}_{T{-}N_{\mathrm{MHE}}|T} - \hat{x}_{T{-}N_{\mathrm{MHE}}|T{-}1}), (\hat{x}_{T{-}N_{\mathrm{MHE}}|T} - \hat{x}_{T{-}N_{\mathrm{MHE}}|T{-}1}) \rangle_{P_{\mathrm{MHE}}^{-1}} \\
 \text{s.t.} \quad
-& x_{k+1} = A_d x_k + B_d u_k + \mathcal{N}_d w_k \\
-& y_k = C_d x_k + D_d u_k + v_k \\
-& w_k \in [w^{\min}, w^{\max}], \quad \hat{y}_k \in [y_k - v^{\max}, y_k - v^{\min}]
+& x_{k+1} = \mathfrak{A}_d x_k + \mathfrak{B}_d u_k + \mathfrak{N}_d w_k \\
+& y_k = \mathfrak{C}_d x_k + \mathfrak{D}_d u_k + v_k \\
+& w_k \in [w^{\min}, w^{\max}], \quad \hat{y}_k \in [y_k - {\mu}^{\max}, y_k - {\mu}^{\min}]
 \end{aligned}
 \end{equation}
 
-Here, $\hat{x}_{T-N_{\mathrm{MHE}}|T-N_{\mathrm{MHE}}-1}$ is the prior state estimate, and the terms $\hat{v}_{k|T}$ are computed via model consistency with the measurements. The penalty operator $P_{\mathrm{MHE}}$ accounts for the arrival cost and is computed as the minimal nonnegative self-adjoint solution to the discrete-time algebraic Riccati filter equation\autocite{xie2022constrained}, which guarantees well-posedness of the estimation problem under mild detectability conditions.
+Here, $\hat{x}_{T-N_{\mathrm{MHE}}|T-N_{\mathrm{MHE}}-1}$ is the prior state estimate, and the terms $\hat{{\mu}}_{k|T}$ are computed via model consistency with the measurements. The penalty operator $P_{\mathrm{MHE}}$ accounts for the arrival cost and is computed as the minimal nonnegative self-adjoint solution to the discrete-time algebraic Riccati filter equation\autocite{xie2022constrained}, which guarantees well-posedness of the estimation problem under mild detectability conditions.
 
 To express the finite-horizon MHE problem in a quadratic programming (QP) form, the predicted outputs and state trajectory are recursively substituted in terms of the initial state and noise sequence using the system dynamics. The result is the standard QP formulation given in Equation~\ref{eq:3_MHE_QP}.
 
@@ -126,8 +126,8 @@ To express the finite-horizon MHE problem in a quadratic programming (QP) form, 
         \begin{bmatrix}
         w^{\max}_{{N_{\mathrm{MHE}}} \times 1} \\
         -w^{\min}_{{N_{\mathrm{MHE}}} \times 1} \\
-        v^{\max}_{{N_{\mathrm{MHE}}} \times 1} - Y_T \\
-        Y_T - v^{\min}_{{N_{\mathrm{MHE}}} \times 1}
+        {\mu}^{\max}_{{N_{\mathrm{MHE}}} \times 1} - Y_T \\
+        Y_T - {\mu}^{\min}_{{N_{\mathrm{MHE}}} \times 1}
         \end{bmatrix} \\
         \\
         \text{with } \quad
@@ -140,24 +140,24 @@ To express the finite-horizon MHE problem in a quadratic programming (QP) form, 
         S_y &= [\mathcal{O}, T_y], \quad
         \mathcal{O} = 
         \begin{bmatrix}
-        C_d &
-        C_d A_d &
+        \mathfrak{C}_d &
+        \mathfrak{C}_d \mathfrak{A}_d &
         \hdots &
-        C_d A_d^{{N_{\mathrm{MHE}}}-1}
+        \mathfrak{C}_d \mathfrak{A}_d^{{N_{\mathrm{MHE}}}-1}
         \end{bmatrix}^\top, \\[1ex]
         T_y &=
         \begin{bmatrix}
         0 & 0 & \cdots & 0 \\
-        C_d \mathcal{N}_d & 0 & \cdots & 0 \\
+        \mathfrak{C}_d \mathfrak{N}_d & 0 & \cdots & 0 \\
         \vdots & \vdots & \ddots & \vdots \\
-        C_d A_d^{{N_{\mathrm{MHE}}}-2} \mathcal{N}_d & \cdots & C_d \mathcal{N}_d & 0
+        \mathfrak{C}_d \mathfrak{A}_d^{{N_{\mathrm{MHE}}}-2} \mathfrak{N}_d & \cdots & \mathfrak{C}_d \mathfrak{N}_d & 0
         \end{bmatrix}, \quad
         U_y =
         \begin{bmatrix}
-        D_d & 0 & \cdots & 0 \\
-        C_d B_d & D_d & \cdots & 0 \\
+        \mathfrak{D}_d & 0 & \cdots & 0 \\
+        \mathfrak{C}_d \mathfrak{B}_d & \mathfrak{D}_d & \cdots & 0 \\
         \vdots & \vdots & \ddots & \vdots \\
-        C_d A_d^{{N_{\mathrm{MHE}}}-2} B_d & \cdots & C_d B_d & D_d
+        \mathfrak{C}_d \mathfrak{A}_d^{{N_{\mathrm{MHE}}}-2} \mathfrak{B}_d & \cdots & \mathfrak{C}_d \mathfrak{B}_d & \mathfrak{D}_d
         \end{bmatrix}, \\[1ex]
         \omega_T &=
         \left[
@@ -187,7 +187,7 @@ To express the finite-horizon MHE problem in a quadratic programming (QP) form, 
 \end{equation}
 
 
-All system operators $A_d, B_d, C_d, D_d, \mathcal{N}_d$, and $P_{\mathrm{MHE}}$ are derived in closed form from the continuous-time model using Cayley--Tustin discretization, without the need for spatial approximation. As with the MPC formulation, discretization is introduced only at the numerical stage when evaluating inner products and solving the resulting quadratic program, in line with the late-lumping philosophy adopted throughout this work.
+All system operators $\mathfrak{A}_d, \mathfrak{B}_d, \mathfrak{C}_d, \mathfrak{D}_d, \mathfrak{N}_d$, and $P_{\mathrm{MHE}}$ are derived in closed form from the continuous-time model using Cayley--Tustin discretization, without the need for spatial approximation. As with the MPC formulation, discretization is introduced only at the numerical stage when evaluating inner products and solving the resulting quadratic program, in line with the late-lumping philosophy adopted throughout this work.
 
 \subsection{Closed Loop MHE-MPC Implementation} \label{sec:3_mhe_mpc}
 
@@ -197,7 +197,7 @@ The integrated MHE-MPC framework is executed as a closed-loop system in which th
 \centering
 \renewcommand{\arraystretch}{1.8}
 \setlength{\tabcolsep}{4pt}
-\caption{Proposed MHE--MPC Algorithm}
+\caption{Proposed MHE--MPC algorithm}
 \label{tab:3_mhe_algo}
 \begin{tabular}{@{}p{0.03\textwidth}p{0.92\textwidth}@{}}
 \hline\hline
@@ -209,8 +209,8 @@ The integrated MHE-MPC framework is executed as a closed-loop system in which th
 1). & Assign desired values to the input sequence $\{u_k\}_{k=0}^{N-1}$. \\
 
 2). & Run the plant model: $\left\{ \begin{array}{ll}
-x_{k+1} &= A_d x_k + B_d u_k + \mathcal{N}_d w_k \\
-y_k &= C_d x_k + D_d u_k + v_k
+x_{k+1} &= \mathfrak{A}_d x_k + \mathfrak{B}_d u_k + \mathfrak{N}_d w_k \\
+y_k &= \mathfrak{C}_d x_k + \mathfrak{D}_d u_k + v_k
 \end{array} \right\}_{k=0}^{N-1}$ to obtain $\{y_k\}_{k=0}^{N-1}$. \\
 
 3). & Provide an initial guess for $\hat{x}_{0|N-1}$. \\
@@ -223,14 +223,14 @@ y_k &= C_d x_k + D_d u_k + v_k
     \left. \hat{x}_{T-N|T} \right| \{ \hat{w}_{k|T} \}_{k=T-N}^{T-1} 
     \right]$ \\
 
-5). & Simulate the model: $\left\{ \hat{x}_{k+1|T} = A_d \hat{x}_{k|T} + B_d u_k + \mathcal{N}_d \hat{w}_{k|T} \right\}_{k=0}^{N-1}$
+5). & Simulate the model: $\left\{ \hat{x}_{k+1|T} = \mathfrak{A}_d \hat{x}_{k|T} + \mathfrak{B}_d u_k + \mathfrak{N}_d \hat{w}_{k|T} \right\}_{k=0}^{N-1}$
     to compute $\hat{x}_{T-N+1|T}$ and $\hat{x}_{T|T}$. \\
 
 6). & Use $\hat{x}_{T|T}$ to solve $\min_{U} J_{\mathrm{MPC}}$ and obtain $u_T$. \\
 
 7). & Apply $u_T$ to the plant: $\left\{ \begin{array}{ll}
-x_{T+1} &= A_d x_T + B_d u_T + \mathcal{N}_d w_T \\
-y_T &= C_d x_T + D_d u_T + v_T
+x_{T+1} &= \mathfrak{A}_d x_T + \mathfrak{B}_d u_T + \mathfrak{N}_d w_T \\
+y_T &= \mathfrak{C}_d x_T + \mathfrak{D}_d u_T + v_T
 \end{array} \right.$ to obtain $y_T$. \\
 
 8). & Update $T \leftarrow T + 1$ and repeat steps 4-8. \\

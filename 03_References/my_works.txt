@@ -1,0 +1,15 @@
+2023 Conferences:
+        B. Moadeli \emph{et al.}, “Optimal control of an axial dispersion tubular reactor with delayed recycle,” in \emph{2023 CSChE Annual Meeting}, Canadian Society for Chemical Engineers (CSChE), Calgary, AB, Canada, 2023.
+        B. Moadeli \emph{et al.}, “Model predictive control of an axial dispersion tubular reactor with recycle: A distributed parameter system with state delay,” in \emph{2023 AIChE Annual Meeting}, American Institute of Chemical Engineers (AIChE), Orlando, FL, USA, 2023.
+
+
+2025:
+    Paper 1:
+        B. Moadeli \emph{et al.}, “Optimal control of axial dispersion tubular reactors with recycle: Addressing state-delay through transport PDEs,” \emph{The Canadian Journal of Chemical Engineering}, vol. 103, no. 8, pp. 3751–3766, 2025, \textsc{issn}: 0008-4034. \href{https://doi.org/10.1002/cjce.25629}{doi: 10.1002/cjce.25629}.
+    
+    Conferences:
+        B. Moadeli and S. Dubljevic, “Model predictive control of axial dispersion tubular reactors with recycle: Addressing state-delay through transport PDEs,” in \emph{2025 American Control Conference (ACC)}, In Press, Denver, CO, USA, 2025.
+        B. Moadeli and S. Dubljevic, “Observer-based MPC design of an axial dispersion tubular reactor: Addressing recycle delays through transport PDEs,” in \emph{2025 European Control Conference (ECC)}, In Press, Thessaloniki, Greece, 2025.
+    
+    Paper 2:
+        B. Moadeli and S. Dubljevic, “Advanced control of non-isothermal axial dispersion tubular reactors with recycle-induced state delay,” \emph{The Canadian Journal of Chemical Engineering}, 2025, Under review.
