@@ -1,1259 +1,1590 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg
-   width="332.16144pt"
-   height="176.78181pt"
-   viewBox="0 0 332.16144 176.78182"
-   version="1.1"
-   id="svg124"
-   sodipodi:docname="input.svg"
-   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:dc="http://purl.org/dc/elements/1.1/">
-  <sodipodi:namedview
-     id="namedview124"
-     pagecolor="#ffffff"
-     bordercolor="#000000"
-     borderopacity="0.25"
-     inkscape:showpageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#d1d1d1"
-     inkscape:document-units="pt"
-     inkscape:zoom="2.1431376"
-     inkscape:cx="202.97343"
-     inkscape:cy="66.724599"
-     inkscape:window-width="1920"
-     inkscape:window-height="1002"
-     inkscape:window-x="2552"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="svg124" />
-  <metadata
-     id="metadata1">
-    <rdf:RDF>
-      <cc:Work>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:date>2024-11-07T20:47:39.518460</dc:date>
-        <dc:format>image/svg+xml</dc:format>
-        <dc:creator>
-          <cc:Agent>
-            <dc:title>Matplotlib v3.9.2, https://matplotlib.org/</dc:title>
-          </cc:Agent>
-        </dc:creator>
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <defs
-     id="defs1">
-    <linearGradient
-       id="swatch127"
-       inkscape:swatch="solid">
-      <stop
-         style="stop-color:#000000;stop-opacity:1;"
-         offset="0"
-         id="stop127" />
-    </linearGradient>
-    <linearGradient
-       id="swatch126"
-       inkscape:swatch="solid">
-      <stop
-         style="stop-color:#000000;stop-opacity:1;"
-         offset="0"
-         id="stop126" />
-    </linearGradient>
-    <linearGradient
-       id="swatch125"
-       inkscape:swatch="solid">
-      <stop
-         style="stop-color:#000000;stop-opacity:1;"
-         offset="0"
-         id="stop125" />
-    </linearGradient>
-    <style
-       type="text/css"
-       id="style1">*{stroke-linejoin: round; stroke-linecap: butt}</style>
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath128">
-      <rect
-         style="fill:#000000;fill-opacity:0;stroke:url(#linearGradient128);stroke-width:9.44392"
-         id="rect128"
-         width="332.16144"
-         height="176.78181"
-         x="30.943472"
-         y="30.243568" />
-    </clipPath>
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#swatch127"
-       id="linearGradient128"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(13.182735,0,0,12.027546,-356.5782,-163.3746)"
-       x1="29.396152"
-       y1="23.446932"
-       x2="54.592854"
-       y2="23.446932" />
-  </defs>
-  <g
-     id="figure_1"
-     clip-path="url(#clipPath128)"
-     transform="translate(-30.943472,-30.243568)">
-    <g
-       id="patch_1">
-      <path
-         d="M 0,239.42281 H 393.34851 V 0 H 0 Z"
-         style="fill:#ffffff"
-         id="path1" />
-    </g>
-    <g
-       id="axes_1">
-      <g
-         id="patch_2">
-        <path
-           d="M 73.614916,174.6 H 324.71492 V 36 H 73.614916 Z"
-           style="fill:#ffffff"
-           id="path2" />
-      </g>
-      <g
-         id="matplotlib.axis_1">
-        <g
-           id="xtick_1">
-          <g
-             id="line2d_1">
-            <path
-               d="M 85.028552,174.6 V 36"
-               clip-path="url(#pcebd4a2661)"
-               style="fill:none;stroke:#b0b0b0;stroke-width:0.75;stroke-dasharray:2.775, 1.2;stroke-dashoffset:0"
-               id="path3" />
-          </g>
-          <g
-             id="line2d_2">
-            <defs
-               id="defs3">
-              <path
-                 id="m3d0cfb3579"
-                 d="M 0,0 V 3.5"
-                 style="stroke:#000000;stroke-width:0.8" />
-            </defs>
-            <g
-               id="g3">
-              <use
-                 xlink:href="#m3d0cfb3579"
-                 x="85.028549"
-                 y="174.60001"
-                 style="stroke:#000000;stroke-width:0.8"
-                 id="use3" />
-            </g>
-          </g>
-          <g
-             id="text_1">
-            <!-- $\mathdefault{0}$ -->
-            <g
-               transform="matrix(0.1,0,0,-0.1,82.537892,188.35458)"
-               id="g4">
-              <defs
-                 id="defs4">
-                <path
-                   id="NimbusRomNo9L-Regu-30"
-                   d="M 1626,4352 C 1274,4352 1005,4243 768,4019 397,3661 154,2924 154,2176 154,1478 365,729 666,371 902,89 1229,-64 1600,-64 c 326,0 602,108 832,332 371,352 614,1095 614,1869 0,1312 -582,2215 -1420,2215 z m -20,-167 c 538,0 826,-723 826,-2061 0,-1337 -282,-2022 -832,-2022 -550,0 -832,685 -832,2016 0,1357 288,2067 838,2067 z"
-                   transform="scale(0.015625)" />
-              </defs>
-              <use
-                 xlink:href="#NimbusRomNo9L-Regu-30"
-                 transform="scale(0.996264)"
-                 id="use4" />
-            </g>
-          </g>
-        </g>
-        <g
-           id="xtick_2">
-          <g
-             id="line2d_3">
-            <path
-               d="M 142.09673,174.6 V 36"
-               clip-path="url(#pcebd4a2661)"
-               style="fill:none;stroke:#b0b0b0;stroke-width:0.75;stroke-dasharray:2.775, 1.2;stroke-dashoffset:0"
-               id="path4" />
-          </g>
-          <g
-             id="line2d_4">
-            <g
-               id="g5">
-              <use
-                 xlink:href="#m3d0cfb3579"
-                 x="142.09674"
-                 y="174.60001"
-                 style="stroke:#000000;stroke-width:0.8"
-                 id="use5" />
-            </g>
-          </g>
-          <g
-             id="text_2">
-            <!-- $\mathdefault{200}$ -->
-            <g
-               transform="matrix(0.1,0,0,-0.1,134.62475,188.35458)"
-               id="g8">
-              <defs
-                 id="defs5">
-                <path
-                   id="NimbusRomNo9L-Regu-32"
-                   d="m 3040,879 -83,33 C 2720,544 2637,486 2349,486 H 819 l 1075,1135 c 570,600 820,1090 820,1593 0,644 -519,1138 -1184,1138 -352,0 -685,-141 -922,-397 C 403,3736 307,3530 198,3072 l 135,-33 c 256,632 486,839 928,839 537,0 902,-368 902,-909 0,-503 -294,-1103 -832,-1677 L 192,76 V 0 h 2496 z"
-                   transform="scale(0.015625)" />
-              </defs>
-              <use
-                 xlink:href="#NimbusRomNo9L-Regu-32"
-                 transform="scale(0.996264)"
-                 id="use6" />
-              <use
-                 xlink:href="#NimbusRomNo9L-Regu-30"
-                 transform="matrix(0.996264,0,0,0.996264,49.8132,0)"
-                 id="use7" />
-              <use
-                 xlink:href="#NimbusRomNo9L-Regu-30"
-                 transform="matrix(0.996264,0,0,0.996264,99.626401,0)"
-                 id="use8" />
-            </g>
-          </g>
-        </g>
-        <g
-           id="xtick_3">
-          <g
-             id="line2d_5">
-            <path
-               d="M 199.16492,174.6 V 36"
-               clip-path="url(#pcebd4a2661)"
-               style="fill:none;stroke:#b0b0b0;stroke-width:0.75;stroke-dasharray:2.775, 1.2;stroke-dashoffset:0"
-               id="path8" />
-          </g>
-          <g
-             id="line2d_6">
-            <g
-               id="g9">
-              <use
-                 xlink:href="#m3d0cfb3579"
-                 x="199.16492"
-                 y="174.60001"
-                 style="stroke:#000000;stroke-width:0.8"
-                 id="use9" />
-            </g>
-          </g>
-          <g
-             id="text_3">
-            <!-- $\mathdefault{400}$ -->
-            <g
-               transform="matrix(0.1,0,0,-0.1,191.69294,188.35458)"
-               id="g12">
-              <defs
-                 id="defs9">
-                <path
-                   id="NimbusRomNo9L-Regu-34"
-                   d="M 3021,1497 H 2368 V 4352 H 2086 L 77,1497 V 1088 H 1875 V 0 h 493 v 1088 h 653 z m -1152,0 H 333 l 1536,2200 z"
-                   transform="scale(0.015625)" />
-              </defs>
-              <use
-                 xlink:href="#NimbusRomNo9L-Regu-34"
-                 transform="scale(0.996264)"
-                 id="use10" />
-              <use
-                 xlink:href="#NimbusRomNo9L-Regu-30"
-                 transform="matrix(0.996264,0,0,0.996264,49.8132,0)"
-                 id="use11" />
-              <use
-                 xlink:href="#NimbusRomNo9L-Regu-30"
-                 transform="matrix(0.996264,0,0,0.996264,99.626401,0)"
-                 id="use12" />
-            </g>
-          </g>
-        </g>
-        <g
-           id="xtick_4">
-          <g
-             id="line2d_7">
-            <path
-               d="M 256.2331,174.6 V 36"
-               clip-path="url(#pcebd4a2661)"
-               style="fill:none;stroke:#b0b0b0;stroke-width:0.75;stroke-dasharray:2.775, 1.2;stroke-dashoffset:0"
-               id="path12" />
-          </g>
-          <g
-             id="line2d_8">
-            <g
-               id="g13">
-              <use
-                 xlink:href="#m3d0cfb3579"
-                 x="256.23309"
-                 y="174.60001"
-                 style="stroke:#000000;stroke-width:0.8"
-                 id="use13" />
-            </g>
-          </g>
-          <g
-             id="text_4">
-            <!-- $\mathdefault{600}$ -->
-            <g
-               transform="matrix(0.1,0,0,-0.1,248.76112,188.35458)"
-               id="g16">
-              <defs
-                 id="defs13">
-                <path
-                   id="NimbusRomNo9L-Regu-36"
-                   d="M 2854,4390 C 2125,4326 1754,4204 1286,3878 595,3385 218,2655 218,1801 218,1248 390,688 666,369 909,89 1254,-64 1651,-64 c 794,0 1344,605 1344,1484 0,814 -467,1332 -1203,1332 -282,0 -416,-45 -819,-289 173,967 889,1658 1894,1825 z M 1549,2457 c 550,0 870,-458 870,-1254 0,-700 -249,-1088 -697,-1088 -564,0 -909,598 -909,1585 0,324 51,503 179,598 134,102 333,159 557,159 z"
-                   transform="scale(0.015625)" />
-              </defs>
-              <use
-                 xlink:href="#NimbusRomNo9L-Regu-36"
-                 transform="scale(0.996264)"
-                 id="use14" />
-              <use
-                 xlink:href="#NimbusRomNo9L-Regu-30"
-                 transform="matrix(0.996264,0,0,0.996264,49.8132,0)"
-                 id="use15" />
-              <use
-                 xlink:href="#NimbusRomNo9L-Regu-30"
-                 transform="matrix(0.996264,0,0,0.996264,99.626401,0)"
-                 id="use16" />
-            </g>
-          </g>
-        </g>
-        <g
-           id="xtick_5">
-          <g
-             id="line2d_9">
-            <path
-               d="M 313.30128,174.6 V 36"
-               clip-path="url(#pcebd4a2661)"
-               style="fill:none;stroke:#b0b0b0;stroke-width:0.75;stroke-dasharray:2.775, 1.2;stroke-dashoffset:0"
-               id="path16" />
-          </g>
-          <g
-             id="line2d_10">
-            <g
-               id="g17">
-              <use
-                 xlink:href="#m3d0cfb3579"
-                 x="313.30127"
-                 y="174.60001"
-                 style="stroke:#000000;stroke-width:0.8"
-                 id="use17" />
-            </g>
-          </g>
-          <g
-             id="text_5">
-            <!-- $\mathdefault{800}$ -->
-            <g
-               transform="matrix(0.1,0,0,-0.1,305.8293,188.35458)"
-               id="g20">
-              <defs
-                 id="defs17">
-                <path
-                   id="NimbusRomNo9L-Regu-38"
-                   d="m 1856,2400 c 634,339 858,608 858,1043 0,525 -461,909 -1101,909 C 915,4352 397,3923 397,3341 397,2924 518,2739 1190,2150 499,1625 358,1427 358,992 358,371 864,-64 1587,-64 c 768,0 1261,422 1261,1081 0,493 -218,807 -992,1383 z m -115,-660 c 467,-332 621,-563 621,-921 0,-416 -288,-704 -704,-704 -487,0 -813,371 -813,928 0,409 141,678 512,979 z m -71,775 c -569,371 -800,665 -800,1024 0,371 288,633 692,633 435,0 710,-281 710,-723 0,-365 -179,-653 -544,-896 -32,-19 -32,-19 -58,-38 z"
-                   transform="scale(0.015625)" />
-              </defs>
-              <use
-                 xlink:href="#NimbusRomNo9L-Regu-38"
-                 transform="scale(0.996264)"
-                 id="use18" />
-              <use
-                 xlink:href="#NimbusRomNo9L-Regu-30"
-                 transform="matrix(0.996264,0,0,0.996264,49.8132,0)"
-                 id="use19" />
-              <use
-                 xlink:href="#NimbusRomNo9L-Regu-30"
-                 transform="matrix(0.996264,0,0,0.996264,99.626401,0)"
-                 id="use20" />
-            </g>
-          </g>
-        </g>
-        <g
-           id="text_6">
-          <!-- Time (s) -->
-          <g
-             transform="matrix(0.1,0,0,-0.1,182.32331,201.26598)"
-             id="g27">
-            <defs
-               id="defs20">
-              <path
-                 id="NimbusRomNo9L-Regu-54"
-                 d="M 1626,3955 V 765 c 0,-542 -71,-612 -602,-644 V 0 h 1869 v 121 c -525,26 -615,109 -615,574 v 3260 h 346 c 730,0 870,-115 1018,-817 h 153 l -38,1086 H 147 L 109,3138 h 153 c 154,696 301,817 1018,817 z"
-                 transform="scale(0.015625)" />
-              <path
-                 id="NimbusRomNo9L-Regu-69"
-                 d="M 1120,2944 128,2592 v -96 l 51,6 c 77,13 160,19 218,19 153,0 211,-102 211,-384 V 652 C 608,192 544,121 102,96 V 0 h 1517 v 96 c -422,32 -473,96 -473,556 V 2924 Z M 819,4352 c -173,0 -320,-148 -320,-327 0,-179 141,-326 320,-326 186,0 333,140 333,326 0,179 -147,327 -333,327 z"
-                 transform="scale(0.015625)" />
-              <path
-                 id="NimbusRomNo9L-Regu-6d"
-                 d="m 122,2547 c 83,19 134,25 204,25 167,0 224,-102 224,-409 V 544 C 550,198 461,102 102,96 V 0 h 1421 v 96 c -339,12 -435,83 -435,332 v 1805 c 0,13 51,77 96,122 160,147 435,256 659,256 282,0 423,-224 423,-672 V 550 C 2266,192 2195,121 1830,96 V 0 h 1434 v 96 c -365,6 -461,115 -461,512 v 1612 c 192,276 403,391 698,391 365,0 480,-173 480,-704 V 556 C 3981,192 3930,140 3558,96 V 0 h 1402 v 96 l -166,12 c -192,13 -276,128 -276,378 v 1318 c 0,756 -249,1140 -742,1140 -371,0 -698,-167 -1043,-538 -115,365 -333,538 -679,538 -281,0 -460,-90 -992,-493 v 480 l -44,13 C 691,2822 474,2751 122,2655 Z"
-                 transform="scale(0.015625)" />
-              <path
-                 id="NimbusRomNo9L-Regu-65"
-                 d="M 2611,1052 C 2304,564 2029,377 1619,377 1254,377 979,564 794,930 678,1174 634,1386 621,1779 h 1971 c -51,414 -115,598 -275,801 -192,229 -487,364 -819,364 -320,0 -621,-116 -864,-332 C 333,2351 160,1900 160,1374 160,486 621,-64 1357,-64 c 608,0 1088,377 1357,1071 z M 634,1984 c 70,494 288,729 678,729 390,0 544,-178 627,-729 z"
-                 transform="scale(0.015625)" />
-              <path
-                 id="NimbusRomNo9L-Regu-28"
-                 d="M 1888,4352 C 1414,4044 1222,3878 986,3583 531,3027 307,2387 307,1638 307,825 544,198 1107,-455 c 263,-307 429,-448 762,-653 l 77,102 c -512,404 -692,628 -864,1108 -154,428 -224,915 -224,1555 0,672 83,1197 256,1594 179,396 371,627 832,998 z"
-                 transform="scale(0.015625)" />
-              <path
-                 id="NimbusRomNo9L-Regu-73"
-                 d="m 2016,2009 -26,871 h -70 l -13,-13 c -57,-45 -64,-52 -89,-52 -39,0 -103,13 -173,45 -141,58 -282,84 -448,84 -506,0 -871,-327 -871,-789 0,-359 205,-616 749,-924 l 371,-212 C 1670,891 1779,737 1779,538 1779,256 1574,76 1248,76 1030,76 832,160 710,301 576,461 518,609 435,974 H 333 V -26 h 83 c 45,64 70,77 147,77 58,0 147,-13 295,-51 179,-39 352,-64 467,-64 493,0 902,371 902,820 0,321 -153,533 -537,764 l -692,410 c -179,103 -275,263 -275,436 0,257 199,437 493,437 365,0 557,-218 704,-789 z"
-                 transform="scale(0.015625)" />
-              <path
-                 id="NimbusRomNo9L-Regu-29"
-                 d="m 243,-1108 c 474,307 666,474 903,768 454,557 678,1197 678,1946 0,819 -237,1440 -800,2093 -262,307 -429,448 -762,653 L 186,4249 C 698,3846 870,3622 1050,3142 1203,2713 1274,2227 1274,1587 1274,921 1190,390 1018,-1 838,-404 646,-634 186,-1006 Z"
-                 transform="scale(0.015625)" />
-            </defs>
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-54"
-               transform="scale(0.996264)"
-               id="use21" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-69"
-               transform="matrix(0.996264,0,0,0.996264,57.384904,0)"
-               id="use22" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-6d"
-               transform="matrix(0.996264,0,0,0.996264,85.080074,0)"
-               id="use23" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-65"
-               transform="matrix(0.996264,0,0,0.996264,162.58844,0)"
-               id="use24" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-28"
-               transform="matrix(0.996264,0,0,0.996264,231.72861,0)"
-               id="use25" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-73"
-               transform="matrix(0.996264,0,0,0.996264,264.90384,0)"
-               id="use26" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-29"
-               transform="matrix(0.996264,0,0,0.996264,303.65755,0)"
-               id="use27" />
-          </g>
-        </g>
-      </g>
-      <g
-         id="matplotlib.axis_2">
-        <g
-           id="ytick_1">
-          <g
-             id="line2d_11">
-            <path
-               d="M 73.614916,166.9 H 324.71492"
-               clip-path="url(#pcebd4a2661)"
-               style="fill:none;stroke:#b0b0b0;stroke-width:0.75;stroke-dasharray:2.775, 1.2;stroke-dashoffset:0"
-               id="path27" />
-          </g>
-          <g
-             id="line2d_12">
-            <defs
-               id="defs27">
-              <path
-                 id="mf4ccc62aef"
-                 d="M 0,0 H -3.5"
-                 style="stroke:#000000;stroke-width:0.8" />
-            </defs>
-            <g
-               id="g28">
-              <use
-                 xlink:href="#mf4ccc62aef"
-                 x="73.614914"
-                 y="166.89999"
-                 style="stroke:#000000;stroke-width:0.8"
-                 id="use28" />
-            </g>
-          </g>
-          <g
-             id="text_7">
-            <!-- $\mathdefault{0.00}$ -->
-            <g
-               transform="matrix(0.1,0,0,-0.1,48.911406,170.27729)"
-               id="g32">
-              <defs
-                 id="defs28">
-                <path
-                   id="CMMI10-3a"
-                   d="M 1229,339 C 1229,524 1075,678 890,678 704,678 550,524 550,339 550,153 704,0 890,0 c 185,0 339,153 339,339 z"
-                   transform="scale(0.015625)" />
-              </defs>
-              <use
-                 xlink:href="#NimbusRomNo9L-Regu-30"
-                 transform="scale(0.996264)"
-                 id="use29" />
-              <use
-                 xlink:href="#CMMI10-3a"
-                 transform="matrix(0.996264,0,0,0.996264,49.8132,0)"
-                 id="use30" />
-              <use
-                 xlink:href="#NimbusRomNo9L-Regu-30"
-                 transform="matrix(0.996264,0,0,0.996264,77.408707,0)"
-                 id="use31" />
-              <use
-                 xlink:href="#NimbusRomNo9L-Regu-30"
-                 transform="matrix(0.996264,0,0,0.996264,127.22191,0)"
-                 id="use32" />
-            </g>
-          </g>
-        </g>
-        <g
-           id="ytick_2">
-          <g
-             id="line2d_13">
-            <path
-               d="M 73.614916,128.4 H 324.71492"
-               clip-path="url(#pcebd4a2661)"
-               style="fill:none;stroke:#b0b0b0;stroke-width:0.75;stroke-dasharray:2.775, 1.2;stroke-dashoffset:0"
-               id="path32" />
-          </g>
-          <g
-             id="line2d_14">
-            <g
-               id="g33">
-              <use
-                 xlink:href="#mf4ccc62aef"
-                 x="73.614914"
-                 y="128.39999"
-                 style="stroke:#000000;stroke-width:0.8"
-                 id="use33" />
-            </g>
-          </g>
-          <g
-             id="text_8">
-            <!-- $\mathdefault{0.05}$ -->
-            <g
-               transform="matrix(0.1,0,0,-0.1,48.911406,131.77729)"
-               id="g37">
-              <defs
-                 id="defs33">
-                <path
-                   id="NimbusRomNo9L-Regu-35"
-                   d="m 1158,3718 h 1255 c 102,0 128,13 147,57 l 243,570 -57,45 c -96,-134 -160,-166 -295,-166 H 1114 L 416,2717 c -6,-12 -6,-19 -6,-31 0,-32 25,-51 76,-51 205,0 461,-44 724,-127 C 1946,2274 2285,1882 2285,1255 2285,647 1894,172 1395,172 1267,172 1158,217 966,356 762,502 614,565 480,565 294,565 205,489 205,331 205,89 506,-64 986,-64 c 537,0 998,172 1318,496 294,285 429,646 429,1127 0,456 -122,747 -442,1063 -281,279 -646,425 -1401,558 z"
-                   transform="scale(0.015625)" />
-              </defs>
-              <use
-                 xlink:href="#NimbusRomNo9L-Regu-30"
-                 transform="scale(0.996264)"
-                 id="use34" />
-              <use
-                 xlink:href="#CMMI10-3a"
-                 transform="matrix(0.996264,0,0,0.996264,49.8132,0)"
-                 id="use35" />
-              <use
-                 xlink:href="#NimbusRomNo9L-Regu-30"
-                 transform="matrix(0.996264,0,0,0.996264,77.408707,0)"
-                 id="use36" />
-              <use
-                 xlink:href="#NimbusRomNo9L-Regu-35"
-                 transform="matrix(0.996264,0,0,0.996264,127.22191,0)"
-                 id="use37" />
-            </g>
-          </g>
-        </g>
-        <g
-           id="ytick_3">
-          <g
-             id="line2d_15">
-            <path
-               d="M 73.614916,89.9 H 324.71492"
-               clip-path="url(#pcebd4a2661)"
-               style="fill:none;stroke:#b0b0b0;stroke-width:0.75;stroke-dasharray:2.775, 1.2;stroke-dashoffset:0"
-               id="path37" />
-          </g>
-          <g
-             id="line2d_16">
-            <g
-               id="g38">
-              <use
-                 xlink:href="#mf4ccc62aef"
-                 x="73.614914"
-                 y="89.900002"
-                 style="stroke:#000000;stroke-width:0.8"
-                 id="use38" />
-            </g>
-          </g>
-          <g
-             id="text_9">
-            <!-- $\mathdefault{0.10}$ -->
-            <g
-               transform="matrix(0.1,0,0,-0.1,48.911406,93.277289)"
-               id="g42">
-              <defs
-                 id="defs38">
-                <path
-                   id="NimbusRomNo9L-Regu-31"
-                   d="M 1862,4352 710,3776 v -90 c 77,32 148,57 173,70 115,45 224,70 288,70 135,0 192,-95 192,-301 V 599 C 1363,386 1312,238 1210,179 1114,121 1024,102 755,96 V 0 h 1767 v 96 c -506,6 -608,71 -608,381 v 3862 z"
-                   transform="scale(0.015625)" />
-              </defs>
-              <use
-                 xlink:href="#NimbusRomNo9L-Regu-30"
-                 transform="scale(0.996264)"
-                 id="use39" />
-              <use
-                 xlink:href="#CMMI10-3a"
-                 transform="matrix(0.996264,0,0,0.996264,49.8132,0)"
-                 id="use40" />
-              <use
-                 xlink:href="#NimbusRomNo9L-Regu-31"
-                 transform="matrix(0.996264,0,0,0.996264,77.408707,0)"
-                 id="use41" />
-              <use
-                 xlink:href="#NimbusRomNo9L-Regu-30"
-                 transform="matrix(0.996264,0,0,0.996264,127.22191,0)"
-                 id="use42" />
-            </g>
-          </g>
-        </g>
-        <g
-           id="ytick_4">
-          <g
-             id="line2d_17">
-            <path
-               d="M 73.614916,51.4 H 324.71492"
-               clip-path="url(#pcebd4a2661)"
-               style="fill:none;stroke:#b0b0b0;stroke-width:0.75;stroke-dasharray:2.775, 1.2;stroke-dashoffset:0"
-               id="path42" />
-          </g>
-          <g
-             id="line2d_18">
-            <g
-               id="g43">
-              <use
-                 xlink:href="#mf4ccc62aef"
-                 x="73.614914"
-                 y="51.400002"
-                 style="stroke:#000000;stroke-width:0.8"
-                 id="use43" />
-            </g>
-          </g>
-          <g
-             id="text_10">
-            <!-- $\mathdefault{0.15}$ -->
-            <g
-               transform="matrix(0.1,0,0,-0.1,48.911406,54.777289)"
-               id="g47">
-              <use
-                 xlink:href="#NimbusRomNo9L-Regu-30"
-                 transform="scale(0.996264)"
-                 id="use44" />
-              <use
-                 xlink:href="#CMMI10-3a"
-                 transform="matrix(0.996264,0,0,0.996264,49.8132,0)"
-                 id="use45" />
-              <use
-                 xlink:href="#NimbusRomNo9L-Regu-31"
-                 transform="matrix(0.996264,0,0,0.996264,77.408707,0)"
-                 id="use46" />
-              <use
-                 xlink:href="#NimbusRomNo9L-Regu-35"
-                 transform="matrix(0.996264,0,0,0.996264,127.22191,0)"
-                 id="use47" />
-            </g>
-          </g>
-        </g>
-        <g
-           id="text_11">
-          <!-- Control input u(t) -->
-          <g
-             transform="matrix(0,-0.1,-0.1,0,42.754578,140.44782)"
-             id="g63">
-            <defs
-               id="defs47">
-              <path
-                 id="NimbusRomNo9L-Regu-43"
-                 d="m 3968,2905 -58,1447 h -134 c -38,-135 -141,-212 -269,-212 -57,0 -153,19 -249,58 -314,102 -634,154 -935,154 C 1798,4352 1267,4153 870,3801 422,3405 179,2809 179,2105 179,1510 371,960 698,595 1082,179 1670,-64 2304,-64 c 723,0 1357,294 1747,812 L 3936,864 C 3462,409 3040,217 2509,217 c -403,0 -762,128 -1037,371 -352,314 -550,890 -550,1600 0,1159 595,1907 1523,1907 365,0 697,-134 953,-390 205,-204 301,-384 423,-800 z"
-                 transform="scale(0.015625)" />
-              <path
-                 id="NimbusRomNo9L-Regu-6f"
-                 d="M 1600,2944 C 768,2944 186,2329 186,1446 186,582 781,-64 1587,-64 c 807,0 1421,678 1421,1561 0,839 -589,1447 -1408,1447 z m -83,-180 c 537,0 915,-614 915,-1491 0,-723 -288,-1158 -768,-1158 -250,0 -486,153 -621,409 -179,333 -281,781 -281,1236 0,608 300,1004 755,1004 z"
-                 transform="scale(0.015625)" />
-              <path
-                 id="NimbusRomNo9L-Regu-6e"
-                 d="m 102,2547 c 39,19 103,25 173,25 179,0 237,-96 237,-409 V 576 C 512,211 442,121 115,96 V 0 h 1357 v 96 c -326,25 -422,102 -422,332 v 1799 c 307,288 448,364 659,364 313,0 467,-198 467,-620 V 633 C 2176,230 2093,121 1773,96 V 0 h 1331 v 96 c -314,32 -390,108 -390,422 v 1466 c 0,601 -282,960 -756,960 -294,0 -492,-109 -928,-519 v 506 l -44,13 C 672,2828 454,2758 102,2655 Z"
-                 transform="scale(0.015625)" />
-              <path
-                 id="NimbusRomNo9L-Regu-74"
-                 d="M 1632,2880 H 986 v 742 c 0,64 -7,83 -45,83 C 896,3648 858,3590 813,3526 570,3174 294,2867 192,2841 122,2796 83,2751 83,2719 c 0,-19 7,-32 26,-44 H 448 V 748 c 0,-537 192,-812 570,-812 313,0 556,153 768,486 l -84,70 C 1568,332 1459,268 1318,268 1082,268 986,441 986,844 v 1831 h 646 z"
-                 transform="scale(0.015625)" />
-              <path
-                 id="NimbusRomNo9L-Regu-72"
-                 d="m 45,2496 c 89,19 147,25 224,25 160,0 217,-102 217,-384 V 537 C 486,217 442,172 32,96 V 0 h 1536 v 96 c -435,19 -544,115 -544,480 v 1440 c 0,204 275,524 448,524 38,0 96,-32 166,-96 103,-89 173,-128 256,-128 154,0 250,109 250,288 0,211 -134,340 -352,340 -269,0 -454,-148 -768,-602 v 589 l -32,13 C 653,2803 422,2720 45,2598 Z"
-                 transform="scale(0.015625)" />
-              <path
-                 id="NimbusRomNo9L-Regu-6c"
-                 d="m 122,3987 h 38 c 70,6 147,13 198,13 205,0 269,-90 269,-391 V 556 C 627,211 538,128 134,96 V 0 h 1511 v 96 c -403,25 -480,89 -480,441 v 3821 l -26,13 C 806,4262 563,4198 122,4089 Z"
-                 transform="scale(0.015625)" />
-              <path
-                 id="NimbusRomNo9L-Regu-70"
-                 d="m 58,2515 c 57,6 102,6 160,6 217,0 262,-64 262,-364 V -839 c 0,-333 -70,-403 -448,-441 v -109 h 1549 v 109 c -480,6 -563,77 -563,482 V 211 c 224,-211 377,-275 646,-275 755,0 1344,716 1344,1644 0,794 -448,1364 -1069,1364 -358,0 -640,-161 -921,-506 v 493 l -39,13 C 634,2809 410,2726 58,2617 Z m 960,-378 c 0,192 358,422 652,422 474,0 788,-486 788,-1228 0,-711 -314,-1191 -775,-1191 -301,0 -665,231 -665,423 z"
-                 transform="scale(0.015625)" />
-              <path
-                 id="NimbusRomNo9L-Regu-75"
-                 d="m 3066,319 h -32 c -295,0 -365,71 -365,365 V 2880 H 1658 v -109 c 396,-19 473,-83 473,-403 V 864 C 2131,684 2099,595 2010,524 1837,384 1638,307 1446,307 1197,307 992,524 992,793 V 2880 H 58 v -90 c 307,-19 396,-115 396,-410 V 768 c 0,-506 308,-832 775,-832 237,0 486,102 659,275 l 275,275 V -45 l 26,-19 c 320,128 550,198 877,288 z"
-                 transform="scale(0.015625)" />
-            </defs>
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-43"
-               transform="scale(0.996264)"
-               id="use48" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-6f"
-               transform="matrix(0.996264,0,0,0.996264,66.450031,0)"
-               id="use49" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-6e"
-               transform="matrix(0.996264,0,0,0.996264,116.26323,0)"
-               id="use50" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-74"
-               transform="matrix(0.996264,0,0,0.996264,166.07643,0)"
-               id="use51" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-72"
-               transform="matrix(0.996264,0,0,0.996264,193.7716,0)"
-               id="use52" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-6f"
-               transform="matrix(0.996264,0,0,0.996264,226.94683,0)"
-               id="use53" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-6c"
-               transform="matrix(0.996264,0,0,0.996264,276.76003,0)"
-               id="use54" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-69"
-               transform="matrix(0.996264,0,0,0.996264,329.3618,0)"
-               id="use55" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-6e"
-               transform="matrix(0.996264,0,0,0.996264,357.05697,0)"
-               id="use56" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-70"
-               transform="matrix(0.996264,0,0,0.996264,406.87017,0)"
-               id="use57" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-75"
-               transform="matrix(0.996264,0,0,0.996264,456.68337,0)"
-               id="use58" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-74"
-               transform="matrix(0.996264,0,0,0.996264,506.49657,0)"
-               id="use59" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-75"
-               transform="matrix(0.996264,0,0,0.996264,559.09834,0)"
-               id="use60" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-28"
-               transform="matrix(0.996264,0,0,0.996264,608.91154,0)"
-               id="use61" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-74"
-               transform="matrix(0.996264,0,0,0.996264,642.08677,0)"
-               id="use62" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-29"
-               transform="matrix(0.996264,0,0,0.996264,669.78194,0)"
-               id="use63" />
-          </g>
-        </g>
-      </g>
-      <g
-         id="line2d_19">
-        <path
-           d="m 85.028552,166.9 v -23.1 h 5.706818 v -15.4 h 5.706818 V 97.6 h 5.706822 V 74.5 h 5.70681 V 51.4 h 5.70682 v 0 h 5.70682 v 0 h 5.70682 v 0 h 5.70682 v 15.4 h 5.70682 v 15.4 h 5.70681 v 15.4 h 5.70682 V 113 h 5.70682 v 7.7 h 5.70682 v 7.7 h 5.70682 v 7.7 h 5.70681 v 7.7 h 5.70682 v 0 h 5.70682 v 7.7 h 5.70682 v 0 h 5.70682 v 0 h 5.70682 v 0 h 5.70681 v 7.7 h 5.70682 v 0 h 5.70682 v 0 h 5.70682 v 0 h 5.70682 v 0 h 5.70681 v 0 h 5.70682 v 0 h 5.70682 v 0 h 5.70682 v 0 h 5.70682 v 0 h 5.70682 v 0 h 5.70681 v 0 h 5.70682 v 7.7 h 5.70682 v 0 h 5.70682 v 0 h 5.70682 v 0 h 5.70682 v 0 h 5.70681 v 0 h 5.70682 v 0 h 5.70682"
-           clip-path="url(#pcebd4a2661)"
-           style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:square"
-           id="path63" />
-      </g>
-      <g
-         id="line2d_20">
-        <path
-           d="m 85.028552,166.9 h 5.706818 5.706818 5.706822 5.70681 5.70682 5.70682 5.70682 5.70682 5.70682 5.70681 5.70682 5.70682 5.70682 5.70682 5.70681 5.70682 5.70682 5.70682 5.70682 5.70682 5.70681 5.70682 5.70682 5.70682 5.70682 5.70681 5.70682 5.70682 5.70682 5.70682 5.70682 5.70681 5.70682 5.70682 5.70682 5.70682 5.70682 5.70681 5.70682 5.70682"
-           clip-path="url(#pcebd4a2661)"
-           style="fill:none;stroke:#000000;stroke-width:1.5;stroke-dasharray:5.55, 2.4;stroke-dashoffset:0"
-           id="path64" />
-      </g>
-      <g
-         id="line2d_21">
-        <path
-           d="m 85.028552,51.4 h 5.706818 5.706818 5.706822 5.70681 5.70682 5.70682 5.70682 5.70682 5.70682 5.70681 5.70682 5.70682 5.70682 5.70682 5.70681 5.70682 5.70682 5.70682 5.70682 5.70682 5.70681 5.70682 5.70682 5.70682 5.70682 5.70681 5.70682 5.70682 5.70682 5.70682 5.70682 5.70681 5.70682 5.70682 5.70682 5.70682 5.70682 5.70681 5.70682 5.70682"
-           clip-path="url(#pcebd4a2661)"
-           style="fill:none;stroke:#000000;stroke-width:1.5;stroke-dasharray:5.55, 2.4;stroke-dashoffset:0"
-           id="path65" />
-      </g>
-      <g
-         id="patch_3">
-        <path
-           d="M 73.614916,174.6 V 36"
-           style="fill:none;stroke:#000000;stroke-width:0.8;stroke-linecap:square;stroke-linejoin:miter"
-           id="path66" />
-      </g>
-      <g
-         id="patch_4">
-        <path
-           d="M 324.71492,174.6 V 36"
-           style="fill:none;stroke:#000000;stroke-width:0.8;stroke-linecap:square;stroke-linejoin:miter"
-           id="path67" />
-      </g>
-      <g
-         id="patch_5">
-        <path
-           d="M 73.614916,174.6 H 324.71492"
-           style="fill:none;stroke:#000000;stroke-width:0.8;stroke-linecap:square;stroke-linejoin:miter"
-           id="path68" />
-      </g>
-      <g
-         id="patch_6">
-        <path
-           d="M 73.614916,36 H 324.71492"
-           style="fill:none;stroke:#000000;stroke-width:0.8;stroke-linecap:square;stroke-linejoin:miter"
-           id="path69" />
-      </g>
-      <g
-         id="legend_1">
-        <g
-           id="patch_7">
-          <path
-             d="m 219.02585,128.03524 h 98.68907 q 2,0 2,-2 V 84.564757 q 0,-2 -2,-2 h -98.68907 q -2,0 -2,2 v 41.470483 q 0,2 2,2 z"
-             style="opacity:0.8;fill:#ffffff;stroke:#cccccc;stroke-linejoin:miter"
-             id="path70" />
-        </g>
-        <g
-           id="line2d_22">
-          <path
-             d="m 221.02585,90.064757 v 0 h 10 v 0 h 10"
-             style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:square"
-             id="path71" />
-        </g>
-        <g
-           id="text_12">
-          <!-- u(t) -->
-          <g
-             transform="matrix(0.1,0,0,-0.1,249.02585,93.564757)"
-             id="g74">
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-75"
-               transform="scale(0.996264)"
-               id="use71" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-28"
-               transform="matrix(0.996264,0,0,0.996264,49.8132,0)"
-               id="use72" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-74"
-               transform="matrix(0.996264,0,0,0.996264,82.98843,0)"
-               id="use73" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-29"
-               transform="matrix(0.996264,0,0,0.996264,110.6836,0)"
-               id="use74" />
-          </g>
-        </g>
-        <g
-           id="line2d_23">
-          <path
-             d="m 221.02585,104.22159 h 10 10"
-             style="fill:none;stroke:#000000;stroke-width:1.5;stroke-dasharray:5.55, 2.4;stroke-dashoffset:0"
-             id="path74" />
-        </g>
-        <g
-           id="text_13">
-          <!-- Input constraints -->
-          <g
-             transform="matrix(0.1,0,0,-0.1,249.02585,107.72159)"
-             id="g90">
-            <defs
-               id="defs74">
-              <path
-                 id="NimbusRomNo9L-Regu-49"
-                 d="M 736,695 C 736,217 653,140 115,121 V 0 h 1901 v 121 c -525,19 -627,109 -627,574 v 2833 c 0,466 89,549 627,574 v 122 H 115 v -122 c 544,-32 621,-102 621,-574 z"
-                 transform="scale(0.015625)" />
-              <path
-                 id="NimbusRomNo9L-Regu-63"
-                 d="M 2547,998 C 2240,550 2010,396 1645,396 c -583,0 -992,512 -992,1248 0,659 352,1114 870,1114 231,0 314,-71 378,-307 l 38,-141 c 51,-179 167,-295 301,-295 166,0 307,122 307,269 0,359 -448,660 -985,660 -314,0 -640,-129 -903,-359 C 339,2303 160,1868 160,1363 160,531 666,-64 1376,-64 c 288,0 544,102 774,300 173,154 295,327 487,704 z"
-                 transform="scale(0.015625)" />
-              <path
-                 id="NimbusRomNo9L-Regu-61"
-                 d="m 2829,422 c -109,-90 -186,-122 -282,-122 -147,0 -192,90 -192,372 v 1248 c 0,332 -32,518 -128,672 -141,230 -416,352 -793,352 -602,0 -1076,-314 -1076,-717 0,-147 128,-275 276,-275 153,0 288,128 288,268 0,26 -7,58 -13,103 -13,57 -19,109 -19,153 0,173 204,314 460,314 314,0 487,-186 487,-531 V 1868 C 851,1472 742,1420 467,1177 326,1049 237,832 237,620 237,217 518,-64 909,-64 c 281,0 544,134 934,467 32,-333 147,-467 410,-467 217,0 352,76 576,320 z M 1837,787 C 1837,588 1805,531 1670,454 1517,364 1338,307 1203,307 979,307 800,524 800,800 v 25 c 0,378 262,608 1037,890 z"
-                 transform="scale(0.015625)" />
-            </defs>
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-49"
-               transform="scale(0.996264)"
-               id="use75" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-6e"
-               transform="matrix(0.996264,0,0,0.996264,33.17523,0)"
-               id="use76" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-70"
-               transform="matrix(0.996264,0,0,0.996264,82.98843,0)"
-               id="use77" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-75"
-               transform="matrix(0.996264,0,0,0.996264,132.80163,0)"
-               id="use78" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-74"
-               transform="matrix(0.996264,0,0,0.996264,182.61483,0)"
-               id="use79" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-63"
-               transform="matrix(0.996264,0,0,0.996264,235.2166,0)"
-               id="use80" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-6f"
-               transform="matrix(0.996264,0,0,0.996264,279.45017,0)"
-               id="use81" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-6e"
-               transform="matrix(0.996264,0,0,0.996264,329.26337,0)"
-               id="use82" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-73"
-               transform="matrix(0.996264,0,0,0.996264,379.07657,0)"
-               id="use83" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-74"
-               transform="matrix(0.996264,0,0,0.996264,417.83028,0)"
-               id="use84" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-72"
-               transform="matrix(0.996264,0,0,0.996264,445.52545,0)"
-               id="use85" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-61"
-               transform="matrix(0.996264,0,0,0.996264,478.70068,0)"
-               id="use86" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-69"
-               transform="matrix(0.996264,0,0,0.996264,522.93425,0)"
-               id="use87" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-6e"
-               transform="matrix(0.996264,0,0,0.996264,550.62941,0)"
-               id="use88" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-74"
-               transform="matrix(0.996264,0,0,0.996264,600.44262,0)"
-               id="use89" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-73"
-               transform="matrix(0.996264,0,0,0.996264,628.13778,0)"
-               id="use90" />
-          </g>
-        </g>
-        <g
-           id="line2d_24">
-          <path
-             d="m 221.02585,118.37841 h 10 v 0 h 10 v 0"
-             style="fill:none;stroke:#808080;stroke-width:2;stroke-linecap:square"
-             id="path90" />
-        </g>
-        <g
-           id="text_14">
-          <!-- y(t) -->
-          <g
-             transform="matrix(0.1,0,0,-0.1,249.02585,121.87841)"
-             id="g94">
-            <defs
-               id="defs90">
-              <path
-                 id="NimbusRomNo9L-Regu-79"
-                 d="m 3040,2880 h -864 v -97 c 205,0 307,-57 307,-160 0,-26 -6,-64 -25,-109 L 1837,741 1101,2366 c -39,90 -64,174 -64,244 0,116 96,161 371,173 v 97 H 90 v -90 c 166,-26 275,-96 326,-205 l 730,-1580 19,-52 96,-192 c 179,-322 281,-553 281,-649 0,-97 -147,-501 -256,-694 -89,-167 -230,-289 -320,-289 -38,0 -96,13 -160,45 -121,45 -230,71 -339,71 -147,0 -275,-129 -275,-282 0,-211 205,-371 474,-371 428,0 736,358 1081,1282 l 986,2621 c 83,205 153,269 307,288 z"
-                 transform="scale(0.015625)" />
-            </defs>
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-79"
-               transform="scale(0.996264)"
-               id="use91" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-28"
-               transform="matrix(0.996264,0,0,0.996264,49.8132,0)"
-               id="use92" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-74"
-               transform="matrix(0.996264,0,0,0.996264,82.98843,0)"
-               id="use93" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-29"
-               transform="matrix(0.996264,0,0,0.996264,110.6836,0)"
-               id="use94" />
-          </g>
-        </g>
-      </g>
-    </g>
-    <g
-       id="axes_2">
-      <g
-         id="matplotlib.axis_3">
-        <g
-           id="ytick_5">
-          <g
-             id="line2d_25">
-            <defs
-               id="defs94">
-              <path
-                 id="m7d7985dd01"
-                 d="M 0,0 H 3.5"
-                 style="stroke:#000000;stroke-width:0.8" />
-            </defs>
-            <g
-               id="g95">
-              <use
-                 xlink:href="#m7d7985dd01"
-                 x="324.7149"
-                 y="166.89999"
-                 style="stroke:#000000;stroke-width:0.8"
-                 id="use95" />
-            </g>
-          </g>
-          <g
-             id="text_15">
-            <!-- $\mathdefault{0.0}$ -->
-            <g
-               transform="matrix(0.1,0,0,-0.1,331.71492,170.27729)"
-               id="g98">
-              <use
-                 xlink:href="#NimbusRomNo9L-Regu-30"
-                 transform="scale(0.996264)"
-                 id="use96" />
-              <use
-                 xlink:href="#CMMI10-3a"
-                 transform="matrix(0.996264,0,0,0.996264,49.8132,0)"
-                 id="use97" />
-              <use
-                 xlink:href="#NimbusRomNo9L-Regu-30"
-                 transform="matrix(0.996264,0,0,0.996264,77.408707,0)"
-                 id="use98" />
-            </g>
-          </g>
-        </g>
-        <g
-           id="ytick_6">
-          <g
-             id="line2d_26">
-            <g
-               id="g99">
-              <use
-                 xlink:href="#m7d7985dd01"
-                 x="324.7149"
-                 y="128.39999"
-                 style="stroke:#000000;stroke-width:0.8"
-                 id="use99" />
-            </g>
-          </g>
-          <g
-             id="text_16">
-            <!-- $\mathdefault{0.1}$ -->
-            <g
-               transform="matrix(0.1,0,0,-0.1,331.71492,131.77729)"
-               id="g102">
-              <use
-                 xlink:href="#NimbusRomNo9L-Regu-30"
-                 transform="scale(0.996264)"
-                 id="use100" />
-              <use
-                 xlink:href="#CMMI10-3a"
-                 transform="matrix(0.996264,0,0,0.996264,49.8132,0)"
-                 id="use101" />
-              <use
-                 xlink:href="#NimbusRomNo9L-Regu-31"
-                 transform="matrix(0.996264,0,0,0.996264,77.408707,0)"
-                 id="use102" />
-            </g>
-          </g>
-        </g>
-        <g
-           id="ytick_7">
-          <g
-             id="line2d_27">
-            <g
-               id="g103">
-              <use
-                 xlink:href="#m7d7985dd01"
-                 x="324.7149"
-                 y="89.900002"
-                 style="stroke:#000000;stroke-width:0.8"
-                 id="use103" />
-            </g>
-          </g>
-          <g
-             id="text_17">
-            <!-- $\mathdefault{0.2}$ -->
-            <g
-               transform="matrix(0.1,0,0,-0.1,331.71492,93.277289)"
-               id="g106">
-              <use
-                 xlink:href="#NimbusRomNo9L-Regu-30"
-                 transform="scale(0.996264)"
-                 id="use104" />
-              <use
-                 xlink:href="#CMMI10-3a"
-                 transform="matrix(0.996264,0,0,0.996264,49.8132,0)"
-                 id="use105" />
-              <use
-                 xlink:href="#NimbusRomNo9L-Regu-32"
-                 transform="matrix(0.996264,0,0,0.996264,77.408707,0)"
-                 id="use106" />
-            </g>
-          </g>
-        </g>
-        <g
-           id="ytick_8">
-          <g
-             id="line2d_28">
-            <g
-               id="g107">
-              <use
-                 xlink:href="#m7d7985dd01"
-                 x="324.7149"
-                 y="51.400002"
-                 style="stroke:#000000;stroke-width:0.8"
-                 id="use107" />
-            </g>
-          </g>
-          <g
-             id="text_18">
-            <!-- $\mathdefault{0.3}$ -->
-            <g
-               transform="matrix(0.1,0,0,-0.1,331.71492,54.777289)"
-               id="g110">
-              <defs
-                 id="defs107">
-                <path
-                   id="NimbusRomNo9L-Regu-33"
-                   d="m 979,2137 c 378,0 525,-13 679,-70 396,-141 646,-506 646,-947 0,-538 -365,-954 -838,-954 -173,0 -301,45 -538,198 C 736,480 627,524 518,524 371,524 275,435 275,300 275,76 550,-64 998,-64 c 493,0 999,166 1300,428 300,263 467,634 467,1063 0,326 -103,627 -288,825 -128,141 -250,218 -531,340 441,300 601,537 601,883 0,518 -409,877 -998,877 -320,0 -602,-109 -832,-314 C 525,3865 429,3699 288,3315 l 96,-26 c 262,468 550,678 954,678 416,0 704,-281 704,-684 0,-231 -96,-461 -256,-621 -192,-192 -372,-288 -807,-442 z"
-                   transform="scale(0.015625)" />
-              </defs>
-              <use
-                 xlink:href="#NimbusRomNo9L-Regu-30"
-                 transform="scale(0.996264)"
-                 id="use108" />
-              <use
-                 xlink:href="#CMMI10-3a"
-                 transform="matrix(0.996264,0,0,0.996264,49.8132,0)"
-                 id="use109" />
-              <use
-                 xlink:href="#NimbusRomNo9L-Regu-33"
-                 transform="matrix(0.996264,0,0,0.996264,77.408707,0)"
-                 id="use110" />
-            </g>
-          </g>
-        </g>
-        <g
-           id="text_19">
-          <!-- Output y(t) -->
-          <g
-             transform="matrix(0,-0.1,-0.1,0,355.19168,127.57624)"
-             id="g120">
-            <defs
-               id="defs110">
-              <path
-                 id="NimbusRomNo9L-Regu-4f"
-                 d="M 2310,4352 C 1088,4352 218,3430 218,2144 218,1542 422,960 768,588 1139,185 1709,-64 2272,-64 c 1261,0 2131,896 2131,2182 0,634 -185,1178 -537,1562 -404,441 -941,672 -1556,672 z m 0,-231 c 295,0 589,-115 820,-320 345,-313 544,-915 544,-1677 0,-377 -84,-819 -212,-1152 C 3405,812 3296,652 3149,505 2925,281 2637,166 2298,166 c -295,0 -583,115 -807,314 -333,294 -544,940 -544,1651 0,653 179,1274 448,1574 250,276 563,416 915,416 z"
-                 transform="scale(0.015625)" />
-            </defs>
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-4f"
-               transform="scale(0.996264)"
-               id="use111" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-75"
-               transform="matrix(0.996264,0,0,0.996264,71.929985,0)"
-               id="use112" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-74"
-               transform="matrix(0.996264,0,0,0.996264,121.74318,0)"
-               id="use113" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-70"
-               transform="matrix(0.996264,0,0,0.996264,149.43835,0)"
-               id="use114" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-75"
-               transform="matrix(0.996264,0,0,0.996264,199.25155,0)"
-               id="use115" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-74"
-               transform="matrix(0.996264,0,0,0.996264,249.06476,0)"
-               id="use116" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-79"
-               transform="matrix(0.996264,0,0,0.996264,301.66653,0)"
-               id="use117" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-28"
-               transform="matrix(0.996264,0,0,0.996264,351.47973,0)"
-               id="use118" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-74"
-               transform="matrix(0.996264,0,0,0.996264,384.65496,0)"
-               id="use119" />
-            <use
-               xlink:href="#NimbusRomNo9L-Regu-29"
-               transform="matrix(0.996264,0,0,0.996264,412.35013,0)"
-               id="use120" />
-          </g>
-        </g>
-      </g>
-      <g
-         id="line2d_29">
-        <path
-           d="M 85.028552,120.7 H 90.73537 V 59.1 h 5.706818 V 43.7 h 5.706822 v 11.55 h 5.70681 V 66.8 h 5.70682 v 15.4 h 5.70682 v 19.25 h 5.70682 v 19.25 h 5.70682 v 11.55 h 5.70682 v 3.85 h 5.70681 v 3.85 h 5.70682 v 0 h 5.70682 v 3.85 h 5.70682 v 3.85 h 5.70682 v 0 h 5.70681 v 3.85 h 5.70682 v 3.85 h 5.70682 v 0 h 5.70682 v 3.85 h 5.70682 v 0 h 5.70682 v 0 h 5.70681 v 0 h 5.70682 v 0 h 5.70682 v 0 h 5.70682 v 0 h 5.70682 v 3.85 h 5.70681 v 0 h 5.70682 v 0 h 5.70682 v 0 h 5.70682 v 0 h 5.70682 v 0 h 5.70682 v 0 h 5.70681 v 0 h 5.70682 v 0 h 5.70682 v 0 h 5.70682 v 0 h 5.70682 v 0 h 5.70682 v 3.85 h 5.70681 v 0 h 5.70682 v 0 h 5.70682 v 0"
-           clip-path="url(#pcebd4a2661)"
-           style="fill:none;stroke:#808080;stroke-width:2;stroke-linecap:square"
-           id="path120" />
-      </g>
-      <g
-         id="patch_8">
-        <path
-           d="M 73.614916,174.6 V 36"
-           style="fill:none;stroke:#000000;stroke-width:0.8;stroke-linecap:square;stroke-linejoin:miter"
-           id="path121" />
-      </g>
-      <g
-         id="patch_9">
-        <path
-           d="M 324.71492,174.6 V 36"
-           style="fill:none;stroke:#000000;stroke-width:0.8;stroke-linecap:square;stroke-linejoin:miter"
-           id="path122" />
-      </g>
-      <g
-         id="patch_10">
-        <path
-           d="M 73.614916,174.6 H 324.71492"
-           style="fill:none;stroke:#000000;stroke-width:0.8;stroke-linecap:square;stroke-linejoin:miter"
-           id="path123" />
-      </g>
-      <g
-         id="patch_11">
-        <path
-           d="M 73.614916,36 H 324.71492"
-           style="fill:none;stroke:#000000;stroke-width:0.8;stroke-linecap:square;stroke-linejoin:miter"
-           id="path124" />
-      </g>
-    </g>
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="403.2pt" height="273.6pt" viewBox="0 0 403.2 273.6" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2025-07-22T15:33:28.020663</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.9.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 273.6 
+L 403.2 273.6 
+L 403.2 -0 
+L 0 -0 
+z
+" style="fill: #ffffff"/>
   </g>
-  <defs
-     id="defs124">
-    <clipPath
-       id="pcebd4a2661">
-      <rect
-         x="73.614914"
-         y="36"
-         width="251.10001"
-         height="138.60001"
-         id="rect124" />
-    </clipPath>
-  </defs>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 60.266149 223.177187 
+L 347.915171 223.177187 
+L 347.915171 21.6 
+L 60.266149 21.6 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <path d="M 73.341105 223.177187 
+L 73.341105 21.6 
+" clip-path="url(#p6f27963bb8)" style="fill: none; stroke-dasharray: 2.22,0.96; stroke-dashoffset: 0; stroke: #d3d3d3; stroke-width: 0.6"/>
+     </g>
+     <g id="line2d_2">
+      <defs>
+       <path id="m9fd1ce95cb" d="M 0 0 
+L 0 3.5 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m9fd1ce95cb" x="73.341105" y="223.177187" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <!-- $\mathdefault{0}$ -->
+      <g transform="translate(70.850445 236.931765) scale(0.1 -0.1)">
+       <defs>
+        <path id="NimbusRomNo9L-Regu-30" d="M 1626 4352 
+C 1274 4352 1005 4243 768 4019 
+C 397 3661 154 2924 154 2176 
+C 154 1478 365 729 666 371 
+C 902 89 1229 -64 1600 -64 
+C 1926 -64 2202 44 2432 268 
+C 2803 620 3046 1363 3046 2137 
+C 3046 3449 2464 4352 1626 4352 
+z
+M 1606 4185 
+C 2144 4185 2432 3462 2432 2124 
+C 2432 787 2150 102 1600 102 
+C 1050 102 768 787 768 2118 
+C 768 3475 1056 4185 1606 4185 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#NimbusRomNo9L-Regu-30" transform="scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_3">
+      <path d="M 138.715882 223.177187 
+L 138.715882 21.6 
+" clip-path="url(#p6f27963bb8)" style="fill: none; stroke-dasharray: 2.22,0.96; stroke-dashoffset: 0; stroke: #d3d3d3; stroke-width: 0.6"/>
+     </g>
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m9fd1ce95cb" x="138.715882" y="223.177187" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <!-- $\mathdefault{2}$ -->
+      <g transform="translate(136.225222 236.931765) scale(0.1 -0.1)">
+       <defs>
+        <path id="NimbusRomNo9L-Regu-32" d="M 3040 879 
+L 2957 912 
+C 2720 544 2637 486 2349 486 
+L 819 486 
+L 1894 1621 
+C 2464 2221 2714 2711 2714 3214 
+C 2714 3858 2195 4352 1530 4352 
+C 1178 4352 845 4211 608 3955 
+C 403 3736 307 3530 198 3072 
+L 333 3039 
+C 589 3671 819 3878 1261 3878 
+C 1798 3878 2163 3510 2163 2969 
+C 2163 2466 1869 1866 1331 1292 
+L 192 76 
+L 192 0 
+L 2688 0 
+L 3040 879 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#NimbusRomNo9L-Regu-32" transform="scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_5">
+      <path d="M 204.09066 223.177187 
+L 204.09066 21.6 
+" clip-path="url(#p6f27963bb8)" style="fill: none; stroke-dasharray: 2.22,0.96; stroke-dashoffset: 0; stroke: #d3d3d3; stroke-width: 0.6"/>
+     </g>
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#m9fd1ce95cb" x="204.09066" y="223.177187" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <!-- $\mathdefault{4}$ -->
+      <g transform="translate(201.6 236.931765) scale(0.1 -0.1)">
+       <defs>
+        <path id="NimbusRomNo9L-Regu-34" d="M 3021 1497 
+L 2368 1497 
+L 2368 4352 
+L 2086 4352 
+L 77 1497 
+L 77 1088 
+L 1875 1088 
+L 1875 0 
+L 2368 0 
+L 2368 1088 
+L 3021 1088 
+L 3021 1497 
+z
+M 1869 1497 
+L 333 1497 
+L 1869 3697 
+L 1869 1497 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#NimbusRomNo9L-Regu-34" transform="scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_7">
+      <path d="M 269.465438 223.177187 
+L 269.465438 21.6 
+" clip-path="url(#p6f27963bb8)" style="fill: none; stroke-dasharray: 2.22,0.96; stroke-dashoffset: 0; stroke: #d3d3d3; stroke-width: 0.6"/>
+     </g>
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#m9fd1ce95cb" x="269.465438" y="223.177187" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <!-- $\mathdefault{6}$ -->
+      <g transform="translate(266.974778 236.931765) scale(0.1 -0.1)">
+       <defs>
+        <path id="NimbusRomNo9L-Regu-36" d="M 2854 4390 
+C 2125 4326 1754 4204 1286 3878 
+C 595 3385 218 2655 218 1801 
+C 218 1248 390 688 666 369 
+C 909 89 1254 -64 1651 -64 
+C 2445 -64 2995 541 2995 1420 
+C 2995 2234 2528 2752 1792 2752 
+C 1510 2752 1376 2707 973 2463 
+C 1146 3430 1862 4121 2867 4288 
+L 2854 4390 
+z
+M 1549 2457 
+C 2099 2457 2419 1999 2419 1203 
+C 2419 503 2170 115 1722 115 
+C 1158 115 813 713 813 1700 
+C 813 2024 864 2203 992 2298 
+C 1126 2400 1325 2457 1549 2457 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#NimbusRomNo9L-Regu-36" transform="scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_9">
+      <path d="M 334.840215 223.177187 
+L 334.840215 21.6 
+" clip-path="url(#p6f27963bb8)" style="fill: none; stroke-dasharray: 2.22,0.96; stroke-dashoffset: 0; stroke: #d3d3d3; stroke-width: 0.6"/>
+     </g>
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#m9fd1ce95cb" x="334.840215" y="223.177187" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <!-- $\mathdefault{8}$ -->
+      <g transform="translate(332.349555 236.931765) scale(0.1 -0.1)">
+       <defs>
+        <path id="NimbusRomNo9L-Regu-38" d="M 1856 2400 
+C 2490 2739 2714 3008 2714 3443 
+C 2714 3968 2253 4352 1613 4352 
+C 915 4352 397 3923 397 3341 
+C 397 2924 518 2739 1190 2150 
+C 499 1625 358 1427 358 992 
+C 358 371 864 -64 1587 -64 
+C 2355 -64 2848 358 2848 1017 
+C 2848 1510 2630 1824 1856 2400 
+z
+M 1741 1740 
+C 2208 1408 2362 1177 2362 819 
+C 2362 403 2074 115 1658 115 
+C 1171 115 845 486 845 1043 
+C 845 1452 986 1721 1357 2022 
+L 1741 1740 
+z
+M 1670 2515 
+C 1101 2886 870 3180 870 3539 
+C 870 3910 1158 4172 1562 4172 
+C 1997 4172 2272 3891 2272 3449 
+C 2272 3084 2093 2796 1728 2553 
+C 1696 2534 1696 2534 1670 2515 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#NimbusRomNo9L-Regu-38" transform="scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="text_6">
+     <!-- \textbf{Time} -->
+     <g transform="translate(193.11194 249.843171) scale(0.1 -0.1)">
+      <defs>
+       <path id="NimbusRomNo9L-Medi-54" d="M 1619 752 
+C 1619 275 1549 205 998 160 
+L 998 0 
+L 3283 0 
+L 3283 160 
+C 2726 198 2656 263 2656 752 
+L 2656 4146 
+C 3443 4120 3776 3824 3885 3058 
+L 4070 3058 
+L 4058 4352 
+L 218 4352 
+L 198 3058 
+L 384 3058 
+C 493 3824 826 4120 1619 4146 
+L 1619 752 
+z
+" transform="scale(0.015625)"/>
+       <path id="NimbusRomNo9L-Medi-69" d="M 1331 2944 
+L 102 2944 
+L 102 2790 
+C 384 2733 442 2675 442 2413 
+L 442 536 
+C 442 274 397 223 102 153 
+L 102 0 
+L 1632 0 
+L 1632 153 
+C 1408 185 1331 274 1331 517 
+L 1331 2944 
+z
+M 883 4416 
+C 608 4416 384 4191 384 3923 
+C 384 3635 595 3423 877 3423 
+C 1158 3423 1376 3635 1376 3916 
+C 1376 4191 1158 4416 883 4416 
+z
+" transform="scale(0.015625)"/>
+       <path id="NimbusRomNo9L-Medi-6d" d="M 1325 2944 
+L 102 2944 
+L 102 2790 
+C 384 2752 454 2675 454 2413 
+L 454 536 
+C 454 274 384 204 102 153 
+L 102 0 
+L 1638 0 
+L 1638 153 
+C 1414 185 1344 274 1344 517 
+L 1344 2222 
+C 1344 2260 1446 2381 1530 2445 
+C 1664 2534 1773 2579 1882 2579 
+C 2131 2579 2227 2433 2227 2052 
+L 2227 515 
+C 2227 255 2157 172 1920 153 
+L 1920 0 
+L 3418 0 
+L 3418 153 
+C 3194 179 3117 274 3117 515 
+L 3117 2210 
+C 3117 2242 3219 2363 3302 2426 
+C 3443 2534 3552 2579 3661 2579 
+C 3904 2579 4000 2426 4000 2052 
+L 4000 515 
+C 4000 248 3930 172 3686 153 
+L 3686 0 
+L 5210 0 
+L 5210 153 
+C 4960 166 4890 242 4890 515 
+L 4890 2109 
+C 4890 2655 4550 3008 4026 3008 
+C 3661 3008 3418 2860 3085 2452 
+C 2893 2854 2669 3008 2266 3008 
+C 1862 3008 1568 2835 1325 2452 
+L 1325 2944 
+z
+" transform="scale(0.015625)"/>
+       <path id="NimbusRomNo9L-Medi-65" d="M 2573 811 
+C 2317 508 2118 396 1843 396 
+C 1594 396 1408 508 1274 725 
+C 1158 923 1107 1127 1082 1555 
+L 2694 1555 
+C 2656 2090 2560 2389 2355 2631 
+C 2144 2879 1850 3008 1498 3008 
+C 698 3008 160 2377 160 1449 
+C 160 545 685 -64 1478 -64 
+C 1997 -64 2310 140 2726 725 
+L 2573 811 
+z
+M 1050 1792 
+C 1069 2555 1184 2809 1498 2809 
+C 1677 2809 1798 2707 1850 2510 
+C 1882 2389 1894 2211 1907 1887 
+L 1907 1792 
+L 1050 1792 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#NimbusRomNo9L-Medi-54" transform="scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-Medi-69" transform="translate(64.657452 0) scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-Medi-6d" transform="translate(92.352622 0) scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-Medi-65" transform="translate(175.341052 0) scale(0.996264)"/>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_11">
+      <path d="M 60.266149 211.978454 
+L 347.915171 211.978454 
+" clip-path="url(#p6f27963bb8)" style="fill: none; stroke-dasharray: 2.22,0.96; stroke-dashoffset: 0; stroke: #d3d3d3; stroke-width: 0.6"/>
+     </g>
+     <g id="line2d_12">
+      <defs>
+       <path id="m622be97599" d="M 0 0 
+L -3.5 0 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m622be97599" x="60.266149" y="211.978454" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_7">
+      <!-- $\mathdefault{0.00}$ -->
+      <g transform="translate(35.56264 215.355743) scale(0.1 -0.1)">
+       <defs>
+        <path id="CMMI10-3a" d="M 1229 339 
+C 1229 524 1075 678 890 678 
+C 704 678 550 524 550 339 
+C 550 153 704 0 890 0 
+C 1075 0 1229 153 1229 339 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#NimbusRomNo9L-Regu-30" transform="scale(0.996264)"/>
+       <use xlink:href="#CMMI10-3a" transform="translate(49.8132 0) scale(0.996264)"/>
+       <use xlink:href="#NimbusRomNo9L-Regu-30" transform="translate(77.408707 0) scale(0.996264)"/>
+       <use xlink:href="#NimbusRomNo9L-Regu-30" transform="translate(127.221908 0) scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_13">
+      <path d="M 60.266149 155.984791 
+L 347.915171 155.984791 
+" clip-path="url(#p6f27963bb8)" style="fill: none; stroke-dasharray: 2.22,0.96; stroke-dashoffset: 0; stroke: #d3d3d3; stroke-width: 0.6"/>
+     </g>
+     <g id="line2d_14">
+      <g>
+       <use xlink:href="#m622be97599" x="60.266149" y="155.984791" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <!-- $\mathdefault{0.05}$ -->
+      <g transform="translate(35.56264 159.36208) scale(0.1 -0.1)">
+       <defs>
+        <path id="NimbusRomNo9L-Regu-35" d="M 1158 3718 
+L 2413 3718 
+C 2515 3718 2541 3731 2560 3775 
+L 2803 4345 
+L 2746 4390 
+C 2650 4256 2586 4224 2451 4224 
+L 1114 4224 
+L 416 2717 
+C 410 2705 410 2698 410 2686 
+C 410 2654 435 2635 486 2635 
+C 691 2635 947 2591 1210 2508 
+C 1946 2274 2285 1882 2285 1255 
+C 2285 647 1894 172 1395 172 
+C 1267 172 1158 217 966 356 
+C 762 502 614 565 480 565 
+C 294 565 205 489 205 331 
+C 205 89 506 -64 986 -64 
+C 1523 -64 1984 108 2304 432 
+C 2598 717 2733 1078 2733 1559 
+C 2733 2015 2611 2306 2291 2622 
+C 2010 2901 1645 3047 890 3180 
+L 1158 3718 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#NimbusRomNo9L-Regu-30" transform="scale(0.996264)"/>
+       <use xlink:href="#CMMI10-3a" transform="translate(49.8132 0) scale(0.996264)"/>
+       <use xlink:href="#NimbusRomNo9L-Regu-30" transform="translate(77.408707 0) scale(0.996264)"/>
+       <use xlink:href="#NimbusRomNo9L-Regu-35" transform="translate(127.221908 0) scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_15">
+      <path d="M 60.266149 99.991128 
+L 347.915171 99.991128 
+" clip-path="url(#p6f27963bb8)" style="fill: none; stroke-dasharray: 2.22,0.96; stroke-dashoffset: 0; stroke: #d3d3d3; stroke-width: 0.6"/>
+     </g>
+     <g id="line2d_16">
+      <g>
+       <use xlink:href="#m622be97599" x="60.266149" y="99.991128" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_9">
+      <!-- $\mathdefault{0.10}$ -->
+      <g transform="translate(35.56264 103.368417) scale(0.1 -0.1)">
+       <defs>
+        <path id="NimbusRomNo9L-Regu-31" d="M 1862 4352 
+L 710 3776 
+L 710 3686 
+C 787 3718 858 3743 883 3756 
+C 998 3801 1107 3826 1171 3826 
+C 1306 3826 1363 3731 1363 3525 
+L 1363 599 
+C 1363 386 1312 238 1210 179 
+C 1114 121 1024 102 755 96 
+L 755 0 
+L 2522 0 
+L 2522 96 
+C 2016 102 1914 167 1914 477 
+L 1914 4339 
+L 1862 4352 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#NimbusRomNo9L-Regu-30" transform="scale(0.996264)"/>
+       <use xlink:href="#CMMI10-3a" transform="translate(49.8132 0) scale(0.996264)"/>
+       <use xlink:href="#NimbusRomNo9L-Regu-31" transform="translate(77.408707 0) scale(0.996264)"/>
+       <use xlink:href="#NimbusRomNo9L-Regu-30" transform="translate(127.221908 0) scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_17">
+      <path d="M 60.266149 43.997465 
+L 347.915171 43.997465 
+" clip-path="url(#p6f27963bb8)" style="fill: none; stroke-dasharray: 2.22,0.96; stroke-dashoffset: 0; stroke: #d3d3d3; stroke-width: 0.6"/>
+     </g>
+     <g id="line2d_18">
+      <g>
+       <use xlink:href="#m622be97599" x="60.266149" y="43.997465" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_10">
+      <!-- $\mathdefault{0.15}$ -->
+      <g transform="translate(35.56264 47.374754) scale(0.1 -0.1)">
+       <use xlink:href="#NimbusRomNo9L-Regu-30" transform="scale(0.996264)"/>
+       <use xlink:href="#CMMI10-3a" transform="translate(49.8132 0) scale(0.996264)"/>
+       <use xlink:href="#NimbusRomNo9L-Regu-31" transform="translate(77.408707 0) scale(0.996264)"/>
+       <use xlink:href="#NimbusRomNo9L-Regu-35" transform="translate(127.221908 0) scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="text_11">
+     <!-- \textbf{Control input}, $u(t)$ -->
+     <g transform="translate(29.07198 161.949248) rotate(-90) scale(0.1 -0.1)">
+      <defs>
+       <path id="NimbusRomNo9L-Medi-43" d="M 4205 966 
+C 3827 569 3622 416 3309 294 
+C 3123 217 2912 179 2733 179 
+C 2310 179 1907 403 1722 736 
+C 1536 1075 1446 1536 1446 2176 
+C 1446 3501 1856 4204 2624 4204 
+C 2925 4204 3200 4089 3475 3846 
+C 3750 3597 3898 3385 4122 2899 
+L 4282 2899 
+L 4282 4396 
+L 4109 4396 
+C 4019 4173 3949 4102 3827 4102 
+C 3770 4102 3674 4128 3533 4192 
+C 3155 4345 2848 4416 2541 4416 
+C 1267 4416 314 3430 314 2124 
+C 314 806 1254 -128 2579 -128 
+C 3034 -128 3411 -20 3763 217 
+C 3968 358 4109 486 4397 806 
+L 4205 966 
+z
+" transform="scale(0.015625)"/>
+       <path id="NimbusRomNo9L-Medi-6f" d="M 1606 3008 
+C 794 3008 160 2343 160 1487 
+C 160 587 768 -64 1606 -64 
+C 2432 -64 3046 593 3046 1468 
+C 3046 2350 2432 3008 1606 3008 
+z
+M 1613 2809 
+C 1984 2809 2106 2463 2106 1431 
+C 2106 461 1978 134 1606 134 
+C 1229 134 1101 455 1101 1374 
+C 1101 2482 1216 2809 1613 2809 
+z
+" transform="scale(0.015625)"/>
+       <path id="NimbusRomNo9L-Medi-6e" d="M 1357 2944 
+L 134 2944 
+L 134 2790 
+C 416 2745 474 2681 474 2413 
+L 474 536 
+C 474 268 422 211 134 153 
+L 134 0 
+L 1677 0 
+L 1677 153 
+C 1440 185 1363 281 1363 517 
+L 1363 2222 
+C 1363 2247 1408 2311 1472 2369 
+C 1613 2502 1766 2579 1914 2579 
+C 2138 2579 2246 2407 2246 2052 
+L 2246 515 
+C 2246 280 2163 179 1946 153 
+L 1946 0 
+L 3450 0 
+L 3450 153 
+C 3200 172 3136 248 3136 515 
+L 3136 2109 
+C 3136 2655 2797 3008 2272 3008 
+C 1888 3008 1594 2828 1357 2452 
+L 1357 2944 
+z
+" transform="scale(0.015625)"/>
+       <path id="NimbusRomNo9L-Medi-74" d="M 1952 2944 
+L 1350 2944 
+L 1350 4025 
+L 1190 4025 
+C 800 3475 544 3187 128 2835 
+L 128 2662 
+L 461 2662 
+L 461 606 
+C 461 192 736 -64 1178 -64 
+C 1606 -64 1862 128 2125 650 
+L 1965 720 
+C 1837 479 1734 390 1600 390 
+C 1421 390 1350 498 1350 752 
+L 1350 2662 
+L 1952 2662 
+L 1952 2944 
+z
+" transform="scale(0.015625)"/>
+       <path id="NimbusRomNo9L-Medi-72" d="M 1395 2944 
+L 186 2944 
+L 186 2790 
+C 461 2752 531 2669 531 2413 
+L 531 536 
+C 531 274 467 204 186 153 
+L 186 0 
+L 1888 0 
+L 1888 153 
+C 1498 179 1421 262 1421 658 
+L 1421 1864 
+C 1421 2196 1600 2471 1811 2471 
+C 1862 2471 1920 2426 1990 2324 
+C 2112 2152 2208 2094 2374 2094 
+C 2611 2094 2778 2273 2778 2522 
+C 2778 2796 2560 3008 2259 3008 
+C 1939 3008 1696 2835 1395 2406 
+L 1395 2944 
+z
+" transform="scale(0.015625)"/>
+       <path id="NimbusRomNo9L-Medi-6c" d="M 1318 4352 
+L 102 4352 
+L 102 4198 
+C 326 4178 429 4062 429 3824 
+L 429 540 
+C 429 301 320 172 102 153 
+L 102 0 
+L 1632 0 
+L 1632 153 
+C 1421 160 1318 282 1318 540 
+L 1318 4352 
+z
+" transform="scale(0.015625)"/>
+       <path id="NimbusRomNo9L-Medi-70" d="M 1357 2944 
+L 134 2944 
+L 134 2790 
+C 416 2745 480 2681 480 2413 
+L 480 -783 
+C 480 -1044 429 -1101 122 -1152 
+L 122 -1280 
+L 1869 -1280 
+L 1869 -1152 
+C 1478 -1133 1370 -1006 1370 -580 
+L 1370 319 
+C 1677 19 1843 -64 2125 -64 
+C 2842 -64 3354 596 3354 1528 
+C 3354 2403 2874 3008 2163 3008 
+C 1786 3008 1555 2860 1357 2491 
+L 1357 2944 
+z
+M 1370 2202 
+C 1370 2246 1427 2347 1504 2428 
+C 1632 2567 1779 2643 1920 2643 
+C 2253 2643 2406 2265 2406 1440 
+C 2406 659 2227 288 1862 288 
+C 1651 288 1466 432 1370 672 
+L 1370 2202 
+z
+" transform="scale(0.015625)"/>
+       <path id="NimbusRomNo9L-Medi-75" d="M 2195 -39 
+C 2470 57 2624 83 3040 127 
+L 3437 172 
+L 3437 320 
+C 3155 332 3078 414 3078 683 
+L 3078 2944 
+L 1792 2944 
+L 1792 2790 
+C 2112 2765 2189 2690 2189 2420 
+L 2189 646 
+C 1978 421 1843 352 1664 352 
+C 1402 352 1306 478 1306 800 
+L 1306 2944 
+L 102 2944 
+L 102 2790 
+C 365 2739 416 2683 416 2417 
+L 416 825 
+C 416 268 736 -64 1267 -64 
+C 1600 -64 1824 38 2195 358 
+L 2195 -39 
+z
+" transform="scale(0.015625)"/>
+       <path id="NimbusRomNo9L-Regu-2c" d="M 531 -890 
+C 960 -679 1248 -289 1248 96 
+C 1248 416 1024 665 736 665 
+C 512 665 358 518 358 300 
+C 358 57 506 -64 736 -64 
+C 774 -64 819 -58 858 -52 
+C 902 0 902 0 909 0 
+C 960 0 998 -39 998 -90 
+C 998 -295 819 -532 474 -769 
+L 531 -890 
+z
+" transform="scale(0.015625)"/>
+       <path id="NimbusRomNo9L-ReguItal-75" d="M 2950 742 
+C 2618 326 2522 236 2419 236 
+C 2374 236 2349 275 2349 345 
+C 2349 384 2349 384 2470 844 
+L 2976 2758 
+L 2502 2758 
+C 2138 1766 2093 1664 1798 1196 
+C 1414 599 1101 275 896 275 
+C 819 275 762 338 762 434 
+C 762 459 762 472 768 491 
+L 1350 2803 
+L 1331 2816 
+C 966 2732 736 2687 371 2643 
+L 371 2554 
+C 614 2554 627 2547 685 2516 
+C 723 2503 755 2446 755 2401 
+C 755 2350 723 2191 666 1974 
+L 429 1070 
+C 314 618 269 402 269 287 
+C 269 57 384 -64 608 -64 
+C 1062 -64 1402 281 2138 1510 
+C 1952 829 1850 389 1850 256 
+C 1850 51 1965 -64 2157 -64 
+C 2458 -64 2605 64 3040 684 
+L 2950 742 
+z
+" transform="scale(0.015625)"/>
+       <path id="CMR10-28" d="M 2118 -1536 
+C 2118 -1517 2118 -1504 2010 -1396 
+C 1210 -589 1005 620 1005 1600 
+C 1005 2713 1248 3827 2035 4627 
+C 2118 4704 2118 4716 2118 4736 
+C 2118 4780 2093 4800 2054 4800 
+C 1990 4800 1414 4365 1037 3552 
+C 710 2848 634 2137 634 1600 
+C 634 1100 704 326 1056 -397 
+C 1440 -1184 1990 -1600 2054 -1600 
+C 2093 -1600 2118 -1581 2118 -1536 
+z
+" transform="scale(0.015625)"/>
+       <path id="NimbusRomNo9L-ReguItal-74" d="M 1894 2752 
+L 1382 2752 
+L 1562 3411 
+C 1568 3424 1568 3436 1568 3443 
+C 1568 3488 1549 3507 1517 3507 
+C 1478 3507 1459 3500 1421 3449 
+C 1171 3123 774 2803 570 2745 
+C 410 2694 365 2655 365 2585 
+C 365 2579 365 2566 371 2547 
+L 845 2547 
+L 384 782 
+C 371 724 365 705 346 647 
+C 288 454 237 230 237 179 
+C 237 38 371 -64 544 -64 
+C 838 -64 1050 115 1453 711 
+L 1370 756 
+C 1056 352 954 249 851 249 
+C 794 249 755 300 755 377 
+C 755 384 755 390 762 410 
+L 1325 2547 
+L 1862 2547 
+L 1894 2752 
+z
+" transform="scale(0.015625)"/>
+       <path id="CMR10-29" d="M 1850 1600 
+C 1850 2099 1779 2873 1427 3597 
+C 1043 4384 493 4800 429 4800 
+C 390 4800 365 4774 365 4736 
+C 365 4716 365 4704 486 4589 
+C 1114 3955 1478 2937 1478 1600 
+C 1478 505 1242 -621 448 -1428 
+C 365 -1504 365 -1517 365 -1536 
+C 365 -1575 390 -1600 429 -1600 
+C 493 -1600 1069 -1165 1446 -352 
+C 1773 352 1850 1062 1850 1600 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#NimbusRomNo9L-Medi-43" transform="scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-Medi-6f" transform="translate(71.929985 0) scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-Medi-6e" transform="translate(121.743185 0) scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-Medi-74" transform="translate(177.134862 0) scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-Medi-72" transform="translate(210.310092 0) scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-Medi-6f" transform="translate(252.751082 0) scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-Medi-6c" transform="translate(302.564282 0) scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-Medi-69" transform="translate(355.166052 0) scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-Medi-6e" transform="translate(382.861222 0) scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-Medi-70" transform="translate(438.252899 0) scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-Medi-75" transform="translate(493.644576 0) scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-Medi-74" transform="translate(549.036253 0) scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-Regu-2c" transform="translate(582.211482 0) scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-ReguItal-75" transform="translate(632.024683 0) scale(0.996264)"/>
+      <use xlink:href="#CMR10-28" transform="translate(681.837883 0) scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-ReguItal-74" transform="translate(718.001099 0) scale(0.996264)"/>
+      <use xlink:href="#CMR10-29" transform="translate(752.470092 0) scale(0.996264)"/>
+     </g>
+    </g>
+   </g>
+   <g id="line2d_19">
+    <path d="M 73.341105 211.978454 
+L 79.878583 211.978454 
+L 79.878583 178.382257 
+L 86.41606 178.382257 
+L 86.41606 155.984791 
+L 92.953538 155.984791 
+L 92.953538 111.189861 
+L 99.491016 111.189861 
+L 99.491016 77.593663 
+L 106.028494 77.593663 
+L 106.028494 43.997465 
+L 112.565971 43.997465 
+L 112.565971 43.997465 
+L 119.103449 43.997465 
+L 119.103449 43.997465 
+L 125.640927 43.997465 
+L 125.640927 43.997465 
+L 132.178405 43.997465 
+L 132.178405 66.39493 
+L 138.715882 66.39493 
+L 138.715882 88.792396 
+L 145.25336 88.792396 
+L 145.25336 111.189861 
+L 151.790838 111.189861 
+L 151.790838 133.587326 
+L 158.328316 133.587326 
+L 158.328316 144.786059 
+L 164.865793 144.786059 
+L 164.865793 155.984791 
+L 171.403271 155.984791 
+L 171.403271 167.183524 
+L 177.940749 167.183524 
+L 177.940749 178.382257 
+L 184.478227 178.382257 
+L 184.478227 178.382257 
+L 191.015705 178.382257 
+L 191.015705 189.580989 
+L 197.553182 189.580989 
+L 197.553182 189.580989 
+L 204.09066 189.580989 
+L 204.09066 189.580989 
+L 210.628138 189.580989 
+L 210.628138 189.580989 
+L 217.165616 189.580989 
+L 217.165616 200.779722 
+L 223.703093 200.779722 
+L 223.703093 200.779722 
+L 230.240571 200.779722 
+L 230.240571 200.779722 
+L 236.778049 200.779722 
+L 236.778049 200.779722 
+L 243.315527 200.779722 
+L 243.315527 200.779722 
+L 249.853004 200.779722 
+L 249.853004 200.779722 
+L 256.390482 200.779722 
+L 256.390482 200.779722 
+L 262.92796 200.779722 
+L 262.92796 200.779722 
+L 269.465438 200.779722 
+L 269.465438 200.779722 
+L 276.002915 200.779722 
+L 276.002915 200.779722 
+L 282.540393 200.779722 
+L 282.540393 200.779722 
+L 289.077871 200.779722 
+L 289.077871 200.779722 
+L 295.615349 200.779722 
+L 295.615349 211.978454 
+L 302.152826 211.978454 
+L 302.152826 211.978454 
+L 308.690304 211.978454 
+L 308.690304 211.978454 
+L 315.227782 211.978454 
+L 315.227782 211.978454 
+L 321.76526 211.978454 
+L 321.76526 211.978454 
+L 328.302737 211.978454 
+L 328.302737 211.978454 
+L 334.840215 211.978454 
+L 334.840215 211.978454 
+" clip-path="url(#p6f27963bb8)" style="fill: none; stroke: #25848e; stroke-width: 2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_20">
+    <path d="M 73.341105 211.978454 
+L 79.878583 211.978454 
+L 86.41606 211.978454 
+L 92.953538 211.978454 
+L 99.491016 211.978454 
+L 106.028494 211.978454 
+L 112.565971 211.978454 
+L 119.103449 211.978454 
+L 125.640927 211.978454 
+L 132.178405 211.978454 
+L 138.715882 211.978454 
+L 145.25336 211.978454 
+L 151.790838 211.978454 
+L 158.328316 211.978454 
+L 164.865793 211.978454 
+L 171.403271 211.978454 
+L 177.940749 211.978454 
+L 184.478227 211.978454 
+L 191.015705 211.978454 
+L 197.553182 211.978454 
+L 204.09066 211.978454 
+L 210.628138 211.978454 
+L 217.165616 211.978454 
+L 223.703093 211.978454 
+L 230.240571 211.978454 
+L 236.778049 211.978454 
+L 243.315527 211.978454 
+L 249.853004 211.978454 
+L 256.390482 211.978454 
+L 262.92796 211.978454 
+L 269.465438 211.978454 
+L 276.002915 211.978454 
+L 282.540393 211.978454 
+L 289.077871 211.978454 
+L 295.615349 211.978454 
+L 302.152826 211.978454 
+L 308.690304 211.978454 
+L 315.227782 211.978454 
+L 321.76526 211.978454 
+L 328.302737 211.978454 
+L 334.840215 211.978454 
+" clip-path="url(#p6f27963bb8)" style="fill: none; stroke-dasharray: 5.55,2.4; stroke-dashoffset: 0; stroke: #d2e21b; stroke-width: 1.5"/>
+   </g>
+   <g id="line2d_21">
+    <path d="M 73.341105 43.997465 
+L 79.878583 43.997465 
+L 86.41606 43.997465 
+L 92.953538 43.997465 
+L 99.491016 43.997465 
+L 106.028494 43.997465 
+L 112.565971 43.997465 
+L 119.103449 43.997465 
+L 125.640927 43.997465 
+L 132.178405 43.997465 
+L 138.715882 43.997465 
+L 145.25336 43.997465 
+L 151.790838 43.997465 
+L 158.328316 43.997465 
+L 164.865793 43.997465 
+L 171.403271 43.997465 
+L 177.940749 43.997465 
+L 184.478227 43.997465 
+L 191.015705 43.997465 
+L 197.553182 43.997465 
+L 204.09066 43.997465 
+L 210.628138 43.997465 
+L 217.165616 43.997465 
+L 223.703093 43.997465 
+L 230.240571 43.997465 
+L 236.778049 43.997465 
+L 243.315527 43.997465 
+L 249.853004 43.997465 
+L 256.390482 43.997465 
+L 262.92796 43.997465 
+L 269.465438 43.997465 
+L 276.002915 43.997465 
+L 282.540393 43.997465 
+L 289.077871 43.997465 
+L 295.615349 43.997465 
+L 302.152826 43.997465 
+L 308.690304 43.997465 
+L 315.227782 43.997465 
+L 321.76526 43.997465 
+L 328.302737 43.997465 
+L 334.840215 43.997465 
+" clip-path="url(#p6f27963bb8)" style="fill: none; stroke-dasharray: 5.55,2.4; stroke-dashoffset: 0; stroke: #d2e21b; stroke-width: 1.5"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 60.266149 223.177187 
+L 60.266149 21.6 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 347.915171 223.177187 
+L 347.915171 21.6 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 60.266149 223.177187 
+L 347.915171 223.177187 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 60.266149 21.6 
+L 347.915171 21.6 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="legend_1">
+    <g id="patch_7">
+     <path d="M 231.657176 148.283754 
+L 340.215171 148.283754 
+Q 342.415171 148.283754 342.415171 146.083754 
+L 342.415171 98.693434 
+Q 342.415171 96.493434 340.215171 96.493434 
+L 231.657176 96.493434 
+Q 229.457176 96.493434 229.457176 98.693434 
+L 229.457176 146.083754 
+Q 229.457176 148.283754 231.657176 148.283754 
+z
+" style="fill: #ffffff; opacity: 0.8; stroke: #cccccc; stroke-linejoin: miter"/>
+    </g>
+    <g id="line2d_22">
+     <path d="M 233.857176 105.262612 
+L 244.857176 105.262612 
+L 244.857176 105.262612 
+L 255.857176 105.262612 
+L 255.857176 105.262612 
+" style="fill: none; stroke: #25848e; stroke-width: 2; stroke-linecap: square"/>
+    </g>
+    <g id="text_12">
+     <!-- $u(t)$ -->
+     <g transform="translate(264.657176 109.112612) scale(0.11 -0.11)">
+      <use xlink:href="#NimbusRomNo9L-ReguItal-75" transform="scale(0.996264)"/>
+      <use xlink:href="#CMR10-28" transform="translate(49.8132 0) scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-ReguItal-74" transform="translate(85.976417 0) scale(0.996264)"/>
+      <use xlink:href="#CMR10-29" transform="translate(120.445409 0) scale(0.996264)"/>
+     </g>
+    </g>
+    <g id="line2d_23">
+     <path d="M 233.857176 121.202338 
+L 244.857176 121.202338 
+L 255.857176 121.202338 
+" style="fill: none; stroke-dasharray: 5.55,2.4; stroke-dashoffset: 0; stroke: #d2e21b; stroke-width: 1.5"/>
+    </g>
+    <g id="text_13">
+     <!-- Input constraints -->
+     <g transform="translate(264.657176 125.052338) scale(0.11 -0.11)">
+      <defs>
+       <path id="NimbusRomNo9L-Regu-49" d="M 736 695 
+C 736 217 653 140 115 121 
+L 115 0 
+L 2016 0 
+L 2016 121 
+C 1491 140 1389 230 1389 695 
+L 1389 3528 
+C 1389 3994 1478 4077 2016 4102 
+L 2016 4224 
+L 115 4224 
+L 115 4102 
+C 659 4070 736 4000 736 3528 
+L 736 695 
+z
+" transform="scale(0.015625)"/>
+       <path id="NimbusRomNo9L-Regu-6e" d="M 102 2547 
+C 141 2566 205 2572 275 2572 
+C 454 2572 512 2476 512 2163 
+L 512 576 
+C 512 211 442 121 115 96 
+L 115 0 
+L 1472 0 
+L 1472 96 
+C 1146 121 1050 198 1050 428 
+L 1050 2227 
+C 1357 2515 1498 2591 1709 2591 
+C 2022 2591 2176 2393 2176 1971 
+L 2176 633 
+C 2176 230 2093 121 1773 96 
+L 1773 0 
+L 3104 0 
+L 3104 96 
+C 2790 128 2714 204 2714 518 
+L 2714 1984 
+C 2714 2585 2432 2944 1958 2944 
+C 1664 2944 1466 2835 1030 2425 
+L 1030 2931 
+L 986 2944 
+C 672 2828 454 2758 102 2655 
+L 102 2547 
+z
+" transform="scale(0.015625)"/>
+       <path id="NimbusRomNo9L-Regu-70" d="M 58 2515 
+C 115 2521 160 2521 218 2521 
+C 435 2521 480 2457 480 2157 
+L 480 -839 
+C 480 -1172 410 -1242 32 -1280 
+L 32 -1389 
+L 1581 -1389 
+L 1581 -1280 
+C 1101 -1274 1018 -1203 1018 -798 
+L 1018 211 
+C 1242 0 1395 -64 1664 -64 
+C 2419 -64 3008 652 3008 1580 
+C 3008 2374 2560 2944 1939 2944 
+C 1581 2944 1299 2783 1018 2438 
+L 1018 2931 
+L 979 2944 
+C 634 2809 410 2726 58 2617 
+L 58 2515 
+z
+M 1018 2137 
+C 1018 2329 1376 2559 1670 2559 
+C 2144 2559 2458 2073 2458 1331 
+C 2458 620 2144 140 1683 140 
+C 1382 140 1018 371 1018 563 
+L 1018 2137 
+z
+" transform="scale(0.015625)"/>
+       <path id="NimbusRomNo9L-Regu-75" d="M 3066 319 
+L 3034 319 
+C 2739 319 2669 390 2669 684 
+L 2669 2880 
+L 1658 2880 
+L 1658 2771 
+C 2054 2752 2131 2688 2131 2368 
+L 2131 864 
+C 2131 684 2099 595 2010 524 
+C 1837 384 1638 307 1446 307 
+C 1197 307 992 524 992 793 
+L 992 2880 
+L 58 2880 
+L 58 2790 
+C 365 2771 454 2675 454 2380 
+L 454 768 
+C 454 262 762 -64 1229 -64 
+C 1466 -64 1715 38 1888 211 
+L 2163 486 
+L 2163 -45 
+L 2189 -64 
+C 2509 64 2739 134 3066 224 
+L 3066 319 
+z
+" transform="scale(0.015625)"/>
+       <path id="NimbusRomNo9L-Regu-74" d="M 1632 2880 
+L 986 2880 
+L 986 3622 
+C 986 3686 979 3705 941 3705 
+C 896 3648 858 3590 813 3526 
+C 570 3174 294 2867 192 2841 
+C 122 2796 83 2751 83 2719 
+C 83 2700 90 2687 109 2675 
+L 448 2675 
+L 448 748 
+C 448 211 640 -64 1018 -64 
+C 1331 -64 1574 89 1786 422 
+L 1702 492 
+C 1568 332 1459 268 1318 268 
+C 1082 268 986 441 986 844 
+L 986 2675 
+L 1632 2675 
+L 1632 2880 
+z
+" transform="scale(0.015625)"/>
+       <path id="NimbusRomNo9L-Regu-63" d="M 2547 998 
+C 2240 550 2010 396 1645 396 
+C 1062 396 653 908 653 1644 
+C 653 2303 1005 2758 1523 2758 
+C 1754 2758 1837 2687 1901 2451 
+L 1939 2310 
+C 1990 2131 2106 2015 2240 2015 
+C 2406 2015 2547 2137 2547 2284 
+C 2547 2643 2099 2944 1562 2944 
+C 1248 2944 922 2815 659 2585 
+C 339 2303 160 1868 160 1363 
+C 160 531 666 -64 1376 -64 
+C 1664 -64 1920 38 2150 236 
+C 2323 390 2445 563 2637 940 
+L 2547 998 
+z
+" transform="scale(0.015625)"/>
+       <path id="NimbusRomNo9L-Regu-6f" d="M 1600 2944 
+C 768 2944 186 2329 186 1446 
+C 186 582 781 -64 1587 -64 
+C 2394 -64 3008 614 3008 1497 
+C 3008 2336 2419 2944 1600 2944 
+z
+M 1517 2764 
+C 2054 2764 2432 2150 2432 1273 
+C 2432 550 2144 115 1664 115 
+C 1414 115 1178 268 1043 524 
+C 864 857 762 1305 762 1760 
+C 762 2368 1062 2764 1517 2764 
+z
+" transform="scale(0.015625)"/>
+       <path id="NimbusRomNo9L-Regu-73" d="M 2016 2009 
+L 1990 2880 
+L 1920 2880 
+L 1907 2867 
+C 1850 2822 1843 2815 1818 2815 
+C 1779 2815 1715 2828 1645 2860 
+C 1504 2918 1363 2944 1197 2944 
+C 691 2944 326 2617 326 2155 
+C 326 1796 531 1539 1075 1231 
+L 1446 1019 
+C 1670 891 1779 737 1779 538 
+C 1779 256 1574 76 1248 76 
+C 1030 76 832 160 710 301 
+C 576 461 518 609 435 974 
+L 333 974 
+L 333 -26 
+L 416 -26 
+C 461 38 486 51 563 51 
+C 621 51 710 38 858 0 
+C 1037 -39 1210 -64 1325 -64 
+C 1818 -64 2227 307 2227 756 
+C 2227 1077 2074 1289 1690 1520 
+L 998 1930 
+C 819 2033 723 2193 723 2366 
+C 723 2623 922 2803 1216 2803 
+C 1581 2803 1773 2585 1920 2014 
+L 2016 2009 
+z
+" transform="scale(0.015625)"/>
+       <path id="NimbusRomNo9L-Regu-72" d="M 45 2496 
+C 134 2515 192 2521 269 2521 
+C 429 2521 486 2419 486 2137 
+L 486 537 
+C 486 217 442 172 32 96 
+L 32 0 
+L 1568 0 
+L 1568 96 
+C 1133 115 1024 211 1024 576 
+L 1024 2016 
+C 1024 2220 1299 2540 1472 2540 
+C 1510 2540 1568 2508 1638 2444 
+C 1741 2355 1811 2316 1894 2316 
+C 2048 2316 2144 2425 2144 2604 
+C 2144 2815 2010 2944 1792 2944 
+C 1523 2944 1338 2796 1024 2342 
+L 1024 2931 
+L 992 2944 
+C 653 2803 422 2720 45 2598 
+L 45 2496 
+z
+" transform="scale(0.015625)"/>
+       <path id="NimbusRomNo9L-Regu-61" d="M 2829 422 
+C 2720 332 2643 300 2547 300 
+C 2400 300 2355 390 2355 672 
+L 2355 1920 
+C 2355 2252 2323 2438 2227 2592 
+C 2086 2822 1811 2944 1434 2944 
+C 832 2944 358 2630 358 2227 
+C 358 2080 486 1952 634 1952 
+C 787 1952 922 2080 922 2220 
+C 922 2246 915 2278 909 2323 
+C 896 2380 890 2432 890 2476 
+C 890 2649 1094 2790 1350 2790 
+C 1664 2790 1837 2604 1837 2259 
+L 1837 1868 
+C 851 1472 742 1420 467 1177 
+C 326 1049 237 832 237 620 
+C 237 217 518 -64 909 -64 
+C 1190 -64 1453 70 1843 403 
+C 1875 70 1990 -64 2253 -64 
+C 2470 -64 2605 12 2829 256 
+L 2829 422 
+z
+M 1837 787 
+C 1837 588 1805 531 1670 454 
+C 1517 364 1338 307 1203 307 
+C 979 307 800 524 800 800 
+L 800 825 
+C 800 1203 1062 1433 1837 1715 
+L 1837 787 
+z
+" transform="scale(0.015625)"/>
+       <path id="NimbusRomNo9L-Regu-69" d="M 1120 2944 
+L 128 2592 
+L 128 2496 
+L 179 2502 
+C 256 2515 339 2521 397 2521 
+C 550 2521 608 2419 608 2137 
+L 608 652 
+C 608 192 544 121 102 96 
+L 102 0 
+L 1619 0 
+L 1619 96 
+C 1197 128 1146 192 1146 652 
+L 1146 2924 
+L 1120 2944 
+z
+M 819 4352 
+C 646 4352 499 4204 499 4025 
+C 499 3846 640 3699 819 3699 
+C 1005 3699 1152 3839 1152 4025 
+C 1152 4204 1005 4352 819 4352 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#NimbusRomNo9L-Regu-49" transform="scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-Regu-6e" transform="translate(33.17523 0) scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-Regu-70" transform="translate(82.98843 0) scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-Regu-75" transform="translate(132.801631 0) scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-Regu-74" transform="translate(182.614831 0) scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-Regu-63" transform="translate(235.216601 0) scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-Regu-6f" transform="translate(279.45017 0) scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-Regu-6e" transform="translate(329.26337 0) scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-Regu-73" transform="translate(379.076571 0) scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-Regu-74" transform="translate(417.830277 0) scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-Regu-72" transform="translate(445.525447 0) scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-Regu-61" transform="translate(478.700676 0) scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-Regu-69" transform="translate(522.934245 0) scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-Regu-6e" transform="translate(550.629415 0) scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-Regu-74" transform="translate(600.442615 0) scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-Regu-73" transform="translate(628.137785 0) scale(0.996264)"/>
+     </g>
+    </g>
+    <g id="line2d_24">
+     <path d="M 233.857176 137.294028 
+L 244.857176 137.294028 
+L 255.857176 137.294028 
+" style="fill: none; stroke: #463480; stroke-width: 1.8; stroke-linecap: square"/>
+    </g>
+    <g id="text_14">
+     <!-- $y(t)$ -->
+     <g transform="translate(264.657176 141.144028) scale(0.11 -0.11)">
+      <defs>
+       <path id="NimbusRomNo9L-ReguItal-79" d="M 96 2553 
+C 179 2572 224 2579 294 2579 
+C 659 2579 755 2419 1050 1318 
+C 1158 902 1312 153 1312 44 
+C 1312 -58 1274 -161 1178 -276 
+C 979 -538 851 -705 781 -782 
+C 646 -922 570 -974 486 -974 
+C 448 -974 403 -954 333 -903 
+C 237 -826 166 -794 96 -794 
+C -45 -794 -154 -903 -154 -1044 
+C -154 -1204 -13 -1326 173 -1326 
+C 582 -1326 1421 -365 2112 902 
+C 2547 1689 2726 2150 2726 2463 
+C 2726 2655 2566 2816 2374 2816 
+C 2227 2816 2125 2719 2125 2579 
+C 2125 2483 2176 2412 2304 2329 
+C 2426 2259 2470 2201 2470 2111 
+C 2470 1855 2234 1356 1690 454 
+L 1562 1196 
+C 1466 1759 1107 2816 1011 2816 
+L 986 2816 
+C 979 2809 954 2809 928 2809 
+C 870 2803 640 2764 301 2700 
+C 269 2694 186 2675 96 2662 
+L 96 2553 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#NimbusRomNo9L-ReguItal-79" transform="scale(0.996264)"/>
+      <use xlink:href="#CMR10-28" transform="translate(44.233569 0) scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-ReguItal-74" transform="translate(80.396785 0) scale(0.996264)"/>
+      <use xlink:href="#CMR10-29" transform="translate(114.865777 0) scale(0.996264)"/>
+     </g>
+    </g>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="matplotlib.axis_3">
+    <g id="ytick_5">
+     <g id="line2d_25">
+      <defs>
+       <path id="m6b5f7a04e0" d="M 0 0 
+L 3.5 0 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m6b5f7a04e0" x="347.915171" y="211.978454" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_15">
+      <!-- $\mathdefault{0.0}$ -->
+      <g transform="translate(354.915171 215.355743) scale(0.1 -0.1)">
+       <use xlink:href="#NimbusRomNo9L-Regu-30" transform="scale(0.996264)"/>
+       <use xlink:href="#CMMI10-3a" transform="translate(49.8132 0) scale(0.996264)"/>
+       <use xlink:href="#NimbusRomNo9L-Regu-30" transform="translate(77.408707 0) scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_26">
+      <g>
+       <use xlink:href="#m6b5f7a04e0" x="347.915171" y="155.984791" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_16">
+      <!-- $\mathdefault{0.1}$ -->
+      <g transform="translate(354.915171 159.36208) scale(0.1 -0.1)">
+       <use xlink:href="#NimbusRomNo9L-Regu-30" transform="scale(0.996264)"/>
+       <use xlink:href="#CMMI10-3a" transform="translate(49.8132 0) scale(0.996264)"/>
+       <use xlink:href="#NimbusRomNo9L-Regu-31" transform="translate(77.408707 0) scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_27">
+      <g>
+       <use xlink:href="#m6b5f7a04e0" x="347.915171" y="99.991128" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_17">
+      <!-- $\mathdefault{0.2}$ -->
+      <g transform="translate(354.915171 103.368417) scale(0.1 -0.1)">
+       <use xlink:href="#NimbusRomNo9L-Regu-30" transform="scale(0.996264)"/>
+       <use xlink:href="#CMMI10-3a" transform="translate(49.8132 0) scale(0.996264)"/>
+       <use xlink:href="#NimbusRomNo9L-Regu-32" transform="translate(77.408707 0) scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_8">
+     <g id="line2d_28">
+      <g>
+       <use xlink:href="#m6b5f7a04e0" x="347.915171" y="43.997465" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_18">
+      <!-- $\mathdefault{0.3}$ -->
+      <g transform="translate(354.915171 47.374754) scale(0.1 -0.1)">
+       <defs>
+        <path id="NimbusRomNo9L-Regu-33" d="M 979 2137 
+C 1357 2137 1504 2124 1658 2067 
+C 2054 1926 2304 1561 2304 1120 
+C 2304 582 1939 166 1466 166 
+C 1293 166 1165 211 928 364 
+C 736 480 627 524 518 524 
+C 371 524 275 435 275 300 
+C 275 76 550 -64 998 -64 
+C 1491 -64 1997 102 2298 364 
+C 2598 627 2765 998 2765 1427 
+C 2765 1753 2662 2054 2477 2252 
+C 2349 2393 2227 2470 1946 2592 
+C 2387 2892 2547 3129 2547 3475 
+C 2547 3993 2138 4352 1549 4352 
+C 1229 4352 947 4243 717 4038 
+C 525 3865 429 3699 288 3315 
+L 384 3289 
+C 646 3757 934 3967 1338 3967 
+C 1754 3967 2042 3686 2042 3283 
+C 2042 3052 1946 2822 1786 2662 
+C 1594 2470 1414 2374 979 2220 
+L 979 2137 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#NimbusRomNo9L-Regu-30" transform="scale(0.996264)"/>
+       <use xlink:href="#CMMI10-3a" transform="translate(49.8132 0) scale(0.996264)"/>
+       <use xlink:href="#NimbusRomNo9L-Regu-33" transform="translate(77.408707 0) scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="text_19">
+     <!-- \textbf{Plant Output}, $y(t)$ -->
+     <g transform="translate(379.10934 160.654057) rotate(-90) scale(0.1 -0.1)">
+      <defs>
+       <path id="NimbusRomNo9L-Medi-50" d="M 1677 1964 
+C 2541 1971 2758 1990 3040 2105 
+C 3558 2303 3840 2694 3840 3187 
+C 3840 3929 3232 4352 2163 4352 
+L 102 4352 
+L 102 4191 
+C 550 4153 640 4050 640 3599 
+L 640 752 
+C 640 353 557 224 256 185 
+C 237 185 173 172 102 160 
+L 102 0 
+L 2240 0 
+L 2240 160 
+C 1734 224 1677 282 1677 752 
+L 1677 1964 
+z
+M 1677 3903 
+C 1677 4051 1786 4127 1997 4127 
+C 2528 4127 2739 3846 2739 3155 
+C 2739 2751 2662 2508 2496 2361 
+C 2342 2233 2131 2188 1677 2188 
+L 1677 3903 
+z
+" transform="scale(0.015625)"/>
+       <path id="NimbusRomNo9L-Medi-61" d="M 3027 429 
+L 2963 366 
+C 2944 347 2925 341 2893 341 
+C 2803 341 2758 397 2758 498 
+L 2758 2141 
+C 2758 2670 2272 3008 1491 3008 
+C 768 3008 282 2683 282 2211 
+C 282 1953 435 1795 698 1795 
+C 954 1795 1133 1946 1133 2160 
+C 1133 2249 1094 2330 1018 2431 
+C 960 2494 941 2532 941 2570 
+C 941 2702 1120 2803 1344 2803 
+C 1715 2803 1882 2633 1882 2249 
+L 1882 1789 
+C 1120 1562 806 1436 570 1279 
+C 294 1090 160 876 160 605 
+C 160 221 461 -64 870 -64 
+C 1235 -64 1530 64 1882 378 
+C 1952 57 2093 -64 2406 -64 
+C 2682 -64 2880 38 3123 296 
+L 3027 429 
+z
+M 1875 655 
+C 1702 460 1574 385 1421 385 
+C 1229 385 1094 555 1094 807 
+C 1094 1172 1363 1436 1875 1568 
+L 1875 655 
+z
+" transform="scale(0.015625)"/>
+       <path id="NimbusRomNo9L-Medi-4f" d="M 2515 4416 
+C 1178 4416 224 3469 224 2137 
+C 224 812 1165 -128 2490 -128 
+C 3814 -128 4755 819 4755 2144 
+C 4755 3449 3802 4416 2515 4416 
+z
+M 2509 4204 
+C 3213 4204 3622 3430 3622 2099 
+C 3622 787 3226 83 2490 83 
+C 1754 83 1357 787 1357 2080 
+C 1357 3462 1760 4204 2509 4204 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#NimbusRomNo9L-Medi-50" transform="scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-Medi-6c" transform="translate(60.871631 0) scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-Medi-61" transform="translate(88.5668 0) scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-Medi-6e" transform="translate(138.380001 0) scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-Medi-74" transform="translate(193.771678 0) scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-Medi-4f" transform="translate(251.853508 0) scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-Medi-75" transform="translate(329.361878 0) scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-Medi-74" transform="translate(384.753555 0) scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-Medi-70" transform="translate(417.928785 0) scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-Medi-75" transform="translate(473.320461 0) scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-Medi-74" transform="translate(528.712138 0) scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-Regu-2c" transform="translate(561.887368 0) scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-ReguItal-79" transform="translate(611.700569 0) scale(0.996264)"/>
+      <use xlink:href="#CMR10-28" transform="translate(655.934137 0) scale(0.996264)"/>
+      <use xlink:href="#NimbusRomNo9L-ReguItal-74" transform="translate(692.097353 0) scale(0.996264)"/>
+      <use xlink:href="#CMR10-29" transform="translate(726.566346 0) scale(0.996264)"/>
+     </g>
+    </g>
+   </g>
+   <g id="line2d_29">
+    <path d="M 73.341105 144.383131 
+L 74.619829 120.197536 
+L 75.898553 99.085237 
+L 77.177278 81.046236 
+L 78.456002 66.080533 
+L 79.734726 54.188126 
+L 81.01345 45.369017 
+L 81.652813 42.111949 
+L 82.292175 39.623205 
+L 82.931537 37.902786 
+L 83.570899 36.837243 
+L 84.210261 36.052509 
+L 84.849623 35.519142 
+L 85.488985 35.237141 
+L 86.128347 35.206507 
+L 86.76771 35.42724 
+L 87.407072 35.89934 
+L 88.046434 36.622806 
+L 88.685796 37.597639 
+L 89.96452 40.278657 
+L 93.800693 49.520404 
+L 96.997504 57.650966 
+L 98.91559 63.248255 
+L 100.833676 69.617437 
+L 102.751763 76.75851 
+L 106.587936 92.237043 
+L 116.178367 131.719866 
+L 118.096454 138.670269 
+L 120.01454 144.905513 
+L 121.932627 150.425597 
+L 123.850713 155.218353 
+L 125.768799 159.256068 
+L 127.047524 161.527812 
+L 128.326248 163.463504 
+L 130.244334 165.8152 
+L 132.162421 167.719071 
+L 134.080507 169.190069 
+L 135.998593 170.244364 
+L 140.474128 172.310759 
+L 146.86775 175.18344 
+L 151.982647 177.846521 
+L 158.376268 181.423122 
+L 163.491165 184.507631 
+L 167.327338 187.069822 
+L 174.999683 192.361331 
+L 178.196494 194.308863 
+L 181.393304 195.961013 
+L 184.590115 197.328588 
+L 187.786926 198.420252 
+L 191.623099 199.427546 
+L 195.459271 200.160326 
+L 199.295444 200.653384 
+L 204.410341 201.033808 
+L 219.755032 202.079738 
+L 226.788016 202.84159 
+L 235.739085 204.090375 
+L 245.329517 205.358068 
+L 253.001863 206.177899 
+L 260.674208 206.762924 
+L 271.543364 207.322852 
+L 325.249783 209.530888 
+L 334.840215 209.777882 
+L 334.840215 209.777882 
+" clip-path="url(#p6f27963bb8)" style="fill: none; stroke: #463480; stroke-width: 1.8; stroke-linecap: square"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 60.266149 223.177187 
+L 60.266149 21.6 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 347.915171 223.177187 
+L 347.915171 21.6 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 60.266149 223.177187 
+L 347.915171 223.177187 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 60.266149 21.6 
+L 347.915171 21.6 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p6f27963bb8">
+   <rect x="60.266149" y="21.6" width="287.649021" height="201.577187"/>
+  </clipPath>
+ </defs>
 </svg>

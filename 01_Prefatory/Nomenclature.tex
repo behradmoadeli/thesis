@@ -6,7 +6,7 @@
 
 % \nomenclature[A]{$\text{R}_e$}{Rankine Number.\nomunit{$\text{R}_e = \frac{L v \rho}{\mu}$}}
 % \nomenclature[A]{$c$}{Speed of light in a vacuum.\nomunit{$299,792,458\, m/s$}}
-% Variables (Group A)
+
 % Variables (Group A)
 \nomenclature[A]{$t_m$}{Time\nomunit{s}}
 \nomenclature[A]{$z$}{Spatial coordinate along the reactor length\nomunit{m}}
@@ -47,6 +47,8 @@
 
 % Operators and Functions (Group C)
 \nomenclature[C]{$C(z,t_m)$}{Concentration profile in the reactor\nomunit{mol/m$^3$}}
+% \nomenclature[C]{$C_A(\zeta,t)$}{Concentration profile of the reactant \mathcal{A} in the reactor\nomunit{mol/m$^3$}}
+% \nomenclature[C]{$c(\zeta,t)$}{Deviation from concentration profile of the reactant\nomunit{$c(\zeta, t) = C_A(\zeta,t) - C_{A}^{ss}(\zeta)$}}
 \nomenclature[C]{$T(z,t_m)$}{Temperature profile in the reactor\nomunit{K}}
 \nomenclature[C]{$T_c(t_m)$}{Cooling jacket temperature\nomunit{K}}
 \nomenclature[C]{$C_r(z_r,t_m)$}{Concentration profile in the recycle stream\nomunit{mol/m$^3$}}
@@ -56,8 +58,8 @@
 \nomenclature[C]{$m_3(\zeta,t)$}{Dimensionless concentration in recycle}
 \nomenclature[C]{$m_4(\zeta,t)$}{Dimensionless temperature in recycle}
 \nomenclature[C]{$T_w(t)$}{Dimensionless cooling jacket temperature}
-\nomenclature[C]{$x(\zeta,t)$}{State vector of the system\ \nomunit{$[x_1, x_2, x_3, x_4]^\top$}}
-\nomenclature[C]{$x_i(\zeta,t)$}{$i$-th state\ \nomunit{Deviation from $m_{i,ss}(\zeta,t)$}}
+\nomenclature[C]{$x(\zeta,t)$}{State vector of the system\ \nomunit{$[x_1, x_2, \dots]^\top$}}
+\nomenclature[C]{$x_i(\zeta,t)$}{$i$-th state of the states vector $x(\zeta,t)$}
 \nomenclature[C]{$u(t)$}{Control input}
 \nomenclature[C]{$y(t)$}{Plant output}
 \nomenclature[C]{$\mathfrak{A}$}{System generator\ \nomunit{$\in \mathcal{L}(X,X)$}}
@@ -65,7 +67,6 @@
 \nomenclature[C]{$\mathfrak{C}$}{Output operator\ \nomunit{$\in \mathcal{L}(X,Y)$}}
 \nomenclature[C]{$\mathfrak{D}$}{Feedthrough operator\ \nomunit{$\in \mathcal{L}(U,Y)$}}
 \nomenclature[C]{$\mathfrak{R}(s,\mathfrak{A})$}{Resolvent of operator $\mathfrak{A}$}
-\nomenclature[C]{$Q_{MPC}$}{State cost operator for MPC\ \nomunit{$\in \mathcal{L}(X,X)$}}
 \nomenclature[C]{$R_{MPC}$}{Control cost operator for MPC\ \nomunit{$\in \mathcal{L}(U,U)$}}
 \nomenclature[C]{$P_{MPC}$}{Terminal cost operator for MPC\ \nomunit{$\in \mathcal{L}(X,X)$}}
 \nomenclature[C]{$\mathfrak{N}$}{Process noise operator\ \nomunit{$\in \mathcal{L}(W,X)$}}
@@ -74,6 +75,11 @@
 \nomenclature[C]{$Q_{MHE}$}{Disturbance tolerance operator in MHE\ \nomunit{$\in \mathcal{L}(W,W)$}}
 \nomenclature[C]{$R_{MHE}$}{Measurement tolerance operator in MHE\ \nomunit{$\in \mathcal{L}(Y,Y)$}}
 \nomenclature[C]{$P_{MHE}$}{Prior estimate tolerance operator in MHE\ \nomunit{$\in \mathcal{L}(X,X)$}}
+\nomenclature[C]{$k_{ric}$}{Riccati-based stabilizing feedback gain\ \nomunit{$\in \mathcal{L}(U,X)$}}
+\nomenclature[C]{$\mathfrak{L}$}{Luenberger-based observer gain\ \nomunit{$\in \mathcal{L}(Y,X)$}}
+\nomenclature[C]{$Q_{MPC}$}{State cost operator for MPC\ \nomunit{$\in \mathcal{L}(X,X)$}}
+
+
 
 % Subscripts and Superscripts (Group D)
 \nomenclature[D]{$x^{ss}$}{Steady-state value/profile of $x$}
@@ -83,6 +89,7 @@
 \nomenclature[D]{$x_k$}{Value of $x$ at time index $k$\nomunit{$x(k)$}}
 \nomenclature[D]{$x_{i|j}$}{Value of $x_i$ evaluated at $j$}
 \nomenclature[D]{$x_d$}{Discrete-time representation of $x$}
+\nomenclature[D]{$x_c$}{Continuous-time representation of $x$}
 
 % Mathematical Notation (Group E)
 \nomenclature[E]{$\mathbb{R}$}{Set of real numbers}

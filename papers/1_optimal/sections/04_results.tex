@@ -27,14 +27,16 @@ Initially, the input response of the system provided by the full-state feedback 
 
 \begin{figure}[!htbp]
     \centering
-    \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth,trim=0 0 100 0,clip]{papers/1_optimal/figures/3D_x1_k3.png}
+    \begin{subfigure}[t]{0.49\textwidth}
+        \includegraphics[width=\textwidth%,trim=0 0 100 0,clip
+        ]{papers/1_optimal/figures/3D_x1_k3.png}
         \caption{$N=3$}
         \label{fig:1_3D_x1_k3}
     \end{subfigure}
     \hfill
-    \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth,trim=0 0 100 0,clip]{papers/1_optimal/figures/3D_x1_k7.png}
+    \begin{subfigure}[t]{0.49\textwidth}
+        \includegraphics[width=\textwidth%,trim=0 0 100 0,clip
+        ]{papers/1_optimal/figures/3D_x1_k7.png}
         \caption{$N=7$}
         \label{fig:1_3D_x1_k7}
     \end{subfigure}
@@ -46,7 +48,8 @@ In order to offer a clearer representation of the state trajectory in time, spat
 
 \begin{figure}[!htbp]
     \centering
-    \includesvg[inkscapelatex=false, width=0.8\textwidth, keepaspectratio]{papers/1_optimal/figures/2D_xt_k7.svg}
+    \includesvg[inkscapelatex=false, width=\textwidth%, keepaspectratio
+    ]{papers/1_optimal/figures/2D_xt_k7.svg}
     \caption{2D cross-section plots of the full-state feedback input response at various $\zeta$ positions, utilizing the feedback gain obtained in Figure~\ref{fig:1_k_7}.}
     \label{fig:1_2D_xt_k7}
 \end{figure}
@@ -59,14 +62,15 @@ Omitting the need to have full access to system states, the observer-based regul
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=0.8\textwidth,trim=0 0 100 0,clip]{papers/1_optimal/figures/3D_x1_L_k7.png}
+    \includegraphics[width=0.8\textwidth%,trim=0 0 100 0,clip
+    ]{papers/1_optimal/figures/3D_x1_L_k7.png}
     \caption{Input response of the system under observer-based output feedback control given by Equation~(\ref{eq:1_observer_ss}), utilizing the observer gain obtained in Figure~\ref{fig:1_L_modes} and the feedback gain obtained in Figure~\ref{fig:1_k_7}.}
     \label{fig:1_3D_x1_L_k7}
 \end{figure}
 
 \begin{figure}[!htbp]
     \centering
-    \includesvg[inkscapelatex=false, width=0.8\textwidth, keepaspectratio]{papers/1_optimal/figures/2D_xt_L_k7.svg}
+    \includesvg[inkscapelatex=false, width=\textwidth, keepaspectratio]{papers/1_optimal/figures/2D_xt_L_k7.svg}
     \caption{2D cross-section plots of the input response at various $\zeta$ positions, utilizing the observer gain obtained in Figure~\ref{fig:1_L_modes} and the feedback gain obtained in Figure~\ref{fig:1_k_7}.}
     \label{fig:1_2D_xt_L_k7}
 \end{figure}
@@ -75,14 +79,15 @@ In the next step, the state estimation error dynamics of the observer are plotte
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=0.8\textwidth,trim=0 0 100 0,clip]{papers/1_optimal/figures/3D_e1_L_k7.png}
+    \includegraphics[width=0.8\textwidth%,trim=0 0 100 0,clip
+    ]{papers/1_optimal/figures/3D_e1_L_k7.png}
     \caption{Error dynamics of the observer-based regulator utilizing the observer gain obtained in Figure~\ref{fig:1_L_modes} and the feedback gain obtained in Figure~\ref{fig:1_k_7}.}
     \label{fig:1_3D_e1_L_k7}
 \end{figure}
 
 \begin{figure}[!htbp]
     \centering
-    \includesvg[inkscapelatex=false, width=0.8\textwidth, keepaspectratio]{papers/1_optimal/figures/2D_et_L_k7.svg}
+    \includesvg[inkscapelatex=false, width=\textwidth, keepaspectratio]{papers/1_optimal/figures/2D_et_L_k7.svg}
     \caption{2D cross-section plots of the error dynamics of the observer-based regulator at various $\zeta$ positions, utilizing the observer gain obtained in Figure~\ref{fig:1_L_modes} and the feedback gain obtained in Figure~\ref{fig:1_k_7}.}
     \label{fig:1_2D_et_L_k7}
 \end{figure}

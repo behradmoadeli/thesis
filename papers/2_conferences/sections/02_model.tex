@@ -7,25 +7,25 @@ The chemical process depicted in Fig.~\ref{fig:2_reactor_scheme} illustrates a c
 \begin{figure}[!htbp] 
     \centering
     \begin{tikzpicture}
-        \node (pfr) [cylinder, draw, minimum height=3cm, minimum width=1cm, shape aspect=1, shape border rotate=180, cylinder uses custom fill, cylinder end fill=gray!45, cylinder body fill=gray!15] {\hspace{-0.2cm}$A \rightarrow Products$};
-        \node (pfr_inlet) [circle, left of=pfr, xshift=-0.5cm, fill=black, draw, inner sep=0pt, minimum size=0.25cm, scale=0.5] {};
+        \node (pfr) [cylinder, draw, minimum height=5cm, minimum width=1.5cm, shape aspect=1, shape border rotate=180, cylinder uses custom fill, cylinder end fill=blue!30!gray, cylinder body fill=blue!15] {$\mathcal{A} \rightarrow {Products}$};
+        \node (pfr_inlet) [circle, left of=pfr, xshift=-1.5cm, fill=black, draw, inner sep=0pt, minimum size=0.25cm, scale=0.5] {};
         \node (pfr_outlet) [circle, at={(pfr.east)}, shift={(-0.25cm,0)}, fill=black, draw, inner sep=0pt, minimum size=0.25cm, scale=0.5] {};
         \node (recycle_right) [circle, right of=pfr_outlet, fill=black, draw, inner sep=0pt, minimum size=0.25cm, scale=0.5] {};
         \node (recycle_left) [circle, left of=pfr_inlet, fill=black, draw, inner sep=0pt, minimum size=0.25cm, scale=0.5] {};
-        
-        \draw[dotted, thick] ([yshift=0.5cm]pfr_inlet.center) -- node[at end, below, yshift=0.1cm] {$\zeta = 0$} ([yshift=-0.65cm]pfr_inlet.center);
-        \draw[dotted, thick] ([yshift=0.5cm]pfr_outlet.center) -- node[at end, below, yshift=0.1cm] {$\zeta = 1$} ([yshift=-0.65cm]pfr_outlet.center);
-        
-        \node[below of=recycle_left, node distance=1.3cm, anchor=north west, xshift=-0.2cm] {$R \, C_A(1, t-\tau)$};
-        \node[above of=pfr_inlet, node distance=0.75cm,] {$C_A(0, t)$};
-        \node[above of=pfr_outlet, node distance=0.75cm,] {$C_A(1, t)$};
+    
+        \draw[dotted, thick] ([yshift=0.75cm]pfr_inlet.center) -- node[at end, below, yshift=0cm] {$\zeta = 0$} ([yshift=-0.75cm]pfr_inlet.center);
+        \draw[dotted, thick] ([yshift=0.75cm]pfr_outlet.center) -- node[at end, below, yshift=0cm] {$\zeta = 1$} ([yshift=-0.75cm]pfr_outlet.center);
+    
+        \node[below of=recycle_left, node distance=1.75cm, anchor=north west, xshift=-0.2cm] {$R \, C_A(1, t-\tau)$};
+        \node[above of=pfr_inlet, node distance=1.05cm,] {$C_A(0, t)$};
+        \node[above of=pfr_outlet, node distance=1.05cm,] {$C_A(1, t)$};
         
         \draw [arrow_2] (pfr_outlet) -- node[near end, above] {$y(t)$} ++(2,0);
         \draw [arrow_2] (pfr_inlet) ++(-2,0) coordinate(start) -- node[near start, above] {$C_A^{feed}(t)$} (pfr_inlet);
-        \draw [arrow_2] (recycle_right) -- ++(0,-1.25) -| (recycle_left);
+        \draw [arrow_2] (recycle_right) -- ++(0,-1.75) -| (recycle_left);
         
     \end{tikzpicture}
-    \caption{Axial tubular reactor with recycle stream.}
+    \caption{Axial dispersion tubular reactor with recycle stream.}
     \label{fig:2_reactor_scheme}
     % \pdfbookmark[2]{Figure: Reactor Scheme}{fig:2_reactor_scheme}
 \end{figure}
@@ -55,25 +55,25 @@ These boundary conditions are therefore summarized in \eqref{eq:2_BC}, with $R$ 
     \end{cases}
 \end{align}
 
-In the case where the problem involves similar forms of PDEs, an effective general practice to address delays in systems is to reformulate the problem such that the notion of delay is replaced with an alternative transport PDE. Therefore, a new state variable $\underline{x}(\zeta, t) \equiv [x_1(\zeta, t), x_2(\zeta, t)]^T$ is defined as a vector of functions, where $x_1(\zeta, t)$ represents the concentration within the reactor—analogous to $c(\zeta,t)$—and $x_2(\zeta, t)$ is introduced as a new state variable to account for the concentration along the recycle stream. The delay is thus modeled as a pure transport process, wherein the first state $x_1(\zeta, t)$ is transported from the reactor outlet to the inlet, experiencing a delay of $\tau$ time units while in the recycle stream. This makes all state variables expressed explicitly at a specific time instance $t$, resulting in the standard state-space form for a given infinite-dimensional linear time-invariant (LTI) system given in \eqref{eq:2_state_space}.
+In the case where the problem involves similar forms of PDEs, an effective general practice to address delays in systems is to reformulate the problem such that the notion of delay is replaced with an alternative transport PDE. Therefore, a new state variable ${x}(\zeta, t) \equiv [x_1(\zeta, t), x_2(\zeta, t)]^T$ is defined as a vector of functions, where $x_1(\zeta, t)$ represents the concentration within the reactor—analogous to $c(\zeta,t)$—and $x_2(\zeta, t)$ is introduced as a new state variable to account for the concentration along the recycle stream. The delay is thus modeled as a pure transport process, wherein the first state $x_1(\zeta, t)$ is transported from the reactor outlet to the inlet, experiencing a delay of $\tau$ time units while in the recycle stream. This makes all state variables expressed explicitly at a specific time instance $t$, resulting in the standard state-space form for a given infinite-dimensional linear time-invariant (LTI) system given in \eqref{eq:2_state_space}.
 \begin{equation} \label{eq:2_state_space}
     \begin{aligned}
-        \dot{\underline{x}}(\zeta, t) &= \mathfrak{A} \underline{x}(\zeta, t) + \mathfrak{B} u(t) \\
-        y(t) &= \mathfrak{C} \underline{x}(\zeta, t) + \mathfrak{D} u(t) \\
+        \dot{{x}}(\zeta, t) &= \mathfrak{A} {x}(\zeta, t) + \mathfrak{B} u(t) \\
+        y(t) &= \mathfrak{C} {x}(\zeta, t) + \mathfrak{D} u(t) \\
     \end{aligned}
 \end{equation}
 
-Here, $\mathfrak{A}$ is a linear operator $\mathcal{L}(X)$ acting on a Hilbert space $X: L^2[0,1] \times L^2[0,1]$ and $\underline{x}(\zeta,t)$, as defined previously, is the vector of functions describing the states of the system. Input operator $\mathfrak{B}$ is a linear operator that maps the scalar input from input-space onto the state space. Output operator $\mathfrak{C}$ on the other hand, is a linear operator that maps the infinite-dimensional state space onto the finite-dimensional output space, resulting in a scalar output. The operator $\mathfrak{D}$ is the direct transmission operator, which is set to zero in this case as there is no direct transmission from the input to the output in the continuous-time system. The operators ($\mathfrak{A}$, $\mathfrak{B}$, $\mathfrak{C}$, and $\mathfrak{D}$) are shown in \eqref{eq:2_operator_A} for the infinite-dimensional LTI system.
+Here, $\mathfrak{A}$ is a linear operator $\mathcal{L}(X)$ acting on a Hilbert space $X: L^2[0,1] \times L^2[0,1]$ and ${x}(\zeta,t)$, as defined previously, is the vector of functions describing the states of the system. Input operator $\mathfrak{B}$ is a linear operator that maps the scalar input from input-space onto the state space. Output operator $\mathfrak{C}$ on the other hand, is a linear operator that maps the infinite-dimensional state space onto the finite-dimensional output space, resulting in a scalar output. The operator $\mathfrak{D}$ is the direct transmission operator, which is set to zero in this case as there is no direct transmission from the input to the output in the continuous-time system. The operators ($\mathfrak{A}$, $\mathfrak{B}$, $\mathfrak{C}$, and $\mathfrak{D}$) are shown in \eqref{eq:2_operator_A} for the infinite-dimensional LTI system.
 
 \begin{equation} \label{eq:2_operator_A}
     \begin{aligned}
         \mathfrak{A} &\equiv
         \begin{bmatrix}
-            D \partial_{\zeta \zeta} - v \partial_\zeta + k_r & 0 \\
+            D \partial_{\zeta \zeta} - v \partial_\zeta - k_r & 0 \\
             0 & \frac{1}{\tau} \partial_\zeta
         \end{bmatrix} \\
-        D(\mathfrak{A}) =& \Bigl\{ \underline{x}(\zeta) = [x_1(\zeta), x_2(\zeta)]^T \in X:\\
-        &\underline{x}(\zeta), \partial_\zeta \underline{x}(\zeta), \partial_{\zeta \zeta} \underline{x}(\zeta) \quad \mathrm{a.c.},\\
+        D(\mathfrak{A}) =& \Bigl\{ {x}(\zeta) = [x_1(\zeta), x_2(\zeta)]^T \in X:\\
+        &{x}(\zeta), \partial_\zeta {x}(\zeta), \partial_{\zeta \zeta} {x}(\zeta) \quad \mathrm{a.c.},\\
         &D \partial_\zeta x_1(0) - v x_1(0) = -v R x_2(0),\\
         &\partial_\zeta x_1(1) = 0,
         x_1(1) = x_2(1) \Bigr\}\\
@@ -98,7 +98,7 @@ Similar to \cite{Moadeli2025Optimal}, a negative reaction coefficient ($k_r$) is
 
 \begin{figure}[!htbp]
     \centering
-    \includesvg[inkscapelatex=false, width=0.35\textwidth, keepaspectratio]{papers/2_conferences/figures/eig_val_dist_R_0.3.svg}
+    \includesvg[inkscapelatex=false, width=0.60\textwidth, keepaspectratio]{papers/2_conferences/figures/eig_val_dist_R_0.3.svg}
     \caption{Eigenvalues of operator $\mathfrak{A}$.}
     \label{fig:2_eigval_dist}
 \end{figure}
@@ -121,7 +121,7 @@ Similar to \cite{Moadeli2025Optimal}, a negative reaction coefficient ($k_r$) is
 
 \subsection{Adjoint system}
 
-Next step is to obtain the adjoint system operators $\mathfrak{A}^*$ and $\mathfrak{B}^*$. Utilizing the relation $\langle \mathfrak{A} \underline{x} + \mathfrak{B} u, \underline{y}\rangle = \langle \underline{x}, \mathfrak{A}^* \underline{y}\rangle + \langle u, \mathfrak{B}^* \underline{y}\rangle$, the adjoint operators $\mathfrak{A}^*$ and $\mathfrak{B}^*$ are obtained as shown in \eqref{eq:2_adjoint_A} and \eqref{eq:2_adjoint_B}, respectively.
+Next step is to obtain the adjoint system operators $\mathfrak{A}^*$ and $\mathfrak{B}^*$. Utilizing the relation $\langle \mathfrak{A} {x} + \mathfrak{B} u, {y}\rangle = \langle {x}, \mathfrak{A}^* {y}\rangle + \langle u, \mathfrak{B}^* {y}\rangle$, the adjoint operators $\mathfrak{A}^*$ and $\mathfrak{B}^*$ are obtained as shown in \eqref{eq:2_adjoint_A} and \eqref{eq:2_adjoint_B}, respectively.
 
 
 \begin{equation} \label{eq:2_adjoint_A}
@@ -131,8 +131,8 @@ Next step is to obtain the adjoint system operators $\mathfrak{A}^*$ and $\mathf
             D \partial_{\zeta \zeta} + v \partial_\zeta - k_r & 0\\
             0 & -\frac{1}{\tau} \partial_\zeta
         \end{bmatrix}\\
-        D(\mathfrak{A}^*) =& \Bigl\{ \underline{y} = [y_1, y_2]^T \in Y:\\
-        &\underline{y}(\zeta), \partial_\zeta \underline{y}(\zeta), \partial_{\zeta \zeta} \underline{y}(\zeta) \quad \mathrm{a.c.},\\
+        D(\mathfrak{A}^*) =& \Bigl\{ {y} = [y_1, y_2]^T \in Y:\\
+        &{y}(\zeta), \partial_\zeta {y}(\zeta), \partial_{\zeta \zeta} {y}(\zeta) \quad \mathrm{a.c.},\\
         &D \partial_\zeta y_1(1) + v y_1(1) = \frac{1}{\tau} y_2(1), \\
         &R v y_1(0) = \frac{1}{\tau} y_2(0), 
         \partial_\zeta y_1(0) = 0 \Bigr\}
@@ -143,32 +143,32 @@ Next step is to obtain the adjoint system operators $\mathfrak{A}^*$ and $\mathf
     \mathfrak{B}^* (\cdot) = \Bigl[ v(1-R) \int_0^1 \delta(\zeta) (\cdot) d\zeta \quad , \quad 0 \Bigr]
 \end{equation}
 
-Once the adjoint operators are determined, the eigenfunctions $\{ \underline{\phi_i}(\zeta), \underline{\psi_i}(\zeta) \}$ (for $\mathfrak{A}$ and $\mathfrak{A}^*$, respectively) may be obtained and properly scaled following the calculation of eigenvalues. The set of scaled eigenfunctions will then form a bi-orthonormal basis for the Hilbert space $X$; which will be later used in the controller design. It is important to note that the system is not self adjoint, as the obtained adjoint operator and its domain are not the same as the original operator and its domain.
+Once the adjoint operators are determined, the eigenfunctions $\{ {\phi_i}(\zeta), {\psi_i}(\zeta) \}$ (for $\mathfrak{A}$ and $\mathfrak{A}^*$, respectively) may be obtained and properly scaled following the calculation of eigenvalues. The set of scaled eigenfunctions will then form a bi-orthonormal basis for the Hilbert space $X$; which will be later used in the controller design. It is important to note that the system is not self adjoint, as the obtained adjoint operator and its domain are not the same as the original operator and its domain.
 
 \subsection{Resolvent operator}
 
-One must obtain the resolvent operator of the system $\mathfrak{R}(s, \mathfrak{A}) = (sI-\mathfrak{A})^{-1}$ prior to constructing the discrete-time representation of the system. One way to obtain it is by utilizing the modal characteristics of the system, resulting in an infinite-sum representation of the operator. While being a common practice in the literature, truncating the infinite-sum representation for numerical implementation may lead to a loss of accuracy. Another way to express the resolvent operator is by treating it as an operator that maps either the initial condition of the system $\underline{x}(\zeta,0)$ or the input $u(t)$, to the Laplace transform of the state of the system $\underline{X}(\zeta, s)$. This approach, although more computationally intensive, results in a closed form expression for the resolvent operator, preserving the infinite-dimensional nature of the system. In \eqref{eq:2_resolvent}, Laplace transform is applied to the LTI representation of the system for both zero-input response and zero-state response to obtain a general expression for the resolvent operator.
+One must obtain the resolvent operator of the system $\mathfrak{R}(s, \mathfrak{A}) = (sI-\mathfrak{A})^{-1}$ prior to constructing the discrete-time representation of the system. One way to obtain it is by utilizing the modal characteristics of the system, resulting in an infinite-sum representation of the operator. While being a common practice in the literature, truncating the infinite-sum representation for numerical implementation may lead to a loss of accuracy. Another way to express the resolvent operator is by treating it as an operator that maps either the initial condition of the system ${x}(\zeta,0)$ or the input $u(t)$, to the Laplace transform of the state of the system ${X}(\zeta, s)$. This approach, although more computationally intensive, results in a closed form expression for the resolvent operator, preserving the infinite-dimensional nature of the system. In \eqref{eq:2_resolvent}, Laplace transform is applied to the LTI representation of the system for both zero-input response and zero-state response to obtain a general expression for the resolvent operator.
 
 \begin{equation} \label{eq:2_resolvent}
     \begin{aligned}
-        \dot{\underline{x}}(\zeta, t) &= \mathfrak{A} \underline{x}(\zeta, t) + \mathfrak{B} u(t) \xrightarrow{\mathcal{L}}\\
-        s \underline{X}(\zeta,s) - \underline{x}(\zeta,0) &= \mathfrak{A} \underline{X}(\zeta,s) + \mathfrak{B} U(s)\\
+        \dot{{x}}(\zeta, t) &= \mathfrak{A} {x}(\zeta, t) + \mathfrak{B} u(t) \xrightarrow{\mathcal{L}}\\
+        s {X}(\zeta,s) - {x}(\zeta,0) &= \mathfrak{A} {X}(\zeta,s) + \mathfrak{B} U(s)\\
         &\hspace{-7.5em}\begin{cases}
-            \xrightarrow{u = 0} &\underline{X}(\zeta,s) = (sI - \mathfrak{A})^{-1} \underline{x}(\zeta,0) = \mathfrak{R}(s, \mathfrak{A}) \underline{x}(\zeta,0)\\
-            \xrightarrow{\underline{x}(0, \zeta)}& \underline{X}(\zeta,s) = (sI - \mathfrak{A})^{-1} \mathfrak{B} U(s) = \mathfrak{R}(s, \mathfrak{A}) \mathfrak{B} U(s)
+            \xrightarrow{u = 0} &{X}(\zeta,s) = (sI - \mathfrak{A})^{-1} {x}(\zeta,0) = \mathfrak{R}(s, \mathfrak{A}) {x}(\zeta,0)\\
+            \xrightarrow{{x}(0, \zeta)}& {X}(\zeta,s) = (sI - \mathfrak{A})^{-1} \mathfrak{B} U(s) = \mathfrak{R}(s, \mathfrak{A}) \mathfrak{B} U(s)
         \end{cases}
     \end{aligned}
     \end{equation}
     
-    The goal is to obtain the solution for $\underline{X}(\zeta, s)$ and compare it with the general expression obtained in \eqref{eq:2_resolvent} to get the closed form expression for the resolvent operator. First step is to apply Laplace transform to the original system of PDEs in \eqref{eq:2_operator_A}. The second order derivative term is decomposed to two first order PDEs, constructing a new $3 \times 3$ system of first order ODEs with respect to $\zeta$ after Laplace transformation, as shown in \eqref{eq:2_laplace_transformed}.
+    The goal is to obtain the solution for ${X}(\zeta, s)$ and compare it with the general expression obtained in \eqref{eq:2_resolvent} to get the closed form expression for the resolvent operator. First step is to apply Laplace transform to the original system of PDEs in \eqref{eq:2_operator_A}. The second order derivative term is decomposed to two first order PDEs, constructing a new $3 \times 3$ system of first order ODEs with respect to $\zeta$ after Laplace transformation, as shown in \eqref{eq:2_laplace_transformed}.
     
     \begin{equation} \label{eq:2_laplace_transformed}
     \begin{aligned}
         \partial_\zeta \overbrace{\begin{bmatrix}
             X_1(\zeta,s)\\ \partial_\zeta X_1(\zeta,s)\\ X_2(\zeta,s)
-        \end{bmatrix}}^{\underline{\tilde{X}}(\zeta,s)} &= \overbrace{\begin{bmatrix}
+        \end{bmatrix}}^{{\tilde{X}}(\zeta,s)} &= \overbrace{\begin{bmatrix}
             0 & 1 & 0\\
-            \frac{s+k_r}{D} & \frac{v}{D} & 0\\
+            \frac{s-k_r}{D} & \frac{v}{D} & 0\\
             0 & 0 & s\tau
             \end{bmatrix}}^{P(s)} \, \begin{bmatrix}
                 X_1(\zeta,s)\\ \partial_\zeta X_1(\zeta,s)\\ X_2(\zeta,s)
@@ -176,17 +176,17 @@ One must obtain the resolvent operator of the system $\mathfrak{R}(s, \mathfrak{
             &+ \underbrace{\begin{bmatrix}
                 0\\ -\frac{x_1(\zeta,0)}{D} + v(1-R) \delta(\zeta) U(s)\\ -\tau x_2(\zeta,0)
             \end{bmatrix}}_{Z(\zeta,s)} \\
-            \Rightarrow \partial_\zeta \underline{\tilde{X}}(\zeta,s) &= P(s) \underline{\tilde{X}}(\zeta,s) + Z(\zeta,s)
+            \Rightarrow \partial_\zeta {\tilde{X}}(\zeta,s) &= P(s) {\tilde{X}}(\zeta,s) + Z(\zeta,s)
     \end{aligned}
     \end{equation} 
     
     with solution given by \eqref{eq:2_ODE_solution}.
     
     \begin{equation} \label{eq:2_ODE_solution}
-        \underline{\tilde{X}}(\zeta,s) = \underbrace{e^{P(s)\zeta}}_{T(\zeta,s)} \underline{\tilde{X}}(0,s) + \int_0^\zeta \underbrace{e^{P(s)(\zeta - \eta)}}_{F(\zeta, \eta)} Z(\eta,s) d\eta
+        {\tilde{X}}(\zeta,s) = \underbrace{e^{P(s)\zeta}}_{T(\zeta,s)} {\tilde{X}}(0,s) + \int_0^\zeta \underbrace{e^{P(s)(\zeta - \eta)}}_{F(\zeta, \eta)} Z(\eta,s) d\eta
     \end{equation}
     
-    Since the boundary conditions are not homogeneous, $\underline{\tilde{X}}(0,s)$ needs to be obtained by solving the system of algebraic equations given in \eqref{eq:2_BC_AE}; which is the result of applying Danckwerts boundary conditions to the Laplace transformed system of PDEs at $\zeta = 1$.
+    Since the boundary conditions are not homogeneous, ${\tilde{X}}(0,s)$ needs to be obtained by solving the system of algebraic equations given in \eqref{eq:2_BC_AE}; which is the result of applying Danckwerts boundary conditions to the Laplace transformed system of PDEs at $\zeta = 1$.
     
     \begin{equation} \label{eq:2_BC_AE}
     \begin{aligned}
@@ -194,19 +194,19 @@ One must obtain the resolvent operator of the system $\mathfrak{R}(s, \mathfrak{
                 -v & D & Rv\\
                 T_{11}(1,s) & T_{12}(1,s) & -T_{33}(1,s)\\
                 T_{21}(1,s) & T_{22}(1,s) & 0
-            \end{bmatrix}}^{M^{-1}(s)} \underline{\tilde{X}}(0,s) =\\ 
+            \end{bmatrix}}^{M^{-1}(s)} {\tilde{X}}(0,s) =\\ 
             &\underbrace{\int_0^1 \begin{bmatrix}
                 0\\ F_{33}(1, \eta) Z_3(\eta,s) - F_{12}(1, \eta) Z_2(\eta,s)\\ -F_{22}(1, \eta) Z_2(\eta,s)
-            \end{bmatrix} d\eta}_{\underline{b}(s)} \\
-            \Rightarrow &\underline{\tilde{X}}(0,s) = M(s) \underline{b}(s)
+            \end{bmatrix} d\eta}_{{b}(s)} \\
+            \Rightarrow &{\tilde{X}}(0,s) = M(s) {b}(s)
     \end{aligned}
     \end{equation}
     
-    Having access to $\underline{\tilde{X}}(0,s)$, the solution for $\underline{X}(\zeta,s)$ can be explicitly derived. The resolvent operator for zero-input and zero-state cases are therefore obtained in a closed form as shown in \eqref{eq:2_resolvent_x} and \eqref{eq:2_resolvent_u}, respectively.
+    Having access to ${\tilde{X}}(0,s)$, the solution for ${X}(\zeta,s)$ can be explicitly derived. The resolvent operator for zero-input and zero-state cases are therefore obtained in a closed form as shown in \eqref{eq:2_resolvent_x} and \eqref{eq:2_resolvent_u}, respectively.
     
     \begin{equation} \label{eq:2_resolvent_x}
     \begin{aligned}
-        &U(s) = 0 \Rightarrow \mathfrak{R}(s, \mathfrak{A}) \underline{(\cdot)} = \begin{bmatrix}
+        &U(s) = 0 \Rightarrow \mathfrak{R}(s, \mathfrak{A}) {(\cdot)} = \begin{bmatrix}
             \mathfrak{R}_{11} & \mathfrak{R}_{12}\\
             \mathfrak{R}_{21} & \mathfrak{R}_{22}
         \end{bmatrix} \begin{bmatrix}
@@ -223,7 +223,7 @@ One must obtain the resolvent operator of the system $\mathfrak{R}(s, \mathfrak{
     
     \begin{equation} \label{eq:2_resolvent_u}
     \begin{aligned}
-        &\underline{x}(\zeta,0) = 0 \Rightarrow \mathfrak{R}(s, \mathfrak{A}) \mathfrak{B} (\cdot) = \begin{bmatrix}
+        &{x}(\zeta,0) = 0 \Rightarrow \mathfrak{R}(s, \mathfrak{A}) \mathfrak{B} (\cdot) = \begin{bmatrix}
             \mathfrak{R}_{1} \mathfrak{B}\\
             \mathfrak{R}_{2} \mathfrak{B}
         \end{bmatrix} (\cdot) \Rightarrow\\
@@ -238,7 +238,7 @@ To avoid redundancy, the derivation of the resolvent operator for the adjoint sy
 
 \subsection{Cayley–Tustin Time Discretization}
 
-To implement the system on digital controllers, it is necessary to transition to a discrete-time framework while preserving critical properties such as stability and controllability. The Cayley–Tustin time-discretization method achieves this by mapping the continuous-time system to the discrete domain \cite{havu2007cayley, xu2017linear}. This Crank–Nicolson type of discretization is also known as the lowest order symplectic integrator in Gauss quadrature-based Runge–Kutta methods \cite{hairer2006geometric}. Considering $\Delta t$ as the sampling time, and assuming a piecewise constant input within time intervals (zero-order hold), the discrete-time representation $\underline{x}(\zeta, k) = \mathfrak{A}_d \underline{x}(\zeta, k-1) + \mathfrak{B}_d u(k)$ is obtained, with discrete-time operators $\mathfrak{A}_d$, $\mathfrak{B}_d$, $\mathfrak{C}_d$, and $\mathfrak{D}_d$ defined in \eqref{eq:2_discrete_AB}, where $\alpha = 2/{\Delta t}$.
+To implement the system on digital controllers, it is necessary to transition to a discrete-time framework while preserving critical properties such as stability and controllability. The Cayley–Tustin time-discretization method achieves this by mapping the continuous-time system to the discrete domain \cite{havu2007cayley, xu2017linear}. This Crank–Nicolson type of discretization is also known as the lowest order symplectic integrator in Gauss quadrature-based Runge–Kutta methods \cite{hairer2006geometric}. Considering $\Delta t$ as the sampling time, and assuming a piecewise constant input within time intervals (zero-order hold), the discrete-time representation ${x}(\zeta, k) = \mathfrak{A}_d {x}(\zeta, k-1) + \mathfrak{B}_d u(k)$ is obtained, with discrete-time operators $\mathfrak{A}_d$, $\mathfrak{B}_d$, $\mathfrak{C}_d$, and $\mathfrak{D}_d$ defined in \eqref{eq:2_discrete_AB}, where $\alpha = 2/{\Delta t}$.
 
 \begin{equation} \label{eq:2_discrete_AB}
     \begin{bmatrix}

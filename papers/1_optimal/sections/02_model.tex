@@ -5,7 +5,7 @@
 \begin{figure}[!htbp]
     \centering
     \begin{tikzpicture}
-        \node (pfr) [cylinder, draw, minimum height=5cm, minimum width=1.5cm, shape aspect=1, shape border rotate=180, cylinder uses custom fill, cylinder end fill=green!30!gray, cylinder body fill=green!15] {$\mathcal{A} \rightarrow {Products}$};
+        \node (pfr) [cylinder, draw, minimum height=5cm, minimum width=1.5cm, shape aspect=1, shape border rotate=180, cylinder uses custom fill, cylinder end fill=red!30!gray, cylinder body fill=red!15] {$\mathcal{A} \rightarrow {Products}$};
         \node (pfr_inlet) [circle, left of=pfr, xshift=-1.5cm, fill=black, draw, inner sep=0pt, minimum size=0.25cm, scale=0.5] {};
         \node (pfr_outlet) [circle, at={(pfr.east)}, shift={(-0.25cm,0)}, fill=black, draw, inner sep=0pt, minimum size=0.25cm, scale=0.5] {};
         \node (recycle_right) [circle, right of=pfr_outlet, fill=black, draw, inner sep=0pt, minimum size=0.25cm, scale=0.5] {};
@@ -23,7 +23,7 @@
         \draw [arrow_2] (recycle_right) -- ++(0,-1.75) -| (recycle_left);
         
     \end{tikzpicture}
-    \caption{Axial tubular reactor with recycle stream.}
+    \caption{Axial dispersion tubular reactor with recycle stream.}
     \label{fig:1_reactor_scheme}
 \end{figure}
 
@@ -34,7 +34,7 @@ The chemical process illustrated in Figure~\ref{fig:1_reactor_scheme} represents
     \dot{C_A}(\zeta, t) = D \partial_{\zeta \zeta} C_A(\zeta, t) - v \partial_\zeta C_A(\zeta, t) + r(C_A)
 \end{equation}
 
-Here, $C_A(\zeta, t)$ denotes the concentration of reactant $A$ along the reactor. The physical parameters $D$ and $v$ correspond to the diffusion coefficient and flow velocity along the reactor, respectively. It is worth noting that the system properties are assumed to be constant against changes in temperature and pressure. The spatial and temporal coordinates of the system are represented by $\zeta$ and $t$, where $\zeta \in [0, 1]$ and $t \in [0, \infty)$. In addition, $r(C_A)$ is the reaction rate by which the reactant is consumed. Considering the reaction term in general can be non-linear, the model is further linearized around its steady-state, followed by replacing the reactant concentration $C_A$ with its deviations from the steady-state concentration $C_{A,ss}$. The result is given in Equation~(\ref{eq:1_PDE_original_model}).
+Here, $C_A(\zeta, t)$ denotes the concentration of reactant $A$ along the reactor. The physical parameters $D$ and $v$ correspond to the diffusion coefficient and flow velocity along the reactor, respectively. It is worth noting that the system properties are assumed to be constant against changes in temperature and pressure. The spatial and temporal coordinates of the system are represented by $\zeta$ and $t$, where $\zeta \in [0, 1]$ and $t \in [0, \infty)$. In addition, $r(C_A)$ is the reaction rate by which the reactant is consumed. Considering the reaction term in general can be non-linear, the model is further linearized around its steady-state, followed by replacing the reactant concentration $C_A$ with its deviations from the steady-state concentration $C_{A}^{ss}$. The result is given in Equation~(\ref{eq:1_PDE_original_model}).
 
 \begin{equation} \label{eq:1_PDE_original_model}
     \dot{c}(\zeta, t) = D \partial_{\zeta \zeta} c(\zeta, t) - v \partial_\zeta c(\zeta, t) - k_r c(\zeta, t)
@@ -50,7 +50,7 @@ where $c(\zeta, t) \equiv C_A(\zeta, t) - C_{A, ss}(\zeta)$ is the deviation fro
     \end{cases}
 \end{align}
 
-Here, parameters $R$ and $\tau$ correspond to the recycle ratio and the residence time along the recycle stream, respectively. Accounting for deviations from perfect mixing and piston flow and assuming negligible transport lags in connecting lines \autocite{Danckwerts1953Continuous}, the Danckwerts boundary conditions have become an inseparable part of modelling axial tubular reactors in the field of chemical engineering process control and dynamics. While capturing physical significance, Danckwerts boundary conditions maintain generality without unnecessarily simplifying the model as they belong to the general class of Robin boundary conditions.
+Here, parameters $R$ and $\tau$ correspond to the recycle ratio and the residence time along the recycle stream, respectively. Accounting for deviations from perfect mixing and piston flow and assuming negligible transport lags in connecting lines \autocite{Danckwerts1953Continuous}, the Danckwerts boundary conditions have become an inseparable part of modelling axial dispersion tubular reactors in the field of chemical engineering process control and dynamics. While capturing physical significance, Danckwerts boundary conditions maintain generality without unnecessarily simplifying the model as they belong to the general class of Robin boundary conditions.
 
 
 \subsection{PDE representation of the delay term}
@@ -64,7 +64,7 @@ One effective method for addressing delay in systems is to represent the delay u
     \end{bmatrix}
     =
     \begin{bmatrix}
-        D \partial_{\zeta \zeta} - v \partial_\zeta + k_r && 0 \\
+        D \partial_{\zeta \zeta} - v \partial_\zeta - k_r && 0 \\
         0 && \frac{1}{\tau} \partial_\zeta
     \end{bmatrix}
     \begin{bmatrix}
@@ -84,7 +84,7 @@ With all state variables now expressed explicitly at a specific time instance $t
     \begin{aligned}
         \mathfrak{A} \equiv&
         \begin{bmatrix}
-            D \partial_{\zeta \zeta} - v \partial_\zeta + k_r & 0 \\
+            D \partial_{\zeta \zeta} - v \partial_\zeta - k_r & 0 \\
             0 & \frac{1}{\tau} \partial_\zeta
         \end{bmatrix}\\
         \mathcal{D}(\mathfrak{A}) =& \Bigl\{ {x} = [x_1, x_2]^T \in X:

@@ -73,11 +73,11 @@ Due to the infinite-dimensional nature of $\tilde{P}$, a numerical solution is i
 
 \begin{equation} \label{eq:1_fullstate_gain}
     \begin{aligned}
-        u(t) &= - \langle {K}(\zeta), {x}(\zeta, t) \rangle = - \mathfrak{B}^* \mathbf{\Pi} {x}(\zeta, t) \\
+        u(t) &= - \langle k_{ric}(\zeta), {x}(\zeta, t) \rangle = - \mathfrak{B}^* \mathbf{\Pi} {x}(\zeta, t) \\
         &= - \sum_{i=1}^N\sum_{j=1}^N p_{i,j} \langle {x}(\zeta, t), {\psi_j}(\zeta) \rangle \gamma_i \\
         &= - \sum_{i=1}^N\sum_{j=1}^N p_{i,j} \gamma_i \int_0^1 {x}(\zeta, t) \cdot \overline{{\psi_j}}(\zeta) d\zeta \\
         &= - \int_0^1 \sum_{i=1}^N\sum_{j=1}^N p_{i,j} \gamma_i \overline{{\psi_j}}(\zeta) \cdot {x}(\zeta, t) d\zeta \\
-        \Rightarrow {K}(\zeta) &\equiv \sum_{i=1}^N\sum_{j=1}^N p_{i,j} \gamma_i \overline{{\psi_j}}(\zeta)
+        \Rightarrow k_{ric}(\zeta) &\equiv \sum_{i=1}^N\sum_{j=1}^N p_{i,j} \gamma_i \overline{{\psi_j}}(\zeta)
     \end{aligned}
 \end{equation}
 
@@ -86,7 +86,7 @@ The computed gain is a function of space and is calculated offline. The control 
 \begin{equation}
     \begin{aligned} \label{eq:1_fullstate_ss}
         \dot{x}(\zeta, t) &= \mathfrak{A} {x}(\zeta, t) + \mathfrak{B} u(t) \\
-        &= (\mathfrak{A} - \mathfrak{B} {K}) \, {x}(\zeta, t) \\
+        &= (\mathfrak{A} - \mathfrak{B} k_{ric}) \, {x}(\zeta, t) \\
         &= \mathfrak{A}_{reg} \, {x}(\zeta, t)
     \end{aligned}
 \end{equation}
@@ -108,7 +108,7 @@ By selecting $\mathfrak{Q} = 0.05$ as a constant function over $\zeta = [0,1]$, 
         \caption{$N = 7$}
         \label{fig:1_k_7}
     \end{subfigure}
-    \caption{Full-state feedback gain ${K}(\zeta)$ utilizing the first $N$ modes of the system given by Equation~(\ref{eq:1_fullstate_gain}).}
+    \caption{Full-state feedback gain $k_{ric}(\zeta)$ utilizing the first $N$ modes of the system given by Equation~(\ref{eq:1_fullstate_gain}).}
     \label{fig:1_k_modes}
 \end{figure}
 
@@ -127,7 +127,7 @@ By selecting $\mathfrak{Q} = 0.05$ as a constant function over $\zeta = [0,1]$, 
 
 \subsection{Output feedback compensator} \label{sec:1_output_design}
 
-Thus far, the optimal regulator is designed under the assumption that it has full access to the system's states. However, this assumption is not feasible in realistic applications. To address this, an observer is introduced to estimate and reconstruct the states by measuring the system's output in real time, and providing the regulator with the reconstructed states to further stabilize the system. The output, in this context, is taken as the concentration at the reactor outlet, as defined in Equation~\ref{eq:1_BC}. This leads to the definition of the output operator $\mathfrak{C}$ in the linear time-invariant (LTI) system $\mathbf{\Sigma(\mathfrak{A},\mathfrak{B},\mathfrak{C},-)}$, which is subsequently used to determine the observer gain, ${L}(\zeta)$. The formulation is shown in Equation~\ref{eq:1_C}:
+Thus far, the optimal regulator is designed under the assumption that it has full access to the system's states. However, this assumption is not feasible in realistic applications. To address this, an observer is introduced to estimate and reconstruct the states by measuring the system's output in real time, and providing the regulator with the reconstructed states to further stabilize the system. The output, in this context, is taken as the concentration at the reactor outlet, as defined in Equation~\ref{eq:1_BC}. This leads to the definition of the output operator $\mathfrak{C}$ in the linear time-invariant (LTI) system $\mathbf{\Sigma(\mathfrak{A},\mathfrak{B},\mathfrak{C},-)}$, which is subsequently used to determine the observer gain, $\mathfrak{L}(\zeta)$. The formulation is shown in Equation~\ref{eq:1_C}:
 
 \begin{equation} \label{eq:1_C}
     \mathfrak{C} \equiv \begin{bmatrix}
@@ -140,7 +140,7 @@ where $\delta(\zeta)$ denotes the Dirac delta function. Regarding the choice of 
 \begin{figure}[!htbp]
     \centering
     \includesvg[inkscapelatex=false, width=0.8\textwidth, keepaspectratio]{papers/1_optimal/figures/L.svg}
-    \caption{Observer gain ${L}(\zeta)$.}
+    \caption{Observer gain $\mathfrak{L}(\zeta)$.}
     \label{fig:1_L_modes}
 \end{figure}
 
@@ -176,15 +176,15 @@ The dynamics of the augmented observer-controller system are described by the st
         \end{array}\right] &= 
         \left[
             \begin{array}{c|c}
-                \mathfrak{A} & -\mathfrak{B} {K} \\ \hline
-                {L} \mathfrak{C} & \mathfrak{A} - \mathfrak{B} {K} - {L} \mathfrak{C}
+                \mathfrak{A} & -\mathfrak{B} k_{ric} \\ \hline
+                \mathfrak{L} \mathfrak{C} & \mathfrak{A} - \mathfrak{B} k_{ric} - \mathfrak{L} \mathfrak{C}
             \end{array}
         \right]
         \left[ \begin{array}{c}
             {x}(\zeta,t) \\ \hline \hat{{x}}(\zeta,t) \end{array}
             \right] \\
         \dot{{e}}(\zeta,t) &= \left[ \dot{{x}}(\zeta,t) - \dot{\hat{{x}}}(\zeta,t) \right] \\
-        &= (\mathfrak{A} - {L} \mathfrak{C}) \, {e}(\zeta,t) \\
+        &= (\mathfrak{A} - \mathfrak{L} \mathfrak{C}) \, {e}(\zeta,t) \\
         &= \mathfrak{A}_{est} \, {e}(\zeta,t)
     \end{aligned}
 \end{equation}

@@ -6,25 +6,25 @@ This section presents numerical simulations of the closed-loop system under both
 
 As the eigenvalue distribution obtained in Fig.~\ref{fig:2_eigval_dist} suggests, the open-loop system is unstable due to the presence of an eigenvalue with positive real part. The zero-input response of the system is shown in Fig.~\ref{fig:2_open} where the initial condition for the reactor is set to $c(\zeta ,0) = \sin^2(\pi \zeta)$. The recycle stream is assumed to be empty at the beginning of the simulation.
 
-An infinite-dimensional MPC is designed and applied to the unstable system. The closed-loop response of the system is shown in Fig.~\ref{fig:2_closed} and the control input as well as the measured output is shown in Fig.~\ref{fig:2_input}. It may be confirmed that the MPC successfully stabilizes the unstable system while satisfying the input constraints.
-
 \begin{figure}[!htbp]
     \centering
-    \includesvg[inkscapelatex=false, width=0.65\textwidth, keepaspectratio]{papers/2_conferences/figures/openloop_response.svg}
+    \includesvg[inkscapelatex=false, width=0.85\textwidth, keepaspectratio]{papers/2_conferences/figures/openloop_response.svg}
     \caption{Open-loop concentration profile along the reactor.}
     \label{fig:2_open}
 \end{figure}
 
+An infinite-dimensional MPC is designed and applied to the unstable system. The closed-loop response of the system is shown in Fig.~\ref{fig:2_closed} and the control input as well as the measured output is shown in Fig.~\ref{fig:2_input}. It may be confirmed that the MPC successfully stabilizes the unstable system while satisfying the input constraints.
+
 \begin{figure}[!htbp]
     \centering
-    \includesvg[inkscapelatex=false, width=0.65\textwidth, keepaspectratio]{papers/2_conferences/figures/closedloop_response_acc.svg}
+    \includesvg[inkscapelatex=false, width=0.85\textwidth, keepaspectratio]{papers/2_conferences/figures/closedloop_response_acc.svg}
     \caption{Stabilized reactor concentration profile under the proposed full-state MPC.}
     \label{fig:2_closed}
 \end{figure}
 
 \begin{figure}[!htbp]
     \centering
-    \includesvg[inkscapelatex=false, width=0.65\textwidth, keepaspectratio]{papers/2_conferences/figures/input_acc.svg}
+    \includesvg[inkscapelatex=false, width=0.85\textwidth, keepaspectratio]{papers/2_conferences/figures/input_acc.svg}
     \caption{Input profile and reactor output under full-state MPC, subject to constraints.}
     \label{fig:2_input}
 \end{figure}
@@ -37,25 +37,27 @@ To evaluate the performance of the output-feedback controller, numerical simulat
 
 The eigenvalue distribution shown previously in Fig.~\ref{fig:2_eigval_dist} confirms that the open-loop system is unstable due to the presence of an eigenvalue with a positive real part. The observer gain is selected as a constant function $L_c = 1$, and the estimated state is initialized to zero across the domain. %XXX explain gain choice if space allows
 
-The closed-loop reactor response under the proposed output-feedback controller is shown in Fig.~\ref{fig:2_closed_ECC}, and the corresponding control input and measured output are shown in Fig.~\ref{fig:2_input_ECC}. The evolution of the state estimation error is depicted in Fig.~\ref{fig:2_error_ECC}. These results confirm that the observer-based MPC successfully stabilizes the unstable system while adhering to input constraints, using only output measurements.
+The closed-loop reactor response under the proposed output-feedback controller is shown in Fig.~\ref{fig:2_closed_ECC}, and the corresponding control input and measured output are shown in Fig.~\ref{fig:2_input_ECC}. 
 
 \begin{figure}[!htbp]
     \centering
-    \includesvg[inkscapelatex=false, width=0.65\textwidth, keepaspectratio]{papers/2_conferences/figures/closedloop_response.svg}
+    \includesvg[inkscapelatex=false, width=0.85\textwidth, keepaspectratio]{papers/2_conferences/figures/closedloop_response.svg}
     \caption{Stabilized reactor concentration profile under the proposed observer-based MPC.}
     \label{fig:2_closed_ECC}
 \end{figure}
 
 \begin{figure}[!htbp]
     \centering
-    \includesvg[inkscapelatex=false, width=0.65\textwidth, keepaspectratio]{papers/2_conferences/figures/input.svg}
+    \includesvg[inkscapelatex=false, width=0.85\textwidth, keepaspectratio]{papers/2_conferences/figures/input.svg}
     \caption{Input profile and reactor output under observer-based MPC.}
     \label{fig:2_input_ECC}
 \end{figure}
 
+The evolution of the state estimation error is depicted in Fig.~\ref{fig:2_error_ECC}. These results confirm that the observer-based MPC successfully stabilizes the unstable system while adhering to input constraints, using only output measurements.
+
 \begin{figure}[!htbp]
     \centering
-    \includesvg[inkscapelatex=false, width=0.65\textwidth, keepaspectratio]{papers/2_conferences/figures/observation_error.svg}
+    \includesvg[inkscapelatex=false, width=0.85\textwidth, keepaspectratio]{papers/2_conferences/figures/observation_error.svg}
     \caption{State reconstruction error profile along the reactor.}
     \label{fig:2_error_ECC}
 \end{figure}
