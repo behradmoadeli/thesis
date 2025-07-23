@@ -59,7 +59,7 @@ To eliminate the unknown value $\tilde{X}(0, s)$, we impose the Laplace-transfor
 Evaluating Equation~\eqref{eq:3_resolvent_voc} at $\zeta = 1$ and substituting the result $\tilde{X}(1, s) = \tilde{T}(1, s)\, \tilde{X}(0, s) + \mathcal{I}_1[\tilde{z}(\zeta, s)]$ into Equation~\eqref{eq:3_resolvent_bc} followed by solving for $\tilde{X}(0, s)$ yields the relation shown in Equation~\eqref{eq:3_resolvent_x0}, where $\mathcal{M}(s)$ is the boundary matching operator.
 
 \begin{equation} \label{eq:3_resolvent_x0}
-    \tilde{X}(0, s) = -\mathcal{M}(s)\, \mathcal{I}_1[\tilde{z}(\zeta, s)], \quad \text{with} \quad \mathcal{M}(s) := \left( M_0(s) + M_1(s)\, \tilde{T}(1, s) \right)^{-1} M_1(s)
+    \tilde{X}(0, s) = -\mathcal{M}(s)\, \mathcal{I}_1[\tilde{z}(\zeta, s)], \, \text{with} \, \mathcal{M}(s) := \left( M_0(s) + M_1(s)\, \tilde{T}(1, s) \right)^{-1} M_1(s)
 \end{equation}
 
 Substituting Equation~\eqref{eq:3_resolvent_x0} back into Equation~\eqref{eq:3_resolvent_voc} gives the final expression for the augmented solution, shown in Equation~\eqref{eq:3_resolvent_final}. 
@@ -143,7 +143,7 @@ This expression can be decomposed into a sum of lifted operator terms acting on 
 \tilde{Z}(\zeta, s) = \mathcal{Q}^x\, x_0(\zeta) + \mathcal{Q}^u\, \mathfrak{B}\, U(s)
 \end{equation}
 
-Here, the initial condition is denoted by $x_0(\zeta) = \begin{bmatrix} x_1(\zeta, 0) & x_2(\zeta, 0) & x_3(\zeta, 0) & x_4(\zeta, 0) \end{bmatrix}^\top$, and the input operator is given by $\mathfrak{B} = \begin{bmatrix} 0 & \sigma & 0 & 0 \end{bmatrix}^\top$. The lifting matrices $\mathcal{Q}^x$ and $\mathcal{Q}^u$ appearing in Equation~\eqref{eq:3_example_Z_split} are defined in Equation~\eqref{eq:3_example_Qx_Qu}.
+Here, the initial condition is denoted by $x_0(\zeta) = \Bigl[ x_1(\zeta, 0) \allowbreak \quad x_2(\zeta, 0) \allowbreak \quad x_3(\zeta, 0) \allowbreak \quad x_4(\zeta, 0) \Bigr]^\top$, and the input operator is given by $\mathfrak{B} = \begin{bmatrix} 0 & \sigma & 0 & 0 \end{bmatrix}^\top$. The lifting matrices $\mathcal{Q}^x$ and $\mathcal{Q}^u$ appearing in Equation~\eqref{eq:3_example_Z_split} are defined in Equation~\eqref{eq:3_example_Qx_Qu}.
 
 \begin{equation} \label{eq:3_example_Qx_Qu}
 \mathcal{Q}^x =
@@ -192,7 +192,7 @@ M_0 &=
 0 & 0 & 0 & 0 & 0 & 0 \\
 0 & 0 & 0 & 0 & 0 & 0 \\
 0 & 0 & 0 & 0 & 0 & 0
-\end{bmatrix}, \qquad
+\end{bmatrix}, \, \, 
 M_1 = 
 \begin{bmatrix}
 0 & 0 & 0 & 0 & 0 & 0 \\
@@ -201,7 +201,8 @@ M_1 =
 0 & 0 & 0 & 1 & 0 & 0 \\
 1 & 0 & 0 & 0 & -1 & 0 \\
 0 & 0 & 1 & 0 & 0 & -1
-\end{bmatrix}
+\end{bmatrix} \\
+\, \\
 \end{aligned}
 \end{equation}
 
@@ -236,7 +237,7 @@ The output operator $\mathfrak{C}_d$ may be constructed explicitly from the defi
 when applied to $x(\zeta) \in \mathrm{L}^2([0,1]; \mathbb{R}^4)$. Composing $\mathfrak{C}$ with $\mathfrak{R}(\alpha, \mathfrak{A})$ therefore involves evaluating the second component of $X(\zeta, s)$ at $\zeta = 1$, where $X = \mathfrak{R}(\alpha, \mathfrak{A}) x_0$ and $\mathcal{Q} = \mathcal{Q}^x$. For the feedthrough operator $\mathfrak{D}_d$, the same process applies, but the resolvent acts on $\mathfrak{B}\,U(s)$ and uses $\mathcal{Q}^u$ instead.
 
 \paragraph{Adjoint operator mapping.}  
-The discrete-time adjoint operators $(\mathfrak{A}_d^*, \mathfrak{B}_d^*, \mathfrak{C}_d^*, \mathfrak{D}_d^*)$ may be obtained in a structurally identical manner by replacing the original generator $\mathfrak{A}$ with its adjoint $\mathfrak{A}^*$ and applying the Cayley--Tustin scheme to the adjoint dynamics. The corresponding resolvent $\mathfrak{R}^*(\alpha, \mathfrak{A}^*)$ is applied to the adjoint generator and measurement structure. The discrete-time mappings then follow as:
+The discrete-time adjoint operators ($\mathfrak{A}_d^*$, $\mathfrak{B}_d^*$, $\mathfrak{C}_d^*$, $\mathfrak{D}_d^*$) may be obtained in a structurally identical manner by replacing the original generator $\mathfrak{A}$ with its adjoint $\mathfrak{A}^*$ and applying the Cayley--Tustin scheme to the adjoint dynamics. The corresponding resolvent $\mathfrak{R}^*(\alpha, \mathfrak{A}^*)$ is applied to the adjoint generator and measurement structure. The discrete-time mappings then follow as:
 \begin{equation}
 \begin{bmatrix}
 \mathfrak{A}_d^* & \mathfrak{C}_d^* \\

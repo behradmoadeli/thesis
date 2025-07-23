@@ -50,8 +50,13 @@ This thesis focuses on the modeling, estimation, and control of distributed para
     \item In the isothermal studies, \textbf{instability is introduced artificially} via a negative reaction term. While such configurations are uncommon in practice, they are used intentionally to test the framework’s ability to stabilize open-loop unstable DPSs before extending the method to non-isothermal systems, where instability arises more naturally.
 
     \item Noise bounds and horizon lengths are treated as \textbf{design parameters} and are assumed to be known/fixed. No stochastic analysis or probabilistic uncertainty modeling is included. A brief sensitivity analysis is performed on the actual delay and the delay parameter the controller is designed for, but no robustness analysis is included.
+    
+    \item All estimation and control algorithms are derived from the infinite-dimensional system using a \textbf{late-lumping approach}, where spatial discretization is introduced only at the final stage for numerical evaluation of controller action. This approximation pertains to the controller implementation and would be required regardless of whether the plant is physically realized or simulated using a finite-dimensional model.
 
-    \item Following the late-lumping approach, all estimation and control algorithms are demonstrated through \textbf{numerical simulation} using a fixed spatial discretization for evaluation of inner products and QP solution. No experimental validation is included in this thesis.
+    \item In the absence of a physically realized plant, closed-loop performance is evaluated on a \textbf{finite-dimensional simulation of the plant}. The choice of model approximation is guided by prior knowledge of the system, but identifying the most accurate finite-dimensional representation of the infinite-dimensional reactor is not the focus of this work. The emphasis here is on developing and demonstrating a delay-aware control framework under nominal modeling assumptions.
+
+    \item Since the true performance of any given controller is directly influenced by the specific approximation used to simulate the plant---i.e. not the focus of this work---no \textbf{benchmark comparisons} are included with early‑lumped, delay‑agnostic, or heuristic controllers, thereby avoiding misleading conclusions.
+
 \end{itemize}
 
 

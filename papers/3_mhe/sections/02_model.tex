@@ -4,7 +4,7 @@
 
 \begin{figure}[!htbp]
     \centering
-    \begin{tikzpicture}
+    \begin{tikzpicture}[scale=0.85]
         \node (pfr) [cylinder, draw, minimum height=6.5cm, minimum width=1.5cm, shape aspect=1, shape border rotate=180, cylinder uses custom fill, cylinder end fill=green!45, cylinder body fill=green!15] {$\mathcal{A} \rightarrow \mathcal{B}$};
         \node (pfr_inlet) [circle, at={(pfr.west)}, shift={(0.25cm,0)}, fill=blue, draw=blue, inner sep=0pt, minimum size=0.25cm, scale=0.5] {};
         \node (pfr_outlet) [circle, at={(pfr.east)}, shift={(-0.25cm,0)}, fill=blue, draw=blue, inner sep=0pt, minimum size=0.25cm, scale=0.5] {};
@@ -14,24 +14,24 @@
         \draw[dotted, thick] ([yshift=0.8cm]pfr_inlet.center) -- node[at end, below, yshift=0.1cm] {$z = 0$} ([yshift=-0.95cm]pfr_inlet.center);
         \draw[dotted, thick] ([yshift=0.8cm]pfr_outlet.center) -- node[at end, below, yshift=0.1cm] {$z = l$} ([yshift=-0.95cm]pfr_outlet.center);
 
-        \node[below of=recycle_left, node distance=2.10cm, anchor=north west, xshift=-0.2cm] {$r_r \, C(l, t_m - \textcolor{red!60!gray}{\boldsymbol{\tilde{t}_r}})$};
+        \node[below of=recycle_left, node distance=2.10cm, anchor=north west, xshift=-0.2cm] {$r_r \, C_{A}(l, t_m - \textcolor{red!60!gray}{\boldsymbol{\tilde{t}_r}})$};
         \node[below of=recycle_left, node distance=2.70cm, anchor=north west, xshift=-0.2cm] {$r_r \, T(l, t_m - \textcolor{red!60!gray}{\boldsymbol{\tilde{t}_r}})$};
-        \node[above of=pfr_inlet, anchor=south east, node distance=1.30cm, xshift=0.25cm] {$C(0, t_m)$};
+        \node[above of=pfr_inlet, anchor=south east, node distance=1.30cm, xshift=0.25cm] {$C_{A}(0, t_m)$};
         \node[above of=pfr_inlet, anchor=south east, node distance=0.70cm, xshift=0.25cm] {$T(0, t_m)$};
-        \node[above of=pfr_outlet, anchor=south west, node distance=1.30cm, xshift=-0.25cm] {$C(l, t_m)$};
+        \node[above of=pfr_outlet, anchor=south west, node distance=1.30cm, xshift=-0.25cm] {$C_{A}(l, t_m)$};
         \node[above of=pfr_outlet, anchor=south west, node distance=0.70cm, xshift=-0.25cm] {$T(l, t_m)$};
 
         \draw [arrow_2] (pfr_outlet) -- node[near end, above] {$\mathbf{y(t_m)} = T(l, t_m)$} ++(4,0);
-        \draw [arrow_2] (pfr_inlet) ++(-4,0) coordinate(start) -- node[near start, above, shift={(-0.35cm,0)}] {$C_{Feed}$} (pfr_inlet);
+        \draw [arrow_2] (pfr_inlet) ++(-4,0) coordinate(start) -- node[near start, above, shift={(-0.35cm,0)}] {$C_{A, Feed}$} (pfr_inlet);
         \draw [arrow_2] (pfr_inlet) ++(-4,0) coordinate(start) -- node[near start, below, shift={(-0.35cm,0)}] {$T_{Feed}$} (pfr_inlet);
         \draw [arrow_2] (recycle_right) -- ++(0,-2.0) -| (recycle_left);
 
 % Heat exchange arrows (from 1.5cm to 1.0cm above reactor)
         \foreach \i in {1,...,17} {
             \draw[->, red!70!black, thick] 
-                ($([yshift=1.25cm]pfr_inlet.center) + (0.3333 * \i cm, 0)$) 
+                ($([yshift=1.25cm]pfr_inlet.center) + (0.3333 / 0.85 * \i cm, 0)$) 
                 -- 
-                ($([yshift=0.75cm]pfr_inlet.center) + (0.3333 * \i cm, 0)$);
+                ($([yshift=0.75cm]pfr_inlet.center) + (0.3333 / 0.85 * \i cm, 0)$);
         }
         \node[anchor=south, yshift=1.2cm] at (pfr.center) {$\mathbf{u(t_m)} = T_c(t_m)$};
         \node[anchor=south, yshift=1.8cm] at (pfr.center) {Heating/Cooling};
@@ -42,17 +42,19 @@
 \end{figure}
 
 
-A non-isothermal axial dispersion tubular reactor subject to first-order exothermic reaction and partial recycle is considered. The process configuration is shown in Figure~\ref{fig:3_reactor_scheme}. The governing equations describe the evolution of reactant concentration and temperature profiles along the reactor length, and are obtained by applying standard mass and energy balances over an infinitesimal axial segment \autocite{levenspiel1998chemical}, resulting in a coupled nonlinear convection--diffusion--reaction PDE system given in Equation~(\ref{eq:3_PDE_1}). Here, $C(z, t_m)$ and $T(z, t_m)$ describe the concentration and temperature profiles along the reactor length $z \in [0, l]$ at time $t_m \in [0, \infty)$, respectively. All variables and parameters are defined in the nomenclature.
+A non-isothermal axial dispersion tubular reactor subject to first-order exothermic reaction and partial recycle is considered. The process configuration is shown in Figure~\ref{fig:3_reactor_scheme}. The governing equations describe the evolution of reactant concentration and temperature profiles along the reactor length, and are obtained by applying standard mass and energy balances over an infinitesimal axial segment \autocite{levenspiel1998chemical}, resulting in a coupled nonlinear convection--diffusion--reaction PDE system given in Equation~(\ref{eq:3_PDE_1}). Here, $C_{A}(z, t_m)$ and $T(z, t_m)$ describe the reactant concentration and temperature profiles along the reactor length $z \in [0, l]$ at time $t_m \in [0, \infty)$, respectively. All variables and parameters are defined in the nomenclature.
 
+\begin{small}
 \begin{equation} \label{eq:3_PDE_1}
 \begin{cases}
 \begin{alignedat}{2}
-    \partial_{t_m} C(z, t_m) = &\hspace{1em} D \partial_{zz} C(z, t_m)              &&- v \partial_{z} C(z, t_m) -                              k e^{\dfrac{-E}{R T(z, t_m)}} C(z, t_m)\\[2.0ex]
-    \partial_{t_m} T(z, t_m) = &\dfrac{\kappa}{\rho_f c_p} \partial_{zz} T(z, t_m) &&- v \partial_{z} T(z, t_m) - \dfrac{\Delta H}{\rho_f c_p} k e^{\dfrac{-E}{R T(z, t_m)}} C(z, t_m)\\[1.2ex]
-    &&& \hspace{3.8em} + \dfrac{4h}{\rho_f c_p d_t} \bigl( T_c(t_m) - T(z, t_m) \bigr) \\
-\end{alignedat}
+        \partial_{t_m} C_{A}(z, t_m) = &\hspace{1em} D \partial_{zz} C_{A}(z, t_m)              &&- v \partial_{z} C_{A}(z, t_m) -                              k e^{\dfrac{-E}{R T(z, t_m)}} C_{A}(z, t_m)\\[2.0ex]
+        \partial_{t_m} T(z, t_m) = &\dfrac{\kappa}{\rho_f c_p} \partial_{zz} T(z, t_m) &&- v \partial_{z} T(z, t_m) - \dfrac{\Delta H}{\rho_f c_p} k e^{\dfrac{-E}{R T(z, t_m)}} C_{A}(z, t_m)\\[1.2ex]
+        &&& + \dfrac{4h}{\rho_f c_p d_t} \bigl( T_c(t_m) - T(z, t_m) \bigr) \\
+    \end{alignedat}
 \end{cases}
 \end{equation}
+\end{small}
 
 The boundary conditions adopt a Danckwerts-type formulation, which has become standard in the modeling of axial dispersion tubular reactors. Belonging to the class of Robin boundaries, Danckwerts conditions preserve generality while remaining physically interpretable in the context of axial dispersion systems \autocite{Danckwerts1953Continuous}.
 
@@ -61,9 +63,9 @@ Except the delay-induced recycle, the present modeling assumptions leading to th
 \begin{equation} \label{eq:3_BC_1}
 \begin{cases}
     \begin{alignedat}{3}
-        \partial_{z} C(0, t_m) &=& \dfrac{v}{D} \quad \Bigl[                           &C(0, t_m) - (1-r_r) C_{Feed} & - r_r C(l, t_m-\tilde{t}_r) \Bigr] & \\[1.4ex]
+        \partial_{z} C_{A}(0, t_m) &=& \dfrac{v}{D} \quad \Bigl[                           &C_{A}(0, t_m) - (1-r_r) C_{A, Feed} & - r_r C_{A}(l, t_m-\tilde{t}_r) \Bigr] & \\[1.4ex]
         \partial_{z} T(0, t_m) &=& \hspace{0.3em} \dfrac{\rho_f v c_p}{\kappa} \Bigl[ &T(0, t_m) - (1-r_r) T_{Feed} & - r_r T(l, t_m-\tilde{t}_r) \Bigr] & \\[1.4ex]
-        \partial_{z} C(l, t_m) &=& 0 \hspace{0.9cm}                                    &                           &                                  & \\[1.4ex]
+        \partial_{z} C_{A}(l, t_m) &=& 0 \hspace{0.9cm}                                    &                           &                                  & \\[1.4ex]
         \partial_{z} T(l, t_m) &=& 0 \hspace{0.9cm}                                    &                           &                                  & \\
     \end{alignedat}
 \end{cases}
@@ -86,7 +88,7 @@ with boundary conditions:
 
 \begin{equation} \label{eq:3_transport_BC}
     \begin{cases}
-        C_r(l_r, t_m) = C(l, t_m) \\
+        C_r(l_r, t_m) = C_{A}(l, t_m) \\
         T_r(l_r, t_m) = T(l, t_m)
     \end{cases}
 \end{equation}
@@ -94,7 +96,7 @@ with boundary conditions:
 Evaluating the transport states at the inlet, the delayed boundary terms in Equation~\eqref{eq:3_BC_1} are equivalently expressed as:
 \begin{equation} \label{eq:3_delay_identity}
     \begin{cases}
-        C_r(0, t_m) = C_r(l_r, t_m - \tilde{t}_r) = C(l, t_m - \tilde{t}_r) \\
+        C_r(0, t_m) = C_r(l_r, t_m - \tilde{t}_r) = C_{A}(l, t_m - \tilde{t}_r) \\
         T_r(0, t_m) = T_r(l_r, t_m - \tilde{t}_r) = T(l, t_m - \tilde{t}_r)
     \end{cases}
 \end{equation}
@@ -105,16 +107,16 @@ The substitution of Equations~\eqref{eq:3_transport_PDE}-\eqref{eq:3_delay_ident
 \begin{equation} \label{eq:3_PDE_2}
 \begin{cases}
 \begin{alignedat}{2}
-    \partial_{t_m} C(z, t_m) = &\hspace{1.5em} D \partial_{zz} C(z, t_m) 
-    &&- v \partial_z C(z, t_m) 
-    - k e^{\dfrac{-E}{R T(z, t_m)}} C(z, t_m) \\[2.0ex]
+    \partial_{t_m} C_{A}(z, t_m) = & D \partial_{zz} C_{A}(z, t_m) 
+    - v \partial_z C_{A}(z, t_m) \\[1.2ex]
+    -& k e^{-E/\left[R T(z, t_m)\right]} C_{A}(z, t_m) \\[2.5ex]
 
-    \partial_{t_m} T(z, t_m) = &\hspace{1em}\dfrac{\kappa}{\rho_f c_p} \partial_{zz} T(z, t_m) 
-    &&- v \partial_z T(z, t_m)
-    - \dfrac{\Delta H}{\rho_f c_p} k e^{\dfrac{-E}{R T(z, t_m)}} C(z, t_m) \\[1.2ex]
-    &&& \hspace{4.1em} + \dfrac{4h}{\rho_f c_p d_t} \bigl( T_c(t_m) - T(z, t_m) \bigr) \\[2.0ex]
+    \partial_{t_m} T(z, t_m) = &\dfrac{\kappa}{\rho_f c_p} \partial_{zz} T(z, t_m) 
+    - v \partial_z T(z, t_m) \\[1.2ex]
+    -& \dfrac{\Delta H}{\rho_f c_p} k e^{-E/\left[R T(z, t_m)\right]} C_{A}(z, t_m)\\[1.2ex]
+    +& \dfrac{4h}{\rho_f c_p d_t} \bigl( T_c(t_m) - T(z, t_m) \bigr) \\[2.5ex]
 
-    \partial_{t_m} C_r(z_r, t_m) = &- v_r \partial_{z_r} C_r(z_r, t_m) \\[2.0ex]
+    \partial_{t_m} C_r(z_r, t_m) = &- v_r \partial_{z_r} C_r(z_r, t_m) \\[2.5ex]
 
     \partial_{t_m} T_r(z_r, t_m) = &- v_r \partial_{z_r} T_r(z_r, t_m)
 \end{alignedat}
@@ -124,11 +126,11 @@ The substitution of Equations~\eqref{eq:3_transport_PDE}-\eqref{eq:3_delay_ident
 \begin{equation} \label{eq:3_BC_2}
 \begin{cases}
 \begin{alignedat}{2}
-    \partial_z C(0, t_m) &= \dfrac{v}{D} \left[ C(0, t_m) - (1 - r_r) C_\text{Feed} - r_r C_r(0, t_m) \right], \quad &\partial_z C(l, t_m) &= 0 \\[1.5ex]
+    \partial_z C_{A}(0, t_m) &= \dfrac{v}{D} \left[ C_{A}(0, t_m) - (1 - r_r) C_{A,\text{Feed}} - r_r C_r(0, t_m) \right], \\[1.5ex] \partial_z C_{A}(l, t_m) &= 0 \\[1.5ex]
 
-    \partial_z T(0, t_m) &= \dfrac{\rho_f v c_p}{\kappa} \left[ T(0, t_m) - (1 - r_r) T_\text{Feed} - r_r T_r(0, t_m) \right], \quad &\partial_z T(l, t_m) &= 0 \\[1.5ex]
+    \partial_z T(0, t_m) &= \dfrac{\rho_f v c_p}{\kappa} \left[ T(0, t_m) - (1 - r_r) T_\text{Feed} - r_r T_r(0, t_m) \right], \\[1.5ex] \partial_z T(l, t_m) &= 0 \\[1.5ex]
 
-    C_r(l_r, t_m) &= C(l, t_m) \\[1.5ex]
+    C_r(l_r, t_m) &= C_{A}(l, t_m) \\[1.5ex]
     T_r(l_r, t_m) &= T(l, t_m)
 \end{alignedat}
 \end{cases}
@@ -142,16 +144,16 @@ For notational simplicity and to reveal the structure of the system more clearly
         &\zeta = \dfrac{z}{l} = \dfrac{z_r}{l_r}, \qquad 
         t = \dfrac{t_m}{\tilde{t}}, \qquad
         &&\tau = \dfrac{\tilde{t}_r}{\tilde{t}}, \\[2.0ex]
-        &m_1(\zeta, t) = \dfrac{C_{\text{Feed}} - C(\zeta, t)}{C_{\text{Feed}}}, \quad 
+        &m_1(\zeta, t) = \dfrac{C_{A, \text{Feed}} - C_{A}(\zeta, t)}{C_{A, \text{Feed}}}, \quad 
         &&m_2(\zeta, t) = \dfrac{T(\zeta, t) - T_{\text{Feed}}}{T_{\text{Feed}}}, \\[1.5ex]
-        &m_3(\zeta, t) = \dfrac{C_{\text{Feed}} - C_r(\zeta, t)}{C_{\text{Feed}}}, \quad 
+        &m_3(\zeta, t) = \dfrac{C_{A, \text{Feed}} - C_r(\zeta, t)}{C_{A, \text{Feed}}}, \quad 
         &&m_4(\zeta, t) = \dfrac{T_r(\zeta, t) - T_{\text{Feed}}}{T_{\text{Feed}}}, \\[1.5ex]
         &T_w(t) = \dfrac{T_c(t) - T_{\text{Feed}}}{T_{\text{Feed}}}
     \end{alignedat}
 \end{cases}
 \end{equation}
 
-Substituting these variables into the nonlinear PDE system in Equations~\eqref{eq:3_PDE_2}-\eqref{eq:3_BC_2} yields the dimensionless representation of the system given in Equations~\eqref{eq:3_PDE_3} and~\eqref{eq:3_BC_3}. 
+Substituting these variables into the non-linear PDE system in Equations~\eqref{eq:3_PDE_2}-\eqref{eq:3_BC_2} yields the dimensionless representation of the system given in Equations~\eqref{eq:3_PDE_3} and~\eqref{eq:3_BC_3}. 
 
 
 \begin{equation} \label{eq:3_PDE_3}
@@ -222,8 +224,8 @@ Similar to the results obtained in \autocite{Khatibi2021Model}, one parameter co
 $\mathrm{Pe}_m$  & 4        & 4      \\
 $\mathrm{Pe}_T$  & 6        & 6      \\
 $T_{\mathrm{w}}^{\mathrm{ss}}$ & -0.37 & -0.37  \\
-$T_{\mathrm{feed}}$ & 600 K & 600 K  \\
-$C_{\mathrm{feed}}$ & 1.0 M & 1.0 M  \\
+$T_{\mathrm{Feed}}$ & 600 K & 600 K  \\
+$C_{A, \mathrm{Feed}}$ & 1.0 M & 1.0 M  \\
 $k_a$            & 0.6      & 0.6    \\
 $r_r$            & 0.3      & 0.3    \\
 $\alpha$         & 0.8      & 0.8    \\
@@ -247,8 +249,10 @@ The nonlinear reaction source terms, which depend on both concentration and temp
 
 \begin{equation}
 \begin{cases}
-    f_{\text{nl}}(m_1, m_2) = k_a (1 - m_1) e^{\frac{\eta m_2}{1 + m_2}} \approx f_{\text{nl}}(m_{1}^{ss}, m_{2}^{ss}) + \tilde{R}_1 (m_1 - m_{1}^{ss}) + \tilde{R}_2 (m_2 - m_{2}^{ss}), \\[1.5ex]
-    g_{\text{nl}}(m_1, m_2) = \alpha k_a (1 - m_1) e^{\frac{\eta m_2}{1 + m_2}} \approx g_{\text{nl}}(m_{1}^{ss}, m_{2}^{ss}) + \alpha \tilde{R}_1 (m_1 - m_{1}^{ss}) + \alpha \tilde{R}_2 (m_2 - m_{2}^{ss})
+    f_{\text{nl}}(m_1, m_2) &= k_a (1 - m_1) e^{\frac{\eta m_2}{1 + m_2}} \\
+    &\approx f_{\text{nl}}(m_{1}^{ss}, m_{2}^{ss}) + \tilde{R}_1 (m_1 - m_{1}^{ss}) + \tilde{R}_2 (m_2 - m_{2}^{ss}), \\[1.8ex]
+    g_{\text{nl}}(m_1, m_2) &= \alpha k_a (1 - m_1) e^{\frac{\eta m_2}{1 + m_2}} \\
+    &\approx g_{\text{nl}}(m_{1}^{ss}, m_{2}^{ss}) + \alpha \tilde{R}_1 (m_1 - m_{1}^{ss}) + \alpha \tilde{R}_2 (m_2 - m_{2}^{ss})
 \end{cases}
 \end{equation}
 
@@ -278,7 +282,8 @@ The spatially averaged parameters $R_1$ and $R_2$ are calculated based on the st
 
     \partial_{t} x_2(\zeta, t) &= \dfrac{1}{Pe_T} \partial_{\zeta\zeta} x_2(\zeta, t) 
     - \partial_{\zeta} x_2(\zeta, t)
-    &+ \alpha R_1 x_1(\zeta, t)  &+ \alpha R_2 x_2(\zeta, t) + \sigma \left[ u(t) - x_2(\zeta, t) \right] \\[2.0ex]
+    &+ \alpha R_1 x_1(\zeta, t)  &+ \alpha R_2 x_2(\zeta, t) \\
+    &&&+ \sigma \left[ u(t) - x_2(\zeta, t) \right] \\[2.0ex]
 
     \partial_{t} x_3(\zeta, t) &= \dfrac{1}{\tau} \partial_{\zeta} x_3(\zeta, t) 
     &\quad & \\[2.0ex]
