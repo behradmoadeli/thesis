@@ -20,6 +20,8 @@
     "**/*.lof": true,
     "**/*.lot": true,
     "**/*.run.xml": true,
+    "**/*.nav": true,
+    "**/*.snm": true,
     "**/*.xdv": true,
     "**/LICENSE": true,
     "**/README.md": true,
