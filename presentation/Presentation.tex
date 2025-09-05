@@ -79,7 +79,7 @@
 
 
 \title{\textbf{State-Delays in Chemical Engineering:\\A Control Framework for Distributed Parameter Systems}}
-\author{Behrad `Brad' Moadeli\\Supervisor: Prof. Stevan Dubljevic}
+\author{Behrad `Brad' Moadeli}
 \institute{Department of Chemical and Materials Engineering, University of Alberta\\Edmonton, Alberta, Canada}
 % \centering
 \date{
@@ -299,7 +299,7 @@ To develop a \textbf{modeling and control framework} via \textbf{late-lumping} a
 \begin{itemize}
     \item A transport PDE over \( \zeta \in [0, 1] \):
     \[
-        \frac{\partial x}{\partial t} + \frac{1}{\tau} \frac{\partial x}{\partial \zeta} = 0, \quad
+        \frac{\partial x}{\partial t} - \frac{1}{\tau} \frac{\partial x}{\partial \zeta} = 0, \quad
         x(0, t) = u(t)
     \]
     \item Describes propagation of input \( u(t) \) with delay:
@@ -515,7 +515,7 @@ MHE (constrained) &
     \item Characteristics equation $det(\lambda_i-A) = 0$ is solved to obtain eigenvalues.
     \item Direct analytical solution is impractical—solved numerically.
     \item Result: eigenvalues with \textbf{positive real parts} → \textcolor{red}{open-loop unstable}.
-    \item Parameters used to obtain the eigenvalue distribution are given in Table~\ref{tab:pars} in \nameref{tab:pars}.
+    \item Parameters used to obtain the eigenvalue distribution are given in Table~\ref{tab:pars_1} in \nameref{tab:pars_1}.
 \end{itemize}
 
 \column{0.5\textwidth}
@@ -987,7 +987,7 @@ MHE (constrained) &
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.6\textwidth]{figures/noniso_reactor.png}\vspace{-4mm}
+    \includegraphics[width=0.6\textwidth]{figures/noniso_reactor.png}\vspace{-2mm}
     \caption{Non-isothermal system schematic.}
 \end{figure}
 
@@ -1011,7 +1011,7 @@ with recycle boundary coupling and Danckwerts boundary conditions.
 \begin{frame}{Linearized, Dimensionless Representation of the Non-linear System around Steady States}
     
 \begin{block}{System Dynamics}
-    \begin{equation} \label{eq:state_space}
+    \begin{equation} \label{eq:state_space_2}
         \dot{x}(\zeta, t) = A x(\zeta, t) + B u(t); \qquad
         y(t) = C x(\zeta, t)
     \end{equation}
@@ -1072,7 +1072,7 @@ x_1(1) = x_3(1); \quad & x_2(1) = x_4(1)
 
 \begin{frame}{Eigenvalue Distribution: Unstable and Stable Cases}
 
-Same as previous chapters, the eigenvalue distribution of the system operator \( A \) is analyzed to determine stability, and is obtained by solving the characteristic equation \( det(\lambda_i - A) = 0 \).
+Same as previous chapters, the eigenvalue distribution of the system operator \( A \) is analyzed to determine stability, and is obtained by solving the characteristic equation \( det(\lambda_i - A) = 0 \). Parameters used to obtain the eigenvalue distributions are given in Table~\ref{tab:pars_2} in \nameref{tab:pars_2}.
 
 \begin{figure}
     \centering
@@ -1243,11 +1243,11 @@ y_T &= \mathfrak{C}_d x_T + \mathfrak{D}_d u_T + v_T
 
 \appendix
 \section{Appendix}
-\begin{frame}{Appendix A: Parameters Used in Simulations}
+\begin{frame}{Appendix A-1: Parameters Used in Isothermal Simulations}
 \begin{table}[ht]
     \centering
-    \caption{Physical Parameters for the System}
-    \label{tab:pars}
+    \caption{Physical Parameters for the Isothermal System}
+    \label{tab:pars_1}
     \begin{tabular}{|c|c|c|c|}
     \hline
     \textbf{Parameter}        & \textbf{Symbol} & \textbf{Value}     & \textbf{Unit}    \\ \hline
@@ -1256,6 +1256,33 @@ y_T &= \mathfrak{C}_d x_T + \mathfrak{D}_d u_T + v_T
     Reaction Constant         & $k_r$           & $-1.5$              & $s^{-1}$         \\ \hline
     Recycle Residence Time    & $\tau$          & $80$               & $s$              \\ \hline
     Recycle Ratio             & $R$             & $0.3$              & $-$              \\ \hline
+    \end{tabular}
+\end{table}
+\end{frame}
+
+
+\begin{frame}{Appendix A-2: Parameters Used in Non-isothermal Simulations}
+\begin{table}[ht]
+    \centering
+    \caption{Parameters Used in the Steady-State Analysis for Case I (Unstable) and Case II (Stable) of the Non-isothermal System} \label{tab:pars_2}
+    \begin{tabular}{|c|c|c|}
+    \hline
+    \textbf{Parameter} & \makecell{\textbf{Case I} \\ \textbf{(Unstable)}} & \makecell{\textbf{Case II} \\ \textbf{(Stable)}} \\
+    \hline
+    $\mathrm{Pe}_m$  & 4        & 4      \\
+    $\mathrm{Pe}_T$  & 6        & 6      \\
+    $T_{\mathrm{w}}^{\mathrm{ss}}$ & -0.37 & -0.37  \\
+    $T_{\mathrm{Feed}}$ & 600 K & 600 K  \\
+    $C_{A, \mathrm{Feed}}$ & 1.0 M & 1.0 M  \\
+    $k_a$            & 0.6      & 0.6    \\
+    $r_r$            & 0.3      & 0.3    \\
+    $\alpha$         & 0.8      & 0.8    \\
+    $\eta$           & 14.0     & 6.0    \\
+    $\sigma$         & 0.9      & 0.9    \\
+    $\tau$           & 0.5      & 0.5    \\
+    $R_1$            & -1.38    & -0.45  \\
+    $R_2$            & 6.48     & 1.95   \\
+    \hline
     \end{tabular}
 \end{table}
 \end{frame}
